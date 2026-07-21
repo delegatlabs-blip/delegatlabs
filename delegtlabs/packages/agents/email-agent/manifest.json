@@ -1,0 +1,10 @@
+{
+  "slug": "email-agent",
+  "name": "Outbound Email Agent",
+  "category": "email",
+  "version": "1.0.0",
+  "admin_route": "/admin/agents/email-agent/dashboard",
+  "user_route": "/dashboard/agents/email-agent",
+  "worker_schedule": "0 */2 * * *",
+  "capabilities": ["cold_email_sequence", "domain_warming"]
+}
