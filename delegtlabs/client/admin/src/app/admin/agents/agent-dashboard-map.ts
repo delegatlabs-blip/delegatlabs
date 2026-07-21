@@ -14,4 +14,7 @@ export const agentDashboardMap: Record<string, ComponentType<{ slug: string }>> 
   "email-agent": dynamic(() => import("@/../../packages/agents/email-agent/frontend/AdminDashboard"), {
     loading: () => <div className="p-8 text-slate-500 font-medium">Loading Email Agent Dashboard...</div>,
   }),
+  "seo-agent": dynamic(() => import("@/../../packages/agents/seo-agent/frontend/AdminDashboard"), {
+    loading: () => <div className="p-8 text-slate-500 font-medium">Loading SEO Agent Dashboard...</div>,
+  }),
 };

@@ -1,0 +1,10 @@
+{
+  "slug": "seo-agent",
+  "name": "SEO & Content Ranker",
+  "category": "seo",
+  "version": "1.0.0",
+  "admin_route": "/admin/agents/seo-agent/dashboard",
+  "user_route": "/dashboard/agents/seo-agent",
+  "worker_schedule": "0 0 * * *",
+  "capabilities": ["keyword_research", "blog_post_generation", "onpage_audit"]
+}
