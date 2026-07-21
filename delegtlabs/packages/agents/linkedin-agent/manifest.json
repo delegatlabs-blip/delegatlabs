@@ -6,5 +6,5 @@
   "admin_route": "/admin/agents/linkedin-agent/dashboard",
   "user_route": "/dashboard/agents/linkedin-agent",
   "worker_schedule": "0 */6 * * *",
-  "capabilities": ["lead_generation", "post_generation"]
+  "capabilities": ["lead_generation", "post_generation", "pr_posting"]
 }

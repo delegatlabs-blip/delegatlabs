@@ -3,6 +3,7 @@ import uuid
 from typing import Any
 from fastapi import APIRouter, Header, HTTPException, Request
 from pydantic import BaseModel
+from shared.agent_registry import get_registered_agents
 
 router = APIRouter(prefix="/checkout", tags=["checkout"])
 
@@ -16,6 +17,20 @@ class CheckoutSessionRequest(BaseModel):
 
 @router.get("/catalog")
 async def get_agent_catalog():
+    registered = get_registered_agents()
+    catalog_agents = [
+        {
+            "slug": a["slug"],
+            "name": a["name"],
+            "category": a["category"],
+            "status": a.get("status", "active"),
+            "price_usd": a.get("base_price_usd", 199.0),
+            "price_inr": a.get("base_price_inr", 15999.0),
+            "description": a.get("description", ""),
+        }
+        for a in registered
+    ]
+
     return {
         "plans": [
             {
@@ -35,53 +50,7 @@ async def get_agent_catalog():
                 "features": ["Priority AI Workers", "Unlimited Runs", "Advanced Sub-dashboards", "Dedicated Support"],
             },
         ],
-        "agents": [
-            {
-                "slug": "linkedin-agent",
-                "name": "LinkedIn Growth Agent",
-                "category": "linkedin",
-                "status": "active",
-                "price_usd": 250.0,
-                "price_inr": 19999.0,
-                "description": "Automated B2B lead generation, connection outreach, and post generation.",
-            },
-            {
-                "slug": "facebook-ads-agent",
-                "name": "Facebook Ads Optimizer",
-                "category": "facebook_ads",
-                "status": "active",
-                "price_usd": 299.0,
-                "price_inr": 24999.0,
-                "description": "Automated ad creative generation, ROAS tracking, and campaign optimization.",
-            },
-            {
-                "slug": "instagram-agent",
-                "name": "Instagram Content Creator",
-                "category": "instagram",
-                "status": "active",
-                "price_usd": 199.0,
-                "price_inr": 15999.0,
-                "description": "Reels scriptwriting, content pillars, auto-scheduling, and engagement boost.",
-            },
-            {
-                "slug": "email-agent",
-                "name": "Outbound Email Agent",
-                "category": "email",
-                "status": "active",
-                "price_usd": 199.0,
-                "price_inr": 15999.0,
-                "description": "Cold email sequence writer, deliverability warmer, and lead responder.",
-            },
-            {
-                "slug": "seo-agent",
-                "name": "SEO & Content Ranker",
-                "category": "seo",
-                "status": "active",
-                "price_usd": 249.0,
-                "price_inr": 19999.0,
-                "description": "Keyword research, blog post generator, on-page optimization, and audit.",
-            },
-        ],
+        "agents": catalog_agents,
     }
 
 

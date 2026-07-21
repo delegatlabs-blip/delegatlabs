@@ -1,0 +1,10 @@
+{
+  "slug": "lawyer-agent",
+  "name": "Lawyer Drafting Agent",
+  "category": "legal",
+  "version": "1.0.0",
+  "admin_route": "/admin/agents/lawyer-agent/dashboard",
+  "user_route": "/dashboard/agents/lawyer-agent",
+  "worker_schedule": "0 0 * * *",
+  "capabilities": ["legal_drafting"]
+}

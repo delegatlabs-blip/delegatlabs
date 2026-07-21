@@ -45,11 +45,8 @@ export default function PricingPage() {
               { id: "plan_growth", name: "Growth Pro Plan", price_usd: 199, price_inr: 15999, max_agents: 5, features: ["Priority AI Workers", "Unlimited Runs", "Advanced Sub-dashboards", "Dedicated Support"] },
             ],
             agents: [
-              { slug: "linkedin-agent", name: "LinkedIn Growth Agent", category: "linkedin", status: "active", price_usd: 250, price_inr: 19999, description: "Automated B2B lead generation, connection outreach, and post generation." },
-              { slug: "facebook-ads-agent", name: "Facebook Ads Optimizer", category: "facebook_ads", status: "active", price_usd: 299, price_inr: 24999, description: "Automated ad creative generation, ROAS tracking, and campaign optimization." },
-              { slug: "instagram-agent", name: "Instagram Content Creator", category: "instagram", status: "active", price_usd: 199, price_inr: 15999, description: "Reels scriptwriting, content pillars, auto-scheduling, and engagement boost." },
-              { slug: "email-agent", name: "Outbound Email Agent", category: "email", status: "active", price_usd: 199, price_inr: 15999, description: "Cold email sequence writer, deliverability warmer, and lead responder." },
-              { slug: "seo-agent", name: "SEO & Content Ranker", category: "seo", status: "active", price_usd: 249, price_inr: 19999, description: "Keyword research, blog post generator, on-page optimization, and audit." },
+              { slug: "linkedin-agent", name: "LinkedIn Growth Agent", category: "linkedin", status: "active", price_usd: 250, price_inr: 19999, description: "Automated PR posting, B2B lead generation, and connection outreach." },
+              { slug: "lawyer-agent", name: "Lawyer Drafting Agent", category: "legal", status: "active", price_usd: 299, price_inr: 24999, description: "Guided AI legal drafting for Indian advocates — catalog, intake, generate, preview." },
             ],
           });
         }

@@ -18,6 +18,7 @@ class TimestampMixin:
 
 AGENT_CATEGORY = (
     "linkedin",
+    "legal",
     "facebook_ads",
     "instagram",
     "twitter",

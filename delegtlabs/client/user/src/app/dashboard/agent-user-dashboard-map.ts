@@ -5,16 +5,7 @@ export const agentUserDashboardMap: Record<string, ComponentType<{ slug: string 
   "linkedin-agent": dynamic(() => import("@/../../packages/agents/linkedin-agent/frontend/UserDashboard"), {
     loading: () => <div className="p-8 text-slate-500 font-medium">Loading LinkedIn User Dashboard...</div>,
   }),
-  "facebook-ads-agent": dynamic(() => import("@/../../packages/agents/facebook-ads-agent/frontend/UserDashboard"), {
-    loading: () => <div className="p-8 text-slate-500 font-medium">Loading Facebook Ads User Dashboard...</div>,
-  }),
-  "instagram-agent": dynamic(() => import("@/../../packages/agents/instagram-agent/frontend/UserDashboard"), {
-    loading: () => <div className="p-8 text-slate-500 font-medium">Loading Instagram User Dashboard...</div>,
-  }),
-  "email-agent": dynamic(() => import("@/../../packages/agents/email-agent/frontend/UserDashboard"), {
-    loading: () => <div className="p-8 text-slate-500 font-medium">Loading Email Agent User Dashboard...</div>,
-  }),
-  "seo-agent": dynamic(() => import("@/../../packages/agents/seo-agent/frontend/UserDashboard"), {
-    loading: () => <div className="p-8 text-slate-500 font-medium">Loading SEO Agent User Dashboard...</div>,
+  "lawyer-agent": dynamic(() => import("@/../../packages/agents/lawyer-agent/frontend/UserDashboard"), {
+    loading: () => <div className="p-8 text-slate-500 font-medium">Loading Lawyer User Dashboard...</div>,
   }),
 };

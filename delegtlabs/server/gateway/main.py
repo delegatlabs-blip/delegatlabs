@@ -57,6 +57,8 @@ def create_app() -> FastAPI:
     @app.middleware("http")
     async def admin_auth(request: Request, call_next):
         if request.url.path.startswith("/api/admin") and not settings.disable_admin_auth:
+            if request.method == "OPTIONS":
+                return await call_next(request)
             auth_header = request.headers.get("Authorization", "")
             if not auth_header.startswith("Bearer "):
                 return JSONResponse(status_code=status.HTTP_401_UNAUTHORIZED, content={"detail": "Missing bearer token"})

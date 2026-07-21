@@ -23,12 +23,12 @@ async def get_user_global_dashboard():
             "connected": True,
         },
         {
-            "slug": "email-agent",
-            "name": "Outbound Email Agent",
-            "category": "email",
+            "slug": "lawyer-agent",
+            "name": "Lawyer Drafting Agent",
+            "category": "legal",
             "status": "active",
-            "monthly_price": 199.00,
-            "connected": False,
+            "monthly_price": 299.00,
+            "connected": True,
         },
     ]
 
@@ -36,11 +36,12 @@ async def get_user_global_dashboard():
         "client_name": "Acme SaaS Inc.",
         "plan_name": "Growth Pro Plan",
         "renewal_date": "2026-08-01T00:00:00Z",
-        "total_monthly_spend": 449.00,
+        "total_monthly_spend": 549.00,
         "purchased_agents": purchased_agents,
         "aggregate_metrics": {
             "total_leads": 482,
             "total_posts": 34,
+            "total_drafts": 12,
         },
     }
 

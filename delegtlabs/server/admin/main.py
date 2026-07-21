@@ -37,7 +37,7 @@ def create_app() -> FastAPI:
 
     @app.middleware("http")
     async def enforce_admin_auth(request: Request, call_next):
-        if settings.disable_admin_auth:
+        if settings.disable_admin_auth or request.method == "OPTIONS":
             return await call_next(request)
         if request.url.path in {"/health", "/docs", "/openapi.json", "/redoc"}:
             return await call_next(request)

@@ -40,10 +40,7 @@ export default function AgentsPage() {
           <select className="azia-input w-40" value={category} onChange={(e) => setCategory(e.target.value)}>
             <option value="">All Categories</option>
             <option value="linkedin">LinkedIn</option>
-            <option value="facebook_ads">Facebook Ads</option>
-            <option value="instagram">Instagram</option>
-            <option value="email">Email</option>
-            <option value="seo">SEO</option>
+            <option value="legal">Legal</option>
           </select>
         </FilterField>
         <FilterField label="Status">

@@ -174,7 +174,7 @@ export default function DashboardPage() {
             {agents.slice(0, 5).map((agent) => (
               <Link
                 key={agent.id}
-                href={`/admin/agents/${agent.id}`}
+                href={`/admin/agents/detail/${agent.id}`}
                 className="block rounded border border-azia-border px-4 py-3 hover:border-azia-primary"
               >
                 <div className="flex items-start justify-between gap-3">

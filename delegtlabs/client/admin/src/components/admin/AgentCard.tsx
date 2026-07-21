@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { LucideIcon } from "lucide-react";
-import { BriefcaseBusiness, Camera, Mail, Megaphone, Search, Sparkles } from "lucide-react";
+import { BriefcaseBusiness, Scale, Sparkles } from "lucide-react";
 import type { Agent } from "@/lib/api";
 
 type AgentCardProps = {
@@ -22,32 +22,14 @@ const categoryThemes: Record<string, CategoryTheme> = {
   linkedin: {
     label: "LinkedIn",
     icon: BriefcaseBusiness,
-    chipClassName: "bg-blue-50 text-blue-700 ring-blue-200/70",
-    iconClassName: "text-blue-600",
+    chipClassName: "bg-teal-50 text-teal-800 ring-teal-200/70",
+    iconClassName: "text-teal-700",
   },
-  facebook_ads: {
-    label: "Facebook",
-    icon: Megaphone,
-    chipClassName: "bg-indigo-50 text-indigo-700 ring-indigo-200/70",
-    iconClassName: "text-indigo-600",
-  },
-  instagram: {
-    label: "Instagram",
-    icon: Camera,
-    chipClassName: "bg-gradient-to-r from-pink-50 to-purple-50 text-pink-700 ring-pink-200/70",
-    iconClassName: "text-pink-600",
-  },
-  email: {
-    label: "Email",
-    icon: Mail,
-    chipClassName: "bg-amber-50 text-amber-700 ring-amber-200/70",
-    iconClassName: "text-amber-600",
-  },
-  seo: {
-    label: "SEO",
-    icon: Search,
-    chipClassName: "bg-emerald-50 text-emerald-700 ring-emerald-200/70",
-    iconClassName: "text-emerald-600",
+  legal: {
+    label: "Legal",
+    icon: Scale,
+    chipClassName: "bg-amber-50 text-amber-800 ring-amber-200/70",
+    iconClassName: "text-amber-700",
   },
 };
 
@@ -142,7 +124,7 @@ export function AgentCard({ agent, onDeactivate }: AgentCardProps) {
 
       <div className="mt-auto flex items-center justify-between gap-3 pt-6">
         <Link
-          href={`/admin/agents/${agent.id}`}
+          href={`/admin/agents/detail/${agent.id}`}
           onClick={(e) => e.stopPropagation()}
           className="rounded-full border border-slate-200 px-4 py-2 text-xs font-semibold text-slate-700 transition-colors hover:border-[#7C3AED] hover:bg-[#7C3AED] hover:text-white"
         >

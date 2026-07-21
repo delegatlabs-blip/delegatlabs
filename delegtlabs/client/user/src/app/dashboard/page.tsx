@@ -40,7 +40,7 @@ export default function UserGlobalDashboard() {
             client_name: "Acme SaaS Inc.",
             plan_name: "Growth Pro Plan",
             renewal_date: "2026-08-01T00:00:00Z",
-            total_monthly_spend: 449.0,
+            total_monthly_spend: 549.0,
             purchased_agents: [
               {
                 slug: "linkedin-agent",
@@ -51,12 +51,12 @@ export default function UserGlobalDashboard() {
                 connected: true,
               },
               {
-                slug: "email-agent",
-                name: "Outbound Email Agent",
-                category: "email",
+                slug: "lawyer-agent",
+                name: "Lawyer Drafting Agent",
+                category: "legal",
                 status: "active",
-                monthly_price: 199.0,
-                connected: false,
+                monthly_price: 299.0,
+                connected: true,
               },
             ],
             aggregate_metrics: {

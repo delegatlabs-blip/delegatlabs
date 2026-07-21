@@ -10,6 +10,21 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("worker_main")
 
 
+async def _invoke_worker_module(slug: str, mod) -> dict:
+    """Prefer generic run_agent_task, then slug-specific names."""
+    candidates = [
+        "run_agent_task",
+        f"run_{slug.replace('-', '_')}_task",
+        "run_linkedin_agent_task",
+        "run_lawyer_agent_task",
+    ]
+    for name in candidates:
+        fn = getattr(mod, name, None)
+        if callable(fn):
+            return await fn()
+    raise AttributeError(f"No worker entrypoint found on module for slug={slug}")
+
+
 async def run_worker_loop():
     logger.info("Initializing DelegtLabs Worker Main Engine...")
     worker_entrypoints = get_worker_entrypoints()
@@ -27,18 +42,22 @@ async def run_worker_loop():
         logger.info(f"Filtering execution to target AGENT_SLUG: '{target_slug}'")
         if target_slug in worker_entrypoints:
             worker_entrypoints = {target_slug: worker_entrypoints[target_slug]}
+        else:
+            logger.error(f"AGENT_SLUG '{target_slug}' not found in worker entrypoints")
+            return
 
-    # Dev/runner loop executing worker tasks for discovered agents
     for slug, path in worker_entrypoints.items():
         try:
             logger.info(f"Executing worker cycle for agent: {slug}")
             spec = importlib.util.spec_from_file_location(f"worker_{slug}", path)
             if spec and spec.loader:
                 mod = importlib.util.module_from_spec(spec)
+                # Ensure package-relative helpers can resolve if needed
+                sys.modules[f"worker_{slug}"] = mod
                 spec.loader.exec_module(mod)
-                if hasattr(mod, "run_linkedin_agent_task"):
-                    res = await mod.run_linkedin_agent_task()
-                    logger.info(f"Result for {slug}: {res['run']['output_summary']}")
+                res = await _invoke_worker_module(slug, mod)
+                summary = res.get("run", {}).get("output_summary", res)
+                logger.info(f"Result for {slug}: {summary}")
         except Exception as e:
             logger.error(f"Error executing worker for {slug}: {e}")
 
