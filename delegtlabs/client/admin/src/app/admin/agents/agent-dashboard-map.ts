@@ -5,4 +5,7 @@ export const agentDashboardMap: Record<string, ComponentType<{ slug: string }>> 
   "linkedin-agent": dynamic(() => import("@/../../packages/agents/linkedin-agent/frontend/AdminDashboard"), {
     loading: () => <div className="p-8 text-slate-500 font-medium">Loading LinkedIn Dashboard...</div>,
   }),
+  "facebook-ads-agent": dynamic(() => import("@/../../packages/agents/facebook-ads-agent/frontend/AdminDashboard"), {
+    loading: () => <div className="p-8 text-slate-500 font-medium">Loading Facebook Ads Dashboard...</div>,
+  }),
 };
