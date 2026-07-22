@@ -10,33 +10,49 @@ api_router.include_router(health.router, tags=["health"])
 api_router.include_router(profile.router, prefix="/profile", tags=["profile"])
 
 
+@api_router.get("/agents/registered", tags=["agents"])
+async def list_registered_agents():
+    agents = get_registered_agents()
+    return [
+        {
+            "slug": a["slug"],
+            "name": a["name"],
+            "category": a.get("category"),
+            "version": a.get("version", "1.0.0"),
+            "admin_route": a.get("admin_route"),
+            "user_route": a.get("user_route"),
+            "worker_schedule": a.get("worker_schedule"),
+            "capabilities": a.get("capabilities", []),
+            "status": a.get("status", "active"),
+        }
+        for a in agents
+    ]
+
+
 @api_router.get("/dashboard", tags=["user-dashboard"])
 async def get_user_global_dashboard():
-    # Global strip aggregated across all agents from agent_metrics_daily
+    registered = get_registered_agents()
     purchased_agents = [
         {
-            "slug": "linkedin-agent",
-            "name": "LinkedIn Growth Agent",
-            "category": "linkedin",
-            "status": "active",
-            "monthly_price": 250.00,
+            "slug": a["slug"],
+            "name": a["name"],
+            "category": a.get("category"),
+            "status": a.get("status", "active"),
+            "monthly_price": float(a.get("base_price_usd", 199.0)),
             "connected": True,
-        },
-        {
-            "slug": "lawyer-agent",
-            "name": "Lawyer Drafting Agent",
-            "category": "legal",
-            "status": "active",
-            "monthly_price": 299.00,
-            "connected": True,
-        },
+            "user_route": a.get("user_route"),
+            "capabilities": a.get("capabilities", []),
+            "worker_schedule": a.get("worker_schedule"),
+        }
+        for a in registered
     ]
+    total = sum(p["monthly_price"] for p in purchased_agents)
 
     return {
         "client_name": "Acme SaaS Inc.",
         "plan_name": "Growth Pro Plan",
         "renewal_date": "2026-08-01T00:00:00Z",
-        "total_monthly_spend": 549.00,
+        "total_monthly_spend": total,
         "purchased_agents": purchased_agents,
         "aggregate_metrics": {
             "total_leads": 482,
@@ -44,6 +60,7 @@ async def get_user_global_dashboard():
             "total_drafts": 12,
         },
     }
+
 
 
 # Auto-mount all agent user routers from packages/agents/*/backend/router_user.py

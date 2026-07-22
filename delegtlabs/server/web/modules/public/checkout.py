@@ -23,10 +23,13 @@ async def get_agent_catalog():
             "slug": a["slug"],
             "name": a["name"],
             "category": a["category"],
+            "version": a.get("version", "1.0.0"),
             "status": a.get("status", "active"),
             "price_usd": a.get("base_price_usd", 199.0),
             "price_inr": a.get("base_price_inr", 15999.0),
             "description": a.get("description", ""),
+            "capabilities": a.get("capabilities", []),
+            "worker_schedule": a.get("worker_schedule"),
         }
         for a in registered
     ]

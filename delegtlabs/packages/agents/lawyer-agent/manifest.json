@@ -6,5 +6,10 @@
   "admin_route": "/admin/agents/lawyer-agent/dashboard",
   "user_route": "/dashboard/agents/lawyer-agent",
   "worker_schedule": "0 0 * * *",
-  "capabilities": ["legal_drafting"]
+  "capabilities": ["legal_drafting"],
+  "description": "Guided AI legal drafting — catalog, intake, generate, and preview.",
+  "base_price_usd": 299.0,
+  "base_price_inr": 24999.0,
+  "status": "active"
 }
+

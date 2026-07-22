@@ -83,10 +83,10 @@ function CheckoutContent() {
         </div>
 
         <button
-          onClick={() => router.push("/dashboard")}
+          onClick={() => router.push("/agents")}
           className="w-full py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-2xl shadow-lg shadow-indigo-600/30 flex items-center justify-center gap-2"
         >
-          Go to User Dashboard <ArrowRight className="h-5 w-5" />
+          Go to My Agents <ArrowRight className="h-5 w-5" />
         </button>
       </div>
     );

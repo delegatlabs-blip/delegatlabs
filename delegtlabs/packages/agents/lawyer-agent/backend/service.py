@@ -99,27 +99,51 @@ class LawyerAgentService:
         return {
             "active_customers": 9,
             "mrr_attributed": 2700.0,
+            "runs_24h": 4,
+            "runs_30d": len(recent_runs),
             "error_rate_7d": 10.0,
-            "recent_runs": recent_runs,
+            "total_drafts": 148,
+            "avg_completion_time_sec": 42.5,
+            "subscribers": [
+                {"client_id": "c1", "name": "Sharma & Co.", "plan": "Growth", "status": "active", "mrr": 299},
+                {"client_id": "c2", "name": "LexForge LLP", "plan": "Starter", "status": "active", "mrr": 199},
+            ],
+            "recent_runs": [
+                {
+                    **r,
+                    "status": (
+                        "SUCCESS"
+                        if r["status"] == "success"
+                        else "FAILED"
+                        if r["status"] == "failed"
+                        else "RUNNING"
+                    ),
+                    "client_agent_id": f"ca-law-{i}",
+                    "duration_ms": 42000,
+                }
+                for i, r in enumerate(recent_runs)
+            ],
             "daily_metrics_30d": daily_metrics,
         }
 
     @staticmethod
     def get_user_stats() -> dict[str, Any]:
         return {
+            "status": "active",
+            "recent_draft_count": 12,
             "recent_drafts": [
                 {
                     "id": "d1",
-                    "draft_id": "rent_agreement",
-                    "title": "Rent Agreement",
+                    "draft_id": "nda",
+                    "title": "NDA",
                     "status": "generated",
                     "language": "en",
                     "created_at": "2026-07-20T09:00:00Z",
                 },
                 {
                     "id": "d2",
-                    "draft_id": "legal_notice",
-                    "title": "Legal Notice",
+                    "draft_id": "service_agreement",
+                    "title": "Service Agreement",
                     "status": "draft",
                     "language": "en",
                     "created_at": "2026-07-18T14:00:00Z",
@@ -127,6 +151,7 @@ class LawyerAgentService:
             ],
             "drafts_this_month": 12,
             "avg_completeness": 86,
+            "templates": ["NDA", "Service Agreement", "Employment Contract", "Term Sheet"],
         }
 
     @staticmethod
