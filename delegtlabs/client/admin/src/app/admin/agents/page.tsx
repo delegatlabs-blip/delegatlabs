@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Plus } from "lucide-react";
+import { AddAgentForm } from "@/components/admin/AddAgentForm";
 import { AgentCard, AgentCardSkeleton } from "@/components/admin/AgentCard";
 import { FilterField, PageHeader } from "@/components/admin/PageHeader";
 import { Card, CardBody } from "@/components/ui/Card";
@@ -13,8 +14,10 @@ export default function AgentsPage() {
   const [error, setError] = useState<string | null>(null);
   const [category, setCategory] = useState("");
   const [status, setStatus] = useState("");
+  const [showAddForm, setShowAddForm] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     adminApi
       .listAgents({ category: category || undefined, status: status || undefined })
       .then(setAgents)
@@ -31,6 +34,16 @@ export default function AgentsPage() {
       setAgents(previous);
       setError(e instanceof Error ? e.message : "Failed");
     }
+  }
+
+  function handleAgentCreated(agent: Agent) {
+    setAgents((curr) => {
+      if (curr.some((a) => a.id === agent.id || a.slug === agent.slug)) {
+        return curr.map((a) => (a.id === agent.id || a.slug === agent.slug ? agent : a));
+      }
+      return [agent, ...curr];
+    });
+    setError(null);
   }
 
   return (
@@ -53,12 +66,19 @@ export default function AgentsPage() {
         </FilterField>
         <button
           type="button"
+          onClick={() => setShowAddForm(true)}
           className="mt-auto inline-flex h-10 items-center gap-2 rounded-full bg-gradient-to-r from-[#7C3AED] to-violet-500 px-4 text-sm font-semibold text-white shadow-sm shadow-violet-500/25 transition-all hover:-translate-y-0.5 hover:shadow-md hover:shadow-violet-500/30"
         >
           <Plus className="h-4 w-4" strokeWidth={2.2} />
           Add Agent
         </button>
       </PageHeader>
+
+      <AddAgentForm
+        open={showAddForm}
+        onClose={() => setShowAddForm(false)}
+        onCreated={handleAgentCreated}
+      />
 
       {error && (
         <div className="mb-4 rounded border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">{error}</div>

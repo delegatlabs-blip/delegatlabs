@@ -1,0 +1,13 @@
+{
+  "project_name": "delegatlabs-lawyer-agent",
+  "version": "1.0.0",
+  "indexing": {
+    "exclude_patterns": [
+      "**/node_modules/**",
+      "**/.next/**",
+      "**/__pycache__/**",
+      "**/venv/**",
+      "**/.git/**"
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+}
+
+body {
+  color: var(--foreground);
+  background-color: var(--background);
+  font-family: 'Outfit', 'Inter', sans-serif;
+  min-height: 100vh;
+  margin: 0;
+}
+
+@media print {
+  /* Hide non-printable items */
+  header, 
+  footer, 
+  button, 
+  .no-print, 
+  .preview-action-bar, 
+  .output-validation-card, 
+  .output-check-list, 
+  .warnings-list, 
+  .metadata-grid,
+  .print-note,
+  .back-button,
+  .action-header {
+    display: none !important;
+  }
+
+  /* Reset layout boxes */
+  body, html, main {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    box-shadow: none !important;
+  }
+
+  /* Simulates legal document page full size */
+  .printable-document {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    position: static !important;
+    min-height: auto !important;
+  }
+
+  .printable-document-text {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    font-size: 11pt !important;
+    line-height: 1.6 !important;
+    color: #000000 !important;
+    white-space: pre-wrap !important;
+  }
+
+  .margin-line {
+    display: none !important;
+  }
+}

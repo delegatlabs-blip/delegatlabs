@@ -1,0 +1,5 @@
+# OpenSpec SDD configuration
+specs_dir: "openspec/specs"
+changes_dir: "openspec/changes"
+active_change: "phase-1-setup"
+version: "1.0.0"

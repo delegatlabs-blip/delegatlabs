@@ -103,66 +103,111 @@ const dummyAgents: Agent[] = [
 ];
 
 const dummyPlans: Plan[] = [
+  // LinkedIn Growth Agent tiers
   {
-    id: "aaaa1111-1111-4111-8111-111111111111",
+    id: "plan-li-starter",
     name: "Starter",
+    price_inr: "14999.00",
+    price_usd: "179.00",
+    billing_cycle: "monthly",
+    max_agents: 1,
+    max_posts_per_month: 30,
+    is_custom: false,
+    included_agents: [
+      { id: "pa-li-starter", agent_id: dummyAgents[0].id, included_quota: 30 },
+    ],
+  },
+  {
+    id: "plan-li-growth",
+    name: "Growth",
     price_inr: "29999.00",
     price_usd: "359.00",
     billing_cycle: "monthly",
-    max_agents: 2,
-    max_posts_per_month: 40,
+    max_agents: 1,
+    max_posts_per_month: 90,
     is_custom: false,
     included_agents: [
-      { id: "pa111111-1111-4111-8111-111111111111", agent_id: dummyAgents[0].id, included_quota: 20 },
-      { id: "pa222222-2222-4222-8222-222222222222", agent_id: dummyAgents[3].id, included_quota: 20 },
+      { id: "pa-li-growth", agent_id: dummyAgents[0].id, included_quota: 90 },
     ],
   },
   {
-    id: "bbbb2222-2222-4222-8222-222222222222",
-    name: "Growth",
-    price_inr: "89999.00",
-    price_usd: "1099.00",
-    billing_cycle: "monthly",
-    max_agents: 5,
-    max_posts_per_month: 160,
-    is_custom: false,
-    included_agents: [
-      { id: "pa333333-3333-4333-8333-333333333333", agent_id: dummyAgents[0].id, included_quota: 60 },
-      { id: "pa444444-4444-4444-8444-444444444444", agent_id: dummyAgents[1].id, included_quota: 40 },
-      { id: "pa555555-5555-4555-8555-555555555555", agent_id: dummyAgents[3].id, included_quota: 60 },
-    ],
-  },
-  {
-    id: "cccc3333-3333-4333-8333-333333333333",
+    id: "plan-li-scale",
     name: "Scale",
-    price_inr: "199999.00",
-    price_usd: "2399.00",
+    price_inr: "59999.00",
+    price_usd: "719.00",
     billing_cycle: "monthly",
-    max_agents: 12,
-    max_posts_per_month: 500,
+    max_agents: 1,
+    max_posts_per_month: 250,
     is_custom: false,
-    included_agents: dummyAgents
-      .filter((agent) => agent.status !== "deprecated")
-      .map((agent, index) => ({
-        id: `pa-scale-${index}`,
-        agent_id: agent.id,
-        included_quota: 100,
-      })),
+    included_agents: [
+      { id: "pa-li-scale", agent_id: dummyAgents[0].id, included_quota: 250 },
+    ],
   },
   {
-    id: "dddd4444-4444-4444-8444-444444444444",
+    id: "plan-li-enterprise",
     name: "Enterprise",
     price_inr: "0.00",
     price_usd: "0.00",
     billing_cycle: "annual",
-    max_agents: 25,
+    max_agents: 1,
     max_posts_per_month: 2000,
     is_custom: true,
-    included_agents: dummyAgents.map((agent, index) => ({
-      id: `pa-enterprise-${index}`,
-      agent_id: agent.id,
-      included_quota: null,
-    })),
+    included_agents: [
+      { id: "pa-li-enterprise", agent_id: dummyAgents[0].id, included_quota: null },
+    ],
+  },
+  // Lawyer Drafting Agent tiers
+  {
+    id: "plan-lw-starter",
+    name: "Starter",
+    price_inr: "19999.00",
+    price_usd: "239.00",
+    billing_cycle: "monthly",
+    max_agents: 1,
+    max_posts_per_month: 40,
+    is_custom: false,
+    included_agents: [
+      { id: "pa-lw-starter", agent_id: dummyAgents[1].id, included_quota: 40 },
+    ],
+  },
+  {
+    id: "plan-lw-growth",
+    name: "Growth",
+    price_inr: "39999.00",
+    price_usd: "479.00",
+    billing_cycle: "monthly",
+    max_agents: 1,
+    max_posts_per_month: 120,
+    is_custom: false,
+    included_agents: [
+      { id: "pa-lw-growth", agent_id: dummyAgents[1].id, included_quota: 120 },
+    ],
+  },
+  {
+    id: "plan-lw-scale",
+    name: "Scale",
+    price_inr: "79999.00",
+    price_usd: "959.00",
+    billing_cycle: "monthly",
+    max_agents: 1,
+    max_posts_per_month: 350,
+    is_custom: false,
+    included_agents: [
+      { id: "pa-lw-scale", agent_id: dummyAgents[1].id, included_quota: 350 },
+    ],
+  },
+  {
+    id: "plan-lw-enterprise",
+    name: "Enterprise",
+    price_inr: "0.00",
+    price_usd: "0.00",
+    billing_cycle: "annual",
+    max_agents: 1,
+    max_posts_per_month: 2000,
+    is_custom: true,
+    included_agents: [
+      { id: "pa-lw-enterprise", agent_id: dummyAgents[1].id, included_quota: null },
+    ],
   },
 ];
 
