@@ -1,13 +1,15 @@
 # DelegtLabs
 
-Monorepo for **DelegtLabs**: modular-monolith FastAPI backend + separate Next.js clients.
+Monorepo for **DelegtLabs**: modular-monolith FastAPI backend + separate Vite clients.
 
 ```
 delegtlabs/
 ├── client/
-│   ├── admin/     # Next.js admin console (scaffolded)
-│   ├── user/      # Product app (placeholder)
-│   └── web/       # Marketing site (placeholder)
+│   ├── admin/     # Admin console (TanStack Start)
+│   ├── user/      # Product app (TanStack Start)
+│   └── web/       # Marketing / marketplace site
+├── packages/
+│   └── agents/    # Pluggable agent packages
 └── server/
     ├── gateway/   # Monolith entry — mounts all surfaces
     ├── shared/    # Kernel (config, db, security, integrations)
@@ -20,7 +22,7 @@ delegtlabs/
 
 1. **Monolith today** — one FastAPI process via `gateway/`.
 2. **Microservice-ready** — `admin/`, `user/`, `web/` are isolated packages (own routers, modules, tests, `main.py`).
-3. **API versioning** — routes under `/admin/api/v1`, `/user/api/v1`, `/web/api/v1`.
+3. **API versioning** — routes under `/api/admin`, `/user/api/v1`, `/web/api/v1`.
 4. **App versioning** — `APP_VERSION` on `/version` and `X-App-Version` response headers.
 5. **Client isolation** — each frontend lives in its own folder for independent deploys.
 
@@ -28,20 +30,29 @@ delegtlabs/
 
 ### One-command Docker run
 
+From this directory (`delegtlabs/`):
+
 ```bash
 docker compose up --build
-# or if your Docker uses legacy CLI:
-docker-compose up --build
 ```
 
 Services:
-- Admin UI: http://localhost:3000
-- API docs: http://localhost:8000/docs
-- Postgres: localhost:5432 (`postgres/postgres`)
+
+| Service | URL |
+|---------|-----|
+| Admin UI | http://localhost:3000 |
+| Web / marketplace | http://localhost:3001 |
+| User app | http://localhost:3002 |
+| API docs | http://localhost:8000/docs |
+| Postgres | localhost:5432 (`postgres` / `postgres`) |
+| Redis | localhost:6379 |
+
+Optional: set `GEMINI_API_KEY` in the environment (or a `.env` next to this compose file) for the web app's agent invoke endpoint.
 
 Notes:
-- For local Docker convenience, admin JWT auth is disabled via `DISABLE_ADMIN_AUTH=true` in compose.
+- Admin JWT auth is disabled via `DISABLE_ADMIN_AUTH=true` for local Docker convenience.
 - Re-enable auth by setting it to `false` and providing real Supabase JWT config.
+- Stop with `Ctrl+C`, or run detached: `docker compose up --build -d`.
 
 ### Backend
 
@@ -54,16 +65,20 @@ export PYTHONPATH=.
 uvicorn gateway.main:app --reload --port 8000
 ```
 
-- Docs: http://localhost:8000/docs  
-- Version: http://localhost:8000/version  
+- Docs: http://localhost:8000/docs
+- Version: http://localhost:8000/version
 
-### Admin client
+### Clients
 
 ```bash
-cd client/admin
-cp .env.example .env.local
-npm install
-npm run dev
+# Admin
+cd client/admin && cp .env.example .env && npm install && npm run dev
+
+# Web
+cd client/web && cp .env.example .env && npm install && npm run dev
+
+# User
+cd client/user && npm install && npm run dev
 ```
 
 ## Extraction path

@@ -1,0 +1,21 @@
+# Shared ignore for monorepo-context builds (server image)
+**/.venv
+**/__pycache__
+**/*.pyc
+**/.pytest_cache
+**/.ruff_cache
+**/.mypy_cache
+**/.git
+**/.DS_Store
+**/*.egg-info
+**/node_modules
+**/.output
+**/.tanstack
+**/.next
+**/dist
+**/build
+client/
+**/.env
+!**/.env.example
+*.md
+!server/README.md

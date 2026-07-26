@@ -1,0 +1,17 @@
+node_modules
+.output
+.tanstack
+.nitro
+.vinxi
+.wrangler
+dist
+dist-ssr
+.git
+.lovable
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+README.md
+AGENTS.md

@@ -21,16 +21,24 @@ class Settings(BaseSettings):
     host: str = "0.0.0.0"
     port: int = 8000
 
-    cors_origins: str = "http://localhost:3000"
+    cors_origins: str = "http://localhost:3000,http://localhost:3001,http://localhost:3002,http://localhost:5173,http://localhost:8080,http://localhost:8081"
 
     database_url: str = "postgresql+asyncpg://postgres:postgres@localhost:5432/delegtlabs"
     secret_key: str = "change-me-in-production"
     access_token_expire_minutes: int = 30
+    supabase_url: str = ""
+    supabase_service_role_key: str = ""
+    supabase_anon_key: str = ""
     supabase_jwks_url: str = "https://project-id.supabase.co/auth/v1/.well-known/jwks.json"
     supabase_jwt_issuer: str = "https://project-id.supabase.co/auth/v1"
     supabase_jwt_audience: str = "authenticated"
     admin_required_role: str = "ops_admin"
-    disable_admin_auth: bool = False
+    # Auth skipped for now while wiring frontend APIs
+    disable_admin_auth: bool = True
+
+    @property
+    def supabase_configured(self) -> bool:
+        return bool(self.supabase_url and self.supabase_service_role_key)
 
     @property
     def cors_origin_list(self) -> list[str]:

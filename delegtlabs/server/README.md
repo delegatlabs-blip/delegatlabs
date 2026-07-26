@@ -30,7 +30,8 @@ GET  /version
 GET  /api/admin/health
 GET  /api/admin/agents
 GET  /api/admin/plans
-GET  /api/admin/clients
+GET  /api/admin/users
+GET  /api/admin/customers
 GET  /user/api/v1/health
 GET  /user/api/v1/profile/me
 GET  /web/api/v1/health

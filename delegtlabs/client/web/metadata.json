@@ -1,0 +1,6 @@
+{
+  "name": "Aetheris AI Marketplace",
+  "description": "Enterprise AI Agent Marketplace with detailed product specs, interactive code integration, user reviews, and secure checkout.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

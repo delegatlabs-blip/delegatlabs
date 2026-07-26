@@ -1,102 +1,49 @@
-export type RegisteredAgent = {
-  slug: string;
-  name: string;
-  category: string;
-  version: string;
-  admin_route?: string;
-  user_route?: string;
-  worker_schedule?: string;
-  capabilities: string[];
-  status?: string;
-  description?: string;
-  base_price_usd?: number;
-  base_price_inr?: number;
-  price_usd?: number;
-  price_inr?: number;
+/** Marketplace agent payload from `/web/api/v1/agents` */
+export type ApiAgentListing = {
+  paymentType: "subscription" | "credit";
+  price: number;
+  currency: string;
+  billingInterval: string;
+  planName: string;
+  redirectUrl: string;
+  demoUrl: string;
+  documentationUrl: string;
+  shortDescription: string;
+  detailedDescription: string;
+  tags: string[];
+  features: string[];
+  featured: boolean;
+  listedOnWebsite: boolean;
+  subscriptionPlans: Array<{ name: string; price: number; currency: string; active: boolean }>;
+  creditPacks: Array<{ name: string; price: number; credits: number; currency: string; active: boolean }>;
 };
 
-async function parseJson<T>(res: Response): Promise<T> {
-  if (!res.ok) {
-    const text = await res.text().catch(() => "");
-    throw new Error(text || `Request failed (${res.status})`);
-  }
-  return res.json() as Promise<T>;
+export type ApiAgent = {
+  id: string;
+  name: string;
+  slug: string;
+  description: string;
+  category: string;
+  version: string;
+  status: string;
+  createdAt: string;
+  updatedAt: string;
+  listing: ApiAgentListing;
+};
+
+const API_BASE =
+  (typeof import.meta !== "undefined" &&
+    (import.meta as { env?: { VITE_WEB_API_URL?: string } }).env?.VITE_WEB_API_URL) ||
+  "http://localhost:8000/web/api/v1";
+
+export async function fetchPublicAgents(): Promise<ApiAgent[]> {
+  const res = await fetch(`${API_BASE}/agents`);
+  if (!res.ok) throw new Error(`Failed to load agents (${res.status})`);
+  return res.json();
 }
 
-export async function fetchRegisteredAgents(): Promise<RegisteredAgent[]> {
-  const res = await fetch("/api/web/agents/registered");
-  return parseJson<RegisteredAgent[]>(res);
-}
-
-export async function fetchCheckoutCatalog() {
-  const res = await fetch("/api/web/public/checkout/catalog");
-  return parseJson<{
-    plans: Array<{
-      id: string;
-      name: string;
-      price_usd: number;
-      price_inr: number;
-      max_agents: number;
-      features: string[];
-    }>;
-    agents: RegisteredAgent[];
-  }>(res);
-}
-
-export async function createCheckoutSession(payload: {
-  plan_id?: string;
-  agent_slugs: string[];
-  email: string;
-  currency?: string;
-}) {
-  const res = await fetch("/api/web/public/checkout/session", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
-  });
-  return parseJson<{ session_id: string; checkout_url: string }>(res);
-}
-
-export async function fetchUserDashboard() {
-  const res = await fetch("/api/user/dashboard");
-  return parseJson<{
-    client_name: string;
-    plan_name: string;
-    renewal_date: string;
-    total_monthly_spend: number;
-    purchased_agents: Array<{
-      slug: string;
-      name: string;
-      category: string;
-      status: string;
-      monthly_price: number;
-      connected: boolean;
-      user_route?: string;
-      capabilities?: string[];
-      worker_schedule?: string;
-    }>;
-    aggregate_metrics: Record<string, number>;
-  }>(res);
-}
-
-export async function userAgentFetch<T>(slug: string, path: string, init?: RequestInit): Promise<T> {
-  const res = await fetch(`/api/user/agents/${slug}${path}`, {
-    ...init,
-    headers: {
-      "Content-Type": "application/json",
-      ...(init?.headers || {}),
-    },
-  });
-  return parseJson<T>(res);
-}
-
-export async function adminAgentFetch<T>(slug: string, path: string, init?: RequestInit): Promise<T> {
-  const res = await fetch(`/api/admin/agents/${slug}${path}`, {
-    ...init,
-    headers: {
-      "Content-Type": "application/json",
-      ...(init?.headers || {}),
-    },
-  });
-  return parseJson<T>(res);
+export async function fetchPublicAgent(ref: string): Promise<ApiAgent> {
+  const res = await fetch(`${API_BASE}/agents/${encodeURIComponent(ref)}`);
+  if (!res.ok) throw new Error(`Failed to load agent (${res.status})`);
+  return res.json();
 }

@@ -1,0 +1,2287 @@
+{
+  "delegtlabs/client/admin/eslint.config.mjs": {
+    "mtime": 1784660209.080482,
+    "ast_hash": "dfa1f5f6a7037bf39dc510f30b180002",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/next.config.ts": {
+    "mtime": 1784742441.0473862,
+    "ast_hash": "8ed42384454fed9ba99d60f399b9cfb9",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/package.json": {
+    "mtime": 1784720602.0178149,
+    "ast_hash": "33bfa808d88548811984e5c92c987f3e",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/postcss.config.mjs": {
+    "mtime": 1784660209.0812411,
+    "ast_hash": "239f3ebf717465dc636818a1a619398d",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/AdminDashboard.tsx": {
+    "mtime": 1784743091.9983213,
+    "ast_hash": "e366a62ddfa2ae85add5b838ee331369",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/ConfigForm.tsx": {
+    "mtime": 1784743091.9976292,
+    "ast_hash": "3224f6866bf34d00ba4ed310e1dcdffe",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/UserDashboard.tsx": {
+    "mtime": 1784743091.9966986,
+    "ast_hash": "a34d9a8051669da7f9a2df11e06ab79c",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/components/blueprint-section-card.tsx": {
+    "mtime": 1784663777.0,
+    "ast_hash": "c6e65b9d07914bc602d40c748c7fa098",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/components/cases/active-cases-empty-state.tsx": {
+    "mtime": 1784663777.0,
+    "ast_hash": "5f513c519eaad10c393f3133041a7bf2",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/components/cases/case-card.tsx": {
+    "mtime": 1784663777.0,
+    "ast_hash": "d50fde8a2eb138aa8760fae00586b50c",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/components/category-filter.tsx": {
+    "mtime": 1784663757.0,
+    "ast_hash": "a55d11540fd090627a331e71e78db287",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/components/clause-list.tsx": {
+    "mtime": 1784663777.0,
+    "ast_hash": "1a9702be1df605662fff4a413f9a8dfd",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/components/completeness/completeness-summary-card.tsx": {
+    "mtime": 1784663777.0,
+    "ast_hash": "60a529a0bd595a6a5ee5db2a272305f3",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/components/completeness/missing-fields-list.tsx": {
+    "mtime": 1784663777.0,
+    "ast_hash": "c09e9cc0b1161f8a98da22fe87701613",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/components/completeness/validation-results.tsx": {
+    "mtime": 1784663777.0,
+    "ast_hash": "aa097623274122a32e7b4851357b753e",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/components/completeness/warnings-list.tsx": {
+    "mtime": 1784663777.0,
+    "ast_hash": "cb00a36707bb9fcce1e8c6392589d20d",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/components/draft-card.tsx": {
+    "mtime": 1784663757.0,
+    "ast_hash": "bf53be940b929e43a0f08572ba0ab375",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/components/empty-state.tsx": {
+    "mtime": 1784663757.0,
+    "ast_hash": "0f3fc8ae33ac01378f000eb67a3526d5",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/components/intake/intake-field.tsx": {
+    "mtime": 1784663757.0,
+    "ast_hash": "6f329aebefef2666ac1a256a7204ac3c",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/components/intake/intake-progress.tsx": {
+    "mtime": 1784663757.0,
+    "ast_hash": "69519ab0de78b74def39c4a204834aa3",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/components/intake/intake-section-nav.tsx": {
+    "mtime": 1784663757.0,
+    "ast_hash": "3ee34c4718eb166e04c1a15e54ddbdba",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/components/intake/intake-summary.tsx": {
+    "mtime": 1784663757.0,
+    "ast_hash": "104da25f936d5a12ec5bcff8e4ac47d6",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/components/intake/intake-wizard.tsx": {
+    "mtime": 1784663807.0,
+    "ast_hash": "80aea4977947e07af8b520f20b22d37f",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/components/preview/draft-document-preview.tsx": {
+    "mtime": 1784663777.0,
+    "ast_hash": "b38cc395404ed5c18b502053e300e5e1",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/components/preview/output-check-list.tsx": {
+    "mtime": 1784663777.0,
+    "ast_hash": "5b24be2f6146e2a79535467123ae377d",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/components/preview/output-validation-card.tsx": {
+    "mtime": 1784663777.0,
+    "ast_hash": "115bb4f00c719d717b0d78d6a0619bc4",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/components/preview/preview-action-bar.tsx": {
+    "mtime": 1784663777.0,
+    "ast_hash": "c3b18a1b73337bbe076f5ad478a95111",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/components/prompt/clause-summary-card.tsx": {
+    "mtime": 1784663777.0,
+    "ast_hash": "248f4934125a3bdd2b01181a378e7097",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/components/prompt/developer-prompt-preview.tsx": {
+    "mtime": 1784663777.0,
+    "ast_hash": "1805a10b03ce0c0b3d3a50ec8e8624b3",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/components/prompt/facts-summary-card.tsx": {
+    "mtime": 1784663777.0,
+    "ast_hash": "0e387ddeb521d9c4413af4b395f2f32b",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/components/prompt/guardrails-card.tsx": {
+    "mtime": 1784663777.0,
+    "ast_hash": "c6bdc7e277cf7500e39f64d0f93bf8b8",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/components/prompt/output-requirements-card.tsx": {
+    "mtime": 1784663777.0,
+    "ast_hash": "55b3ce9d217aa37bf334a63560dba528",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/components/required-field-list.tsx": {
+    "mtime": 1784663777.0,
+    "ast_hash": "de50c2129f17e3d08cbb313ab4b530f9",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/config-schema.ts": {
+    "mtime": 1784743091.9991393,
+    "ast_hash": "201c4c50c07a453bb943199c0b4022f7",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/lib/api.ts": {
+    "mtime": 1784743092.0065482,
+    "ast_hash": "b2f1b9dbd35e8c41535ae8b3c3ebb808",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/lib/case-draft-prefill.ts": {
+    "mtime": 1784663757.0,
+    "ast_hash": "616b2bb2facc946ee2e77b9dde713eed",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/lib/case-storage.ts": {
+    "mtime": 1784663757.0,
+    "ast_hash": "011abb88462ebacd48ad3e7973b0c9b2",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/lib/completeness-engine.ts": {
+    "mtime": 1784663757.0,
+    "ast_hash": "d673dadabd13f459e375448b096cde0d",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/lib/draft-blueprints.ts": {
+    "mtime": 1784663757.0,
+    "ast_hash": "d4cdebe99d2c3aa2a30c120be186719c",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/lib/draft-catalog.ts": {
+    "mtime": 1784663757.0,
+    "ast_hash": "caf1b7594ff70c0bcfb1ca64024fb00c",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/lib/export-service.ts": {
+    "mtime": 1784663757.0,
+    "ast_hash": "2a7c16bf682ecbe2d593fb44f7645e08",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/lib/i18n.ts": {
+    "mtime": 1784663757.0,
+    "ast_hash": "08120dc1ac65ad2b3786cdc55d052658",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/lib/output-validator.ts": {
+    "mtime": 1784663757.0,
+    "ast_hash": "c147d3fccd67fbc5ae91a289b2224fd8",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/lib/prompt-compiler.ts": {
+    "mtime": 1784663757.0,
+    "ast_hash": "a784e70b4e9ab33a33964d61c3ac77b3",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/lawyer-agent/lib/storage.ts": {
+    "mtime": 1784663757.0,
+    "ast_hash": "54b35c034d750651ef3efb00c34e9670",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/linkedin-agent/AdminDashboard.tsx": {
+    "mtime": 1784743091.990404,
+    "ast_hash": "2beb9e99418dda33035d6027065d6156",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/linkedin-agent/ConfigForm.tsx": {
+    "mtime": 1784743091.9899526,
+    "ast_hash": "32de85eac31aa39b5c52fb3ffe324df2",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/linkedin-agent/UserDashboard.tsx": {
+    "mtime": 1784743091.9894776,
+    "ast_hash": "eb0b64e5f6cacb4b7c33dad6a93d7dc9",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/agents/linkedin-agent/config-schema.ts": {
+    "mtime": 1784743091.9908457,
+    "ast_hash": "d472efa081184a36603c4547aa753bdd",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/app/admin/agents/[slug]/dashboard/page.tsx": {
+    "mtime": 1784660209.0829134,
+    "ast_hash": "3e41eb0b5a05edc10d321bd666836965",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/app/admin/agents/agent-dashboard-map.tsx": {
+    "mtime": 1784743090.8045602,
+    "ast_hash": "bea2993666c313e71093865078cb9312",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/app/admin/agents/detail/[id]/page.tsx": {
+    "mtime": 1784660209.0825267,
+    "ast_hash": "2fc9685ded928d62659ee6c7c65c76a5",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/app/admin/agents/page.tsx": {
+    "mtime": 1784743350.930889,
+    "ast_hash": "bd0b03388e7e036730b89ec048c827bb",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/app/admin/audit-log/page.tsx": {
+    "mtime": 1784660209.0834644,
+    "ast_hash": "eb4f82d443230116450d0d14110a06c7",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/app/admin/clients/[id]/page.tsx": {
+    "mtime": 1784660209.0838404,
+    "ast_hash": "7cd90c5cfc43bd54214a538cb6687dc2",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/app/admin/clients/page.tsx": {
+    "mtime": 1784660209.083993,
+    "ast_hash": "a26b3ee9328aaddbf41817d8515113e6",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/app/admin/layout.tsx": {
+    "mtime": 1784660209.0841389,
+    "ast_hash": "c3296af5e8df4e946fdf6c44d53d7f59",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/app/admin/page.tsx": {
+    "mtime": 1784661395.0481498,
+    "ast_hash": "82e256a97b2ee6ff74da046d1567e53b",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/app/admin/plans/page.tsx": {
+    "mtime": 1784720602.0171676,
+    "ast_hash": "addb657093accb0ecd169961c5b54475",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/app/layout.tsx": {
+    "mtime": 1784660209.0851738,
+    "ast_hash": "c80d4624f85ab89b58de77f673ae4cc7",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/app/page.tsx": {
+    "mtime": 1784660209.0853357,
+    "ast_hash": "cb67753e7c82346a876f0a4f18c39e4f",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/app/temp.js": {
+    "mtime": 1784660209.0854745,
+    "ast_hash": "cb67753e7c82346a876f0a4f18c39e4f",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/components/admin/AddAgentForm.tsx": {
+    "mtime": 1784743324.126324,
+    "ast_hash": "b7b782281338d1d1bd36acebec2d8aaf",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/components/admin/AdminNavbar.tsx": {
+    "mtime": 1784660209.085799,
+    "ast_hash": "c53d3018e21d93dfcda67c53cd733fd4",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/components/admin/AgentCard.tsx": {
+    "mtime": 1784743350.0987513,
+    "ast_hash": "d2892bf72db6d0f4ce9255e04b19fe4c",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/components/admin/PageHeader.tsx": {
+    "mtime": 1784660209.0861092,
+    "ast_hash": "b7563af586af9c465a679cecc751b5f8",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/components/ui/Badge.tsx": {
+    "mtime": 1784660209.0863535,
+    "ast_hash": "58b5603fe6f5b19c57f70ae32f14cc64",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/components/ui/Card.tsx": {
+    "mtime": 1784660209.0865169,
+    "ast_hash": "1042bb7638d6847fd0d282e7471bda31",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/components/ui/Charts.tsx": {
+    "mtime": 1784660209.086727,
+    "ast_hash": "bfadb872719f441a845175c533c1dd16",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/src/lib/api.ts": {
+    "mtime": 1784720602.017781,
+    "ast_hash": "b44becc3a4b83e3e0adb55e06b637421",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/tsconfig.json": {
+    "mtime": 1784720602.0171936,
+    "ast_hash": "0a6501b82329d8a59b5dfe5b58cca283",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/next.config.ts": {
+    "mtime": 1784742434.8044786,
+    "ast_hash": "e6353e8feed5fee2d8bb7eef406dff85",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/package.json": {
+    "mtime": 1784720602.0177178,
+    "ast_hash": "f77acc4751138cc828850519eaeba24e",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/postcss.config.mjs": {
+    "mtime": 1784720602.01776,
+    "ast_hash": "239f3ebf717465dc636818a1a619398d",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/AdminDashboard.tsx": {
+    "mtime": 1784743091.9655852,
+    "ast_hash": "e366a62ddfa2ae85add5b838ee331369",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/ConfigForm.tsx": {
+    "mtime": 1784743091.9647112,
+    "ast_hash": "3224f6866bf34d00ba4ed310e1dcdffe",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/UserDashboard.tsx": {
+    "mtime": 1784743091.9640782,
+    "ast_hash": "a34d9a8051669da7f9a2df11e06ab79c",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/components/blueprint-section-card.tsx": {
+    "mtime": 1784663777.4922442,
+    "ast_hash": "c6e65b9d07914bc602d40c748c7fa098",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/components/cases/active-cases-empty-state.tsx": {
+    "mtime": 1784663777.5053554,
+    "ast_hash": "5f513c519eaad10c393f3133041a7bf2",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/components/cases/case-card.tsx": {
+    "mtime": 1784663777.5056486,
+    "ast_hash": "d50fde8a2eb138aa8760fae00586b50c",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/components/category-filter.tsx": {
+    "mtime": 1784663757.3890698,
+    "ast_hash": "a55d11540fd090627a331e71e78db287",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/components/clause-list.tsx": {
+    "mtime": 1784663777.5003128,
+    "ast_hash": "1a9702be1df605662fff4a413f9a8dfd",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/components/completeness/completeness-summary-card.tsx": {
+    "mtime": 1784663777.4764879,
+    "ast_hash": "60a529a0bd595a6a5ee5db2a272305f3",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/components/completeness/missing-fields-list.tsx": {
+    "mtime": 1784663777.4770117,
+    "ast_hash": "c09e9cc0b1161f8a98da22fe87701613",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/components/completeness/validation-results.tsx": {
+    "mtime": 1784663777.4748514,
+    "ast_hash": "aa097623274122a32e7b4851357b753e",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/components/completeness/warnings-list.tsx": {
+    "mtime": 1784663777.4743772,
+    "ast_hash": "cb00a36707bb9fcce1e8c6392589d20d",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/components/draft-card.tsx": {
+    "mtime": 1784663757.3938262,
+    "ast_hash": "bf53be940b929e43a0f08572ba0ab375",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/components/empty-state.tsx": {
+    "mtime": 1784663757.4364574,
+    "ast_hash": "0f3fc8ae33ac01378f000eb67a3526d5",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/components/intake/intake-field.tsx": {
+    "mtime": 1784663757.4011433,
+    "ast_hash": "6f329aebefef2666ac1a256a7204ac3c",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/components/intake/intake-progress.tsx": {
+    "mtime": 1784663757.4001462,
+    "ast_hash": "69519ab0de78b74def39c4a204834aa3",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/components/intake/intake-section-nav.tsx": {
+    "mtime": 1784663757.4024231,
+    "ast_hash": "3ee34c4718eb166e04c1a15e54ddbdba",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/components/intake/intake-summary.tsx": {
+    "mtime": 1784663757.4015048,
+    "ast_hash": "104da25f936d5a12ec5bcff8e4ac47d6",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/components/intake/intake-wizard.tsx": {
+    "mtime": 1784720602.0171328,
+    "ast_hash": "80aea4977947e07af8b520f20b22d37f",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/components/preview/draft-document-preview.tsx": {
+    "mtime": 1784663777.4812768,
+    "ast_hash": "b38cc395404ed5c18b502053e300e5e1",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/components/preview/output-check-list.tsx": {
+    "mtime": 1784663777.4822896,
+    "ast_hash": "5b24be2f6146e2a79535467123ae377d",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/components/preview/output-validation-card.tsx": {
+    "mtime": 1784663777.4817336,
+    "ast_hash": "115bb4f00c719d717b0d78d6a0619bc4",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/components/preview/preview-action-bar.tsx": {
+    "mtime": 1784663777.4809604,
+    "ast_hash": "c3b18a1b73337bbe076f5ad478a95111",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/components/prompt/clause-summary-card.tsx": {
+    "mtime": 1784663777.4880674,
+    "ast_hash": "248f4934125a3bdd2b01181a378e7097",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/components/prompt/developer-prompt-preview.tsx": {
+    "mtime": 1784663777.4860575,
+    "ast_hash": "1805a10b03ce0c0b3d3a50ec8e8624b3",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/components/prompt/facts-summary-card.tsx": {
+    "mtime": 1784663777.4869425,
+    "ast_hash": "0e387ddeb521d9c4413af4b395f2f32b",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/components/prompt/guardrails-card.tsx": {
+    "mtime": 1784663777.487755,
+    "ast_hash": "c6bdc7e277cf7500e39f64d0f93bf8b8",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/components/prompt/output-requirements-card.tsx": {
+    "mtime": 1784663777.486639,
+    "ast_hash": "55b3ce9d217aa37bf334a63560dba528",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/components/required-field-list.tsx": {
+    "mtime": 1784663777.495739,
+    "ast_hash": "de50c2129f17e3d08cbb313ab4b530f9",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/config-schema.ts": {
+    "mtime": 1784743091.9668255,
+    "ast_hash": "201c4c50c07a453bb943199c0b4022f7",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/lib/api.ts": {
+    "mtime": 1784743091.9737275,
+    "ast_hash": "b2f1b9dbd35e8c41535ae8b3c3ebb808",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/lib/case-draft-prefill.ts": {
+    "mtime": 1784663757.3818934,
+    "ast_hash": "616b2bb2facc946ee2e77b9dde713eed",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/lib/case-storage.ts": {
+    "mtime": 1784663757.378284,
+    "ast_hash": "011abb88462ebacd48ad3e7973b0c9b2",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/lib/completeness-engine.ts": {
+    "mtime": 1784663757.3594131,
+    "ast_hash": "d673dadabd13f459e375448b096cde0d",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/lib/draft-blueprints.ts": {
+    "mtime": 1784663757.3559153,
+    "ast_hash": "d4cdebe99d2c3aa2a30c120be186719c",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/lib/draft-catalog.ts": {
+    "mtime": 1784663757.3523076,
+    "ast_hash": "caf1b7594ff70c0bcfb1ca64024fb00c",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/lib/export-service.ts": {
+    "mtime": 1784663757.3850932,
+    "ast_hash": "2a7c16bf682ecbe2d593fb44f7645e08",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/lib/i18n.ts": {
+    "mtime": 1784663757.3706088,
+    "ast_hash": "08120dc1ac65ad2b3786cdc55d052658",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/lib/output-validator.ts": {
+    "mtime": 1784663757.3672423,
+    "ast_hash": "c147d3fccd67fbc5ae91a289b2224fd8",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/lib/prompt-compiler.ts": {
+    "mtime": 1784663757.3635018,
+    "ast_hash": "a784e70b4e9ab33a33964d61c3ac77b3",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/lawyer-agent/lib/storage.ts": {
+    "mtime": 1784663757.3740911,
+    "ast_hash": "54b35c034d750651ef3efb00c34e9670",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/linkedin-agent/AdminDashboard.tsx": {
+    "mtime": 1784743091.956599,
+    "ast_hash": "2beb9e99418dda33035d6027065d6156",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/linkedin-agent/ConfigForm.tsx": {
+    "mtime": 1784743091.9561262,
+    "ast_hash": "32de85eac31aa39b5c52fb3ffe324df2",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/linkedin-agent/UserDashboard.tsx": {
+    "mtime": 1784743091.9555452,
+    "ast_hash": "eb0b64e5f6cacb4b7c33dad6a93d7dc9",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/agents/linkedin-agent/config-schema.ts": {
+    "mtime": 1784743091.957551,
+    "ast_hash": "d472efa081184a36603c4547aa753bdd",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/app/dashboard/agent-user-dashboard-map.tsx": {
+    "mtime": 1784743087.42152,
+    "ast_hash": "41b3542db07e52ca86084bb986008219",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/app/dashboard/agents/[slug]/page.tsx": {
+    "mtime": 1784660209.089619,
+    "ast_hash": "709c4aa22ca3af1ed94bc01e31aa2384",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/app/dashboard/page.tsx": {
+    "mtime": 1784660677.3043902,
+    "ast_hash": "49c5fc69bd4a392c5fc0cf606fc485d8",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/app/layout.tsx": {
+    "mtime": 1784720602.0172338,
+    "ast_hash": "6c04daa22a171fabad23d4a1db596dcf",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/src/app/page.tsx": {
+    "mtime": 1784720602.017842,
+    "ast_hash": "b98eef43c3ac4600ed07fd3681405cad",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/tsconfig.json": {
+    "mtime": 1784720602.0173025,
+    "ast_hash": "a000abcdb385aceac1464aa1e3e79727",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/next.config.ts": {
+    "mtime": 1784743085.128028,
+    "ast_hash": "8382ecd2b871cc8590fb18dce66673bc",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/package.json": {
+    "mtime": 1784741885.6506562,
+    "ast_hash": "0e68eca33662df02681c2be0ba403134",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/postcss.config.mjs": {
+    "mtime": 1784720602.017737,
+    "ast_hash": "239f3ebf717465dc636818a1a619398d",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/app/activity/page.tsx": {
+    "mtime": 1784742101.6881425,
+    "ast_hash": "8d5019ae668c73e14b1b2a5cfc6cccf2",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/app/admin/agents/[slug]/dashboard/page.tsx": {
+    "mtime": 1784742118.910927,
+    "ast_hash": "47a1a8966eb92c03b2e2fb596c6236ba",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/app/admin/agents/agent-dashboard-map.tsx": {
+    "mtime": 1784743083.1600714,
+    "ast_hash": "d0daa906ed457cf5c52d421de43ef04b",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/app/admin/page.tsx": {
+    "mtime": 1784742106.617614,
+    "ast_hash": "9a525f25e3584449024596f5ceaf2cbb",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/app/agents/page.tsx": {
+    "mtime": 1784742095.2502902,
+    "ast_hash": "cef7b81d839cf845152f29e53cd78737",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/app/checkout/page.tsx": {
+    "mtime": 1784742461.2587104,
+    "ast_hash": "847754e7f33cfa7ba2a56462725ed653",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/app/dashboard/agent-user-dashboard-map.tsx": {
+    "mtime": 1784743081.0413973,
+    "ast_hash": "49a861e10ba50448839f651a22b98014",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/app/dashboard/agents/[slug]/page.tsx": {
+    "mtime": 1784742518.5335608,
+    "ast_hash": "8e4889c16b60b60e60afb1de4560cc87",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/app/layout.tsx": {
+    "mtime": 1784743129.2183158,
+    "ast_hash": "5e752ed912f75dc93b33fb4ef3526340",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/app/marketplace/page.tsx": {
+    "mtime": 1784742501.921278,
+    "ast_hash": "d13d89ab3c84f808dc122ae9e3f81f54",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/app/overview/page.tsx": {
+    "mtime": 1784742076.2450755,
+    "ast_hash": "ae9e347e34af796e3fbc482d48abbd3e",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/app/page.tsx": {
+    "mtime": 1784742060.5772405,
+    "ast_hash": "71fa6a830da3ae60f3abcc992f95853e",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/app/pricing/page.tsx": {
+    "mtime": 1784660685.220497,
+    "ast_hash": "986818c4ad90522df577fc2110aef777",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/app/settings/page.tsx": {
+    "mtime": 1784742108.8701599,
+    "ast_hash": "fc9c1575407c49b354f70ab7b970fad9",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/components/agents/shared/DataTable.tsx": {
+    "mtime": 1784741984.8414204,
+    "ast_hash": "9a90e761b2a2b44d11f9b64fc7748f0f",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/components/agents/shared/EmptyState.tsx": {
+    "mtime": 1784741988.5447445,
+    "ast_hash": "6a31481122c139b7d5bfb9a5474c11b4",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/components/agents/shared/JsonInspector.tsx": {
+    "mtime": 1784742451.0725758,
+    "ast_hash": "679d8da72973d4fc8468006744f2847d",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/components/agents/shared/MetricCard.tsx": {
+    "mtime": 1784741960.9330373,
+    "ast_hash": "8b48fa481655f4e4de409c92565e973e",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/components/agents/shared/Skeleton.tsx": {
+    "mtime": 1784741989.9020329,
+    "ast_hash": "ce7e7d810e4811fb669b104553d5a72e",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/components/agents/shared/StatusPill.tsx": {
+    "mtime": 1784741949.7281296,
+    "ast_hash": "3d4f66d7384d5efd2660c3cbedc8f08e",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/components/agents/shared/index.ts": {
+    "mtime": 1784741990.3099577,
+    "ast_hash": "5f1025dffe1c5610e68a6db77780b492",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/components/marketplace/CheckoutDrawer.tsx": {
+    "mtime": 1784742042.5612714,
+    "ast_hash": "431aa0c06bb36112e5ce8a69ca5fb44c",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/components/shell/AppShell.tsx": {
+    "mtime": 1784742042.0835378,
+    "ast_hash": "7452147a215e088519b4995b6103b69e",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/components/shell/CommandSearch.tsx": {
+    "mtime": 1784742028.8144581,
+    "ast_hash": "57f7ed2e043002c3202cd285d6e4caf3",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/components/shell/Sidebar.tsx": {
+    "mtime": 1784742018.081889,
+    "ast_hash": "188c0953e820f57127b18c912cd366d9",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/components/shell/TopHeader.tsx": {
+    "mtime": 1784742025.8039258,
+    "ast_hash": "d9cfb64c289359bbfe0eaabb790696f7",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/lib/api.ts": {
+    "mtime": 1784741941.9889672,
+    "ast_hash": "9eff3340cf8a080d052fc3b205b2ceb1",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/lib/cn.ts": {
+    "mtime": 1784741953.4100747,
+    "ast_hash": "eff0ded8718da01230e923d0395ec66d",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/lib/cron.ts": {
+    "mtime": 1784742481.8165722,
+    "ast_hash": "666d8d1f7857aaaea93028c202e602ab",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/tsconfig.json": {
+    "mtime": 1784742865.4133022,
+    "ast_hash": "0e3c8867af3fc06e7f1c24229ecd3c76",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/backend/__init__.py": {
+    "mtime": 1784660499.514688,
+    "ast_hash": "dadbcfc27090cd2bdb69ff1242fdfcc7",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/backend/models.py": {
+    "mtime": 1784660471.6603656,
+    "ast_hash": "5bdbb91783904b01c8633d4b7a15b5b9",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/backend/router_admin.py": {
+    "mtime": 1784660494.1992445,
+    "ast_hash": "eb5fdae8acf097030636193d74a49dd8",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/backend/router_user.py": {
+    "mtime": 1784660498.6040037,
+    "ast_hash": "41ab0c2c97e4fb45cea77cfdf325540d",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/backend/schemas.py": {
+    "mtime": 1784660487.0953317,
+    "ast_hash": "5a92ed69ac7e6280629a01bc9e2a1777",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/backend/service.py": {
+    "mtime": 1784741919.0383878,
+    "ast_hash": "33f59bb997fa2c8833e924e103aff8aa",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/backend/worker.py": {
+    "mtime": 1784660499.0393155,
+    "ast_hash": "b2e8cceb06f54a005c74d646efe3e22f",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/AdminDashboard.tsx": {
+    "mtime": 1784742393.833177,
+    "ast_hash": "e366a62ddfa2ae85add5b838ee331369",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/ConfigForm.tsx": {
+    "mtime": 1784742393.245629,
+    "ast_hash": "3224f6866bf34d00ba4ed310e1dcdffe",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/UserDashboard.tsx": {
+    "mtime": 1784742333.2189882,
+    "ast_hash": "a34d9a8051669da7f9a2df11e06ab79c",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/components/blueprint-section-card.tsx": {
+    "mtime": 1784663777.0,
+    "ast_hash": "c6e65b9d07914bc602d40c748c7fa098",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/components/cases/active-cases-empty-state.tsx": {
+    "mtime": 1784663777.0,
+    "ast_hash": "5f513c519eaad10c393f3133041a7bf2",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/components/cases/case-card.tsx": {
+    "mtime": 1784663777.0,
+    "ast_hash": "d50fde8a2eb138aa8760fae00586b50c",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/components/category-filter.tsx": {
+    "mtime": 1784663757.0,
+    "ast_hash": "a55d11540fd090627a331e71e78db287",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/components/clause-list.tsx": {
+    "mtime": 1784663777.0,
+    "ast_hash": "1a9702be1df605662fff4a413f9a8dfd",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/components/completeness/completeness-summary-card.tsx": {
+    "mtime": 1784663777.0,
+    "ast_hash": "60a529a0bd595a6a5ee5db2a272305f3",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/components/completeness/missing-fields-list.tsx": {
+    "mtime": 1784663777.0,
+    "ast_hash": "c09e9cc0b1161f8a98da22fe87701613",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/components/completeness/validation-results.tsx": {
+    "mtime": 1784663777.0,
+    "ast_hash": "aa097623274122a32e7b4851357b753e",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/components/completeness/warnings-list.tsx": {
+    "mtime": 1784663777.0,
+    "ast_hash": "cb00a36707bb9fcce1e8c6392589d20d",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/components/draft-card.tsx": {
+    "mtime": 1784663757.0,
+    "ast_hash": "bf53be940b929e43a0f08572ba0ab375",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/components/empty-state.tsx": {
+    "mtime": 1784663757.0,
+    "ast_hash": "0f3fc8ae33ac01378f000eb67a3526d5",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/components/intake/intake-field.tsx": {
+    "mtime": 1784663757.0,
+    "ast_hash": "6f329aebefef2666ac1a256a7204ac3c",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/components/intake/intake-progress.tsx": {
+    "mtime": 1784663757.0,
+    "ast_hash": "69519ab0de78b74def39c4a204834aa3",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/components/intake/intake-section-nav.tsx": {
+    "mtime": 1784663757.0,
+    "ast_hash": "3ee34c4718eb166e04c1a15e54ddbdba",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/components/intake/intake-summary.tsx": {
+    "mtime": 1784663757.0,
+    "ast_hash": "104da25f936d5a12ec5bcff8e4ac47d6",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/components/intake/intake-wizard.tsx": {
+    "mtime": 1784663807.0,
+    "ast_hash": "80aea4977947e07af8b520f20b22d37f",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/components/preview/draft-document-preview.tsx": {
+    "mtime": 1784663777.0,
+    "ast_hash": "b38cc395404ed5c18b502053e300e5e1",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/components/preview/output-check-list.tsx": {
+    "mtime": 1784663777.0,
+    "ast_hash": "5b24be2f6146e2a79535467123ae377d",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/components/preview/output-validation-card.tsx": {
+    "mtime": 1784663777.0,
+    "ast_hash": "115bb4f00c719d717b0d78d6a0619bc4",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/components/preview/preview-action-bar.tsx": {
+    "mtime": 1784663777.0,
+    "ast_hash": "c3b18a1b73337bbe076f5ad478a95111",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/components/prompt/clause-summary-card.tsx": {
+    "mtime": 1784663777.0,
+    "ast_hash": "248f4934125a3bdd2b01181a378e7097",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/components/prompt/developer-prompt-preview.tsx": {
+    "mtime": 1784663777.0,
+    "ast_hash": "1805a10b03ce0c0b3d3a50ec8e8624b3",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/components/prompt/facts-summary-card.tsx": {
+    "mtime": 1784663777.0,
+    "ast_hash": "0e387ddeb521d9c4413af4b395f2f32b",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/components/prompt/guardrails-card.tsx": {
+    "mtime": 1784663777.0,
+    "ast_hash": "c6bdc7e277cf7500e39f64d0f93bf8b8",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/components/prompt/output-requirements-card.tsx": {
+    "mtime": 1784663777.0,
+    "ast_hash": "55b3ce9d217aa37bf334a63560dba528",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/components/required-field-list.tsx": {
+    "mtime": 1784663777.0,
+    "ast_hash": "de50c2129f17e3d08cbb313ab4b530f9",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/config-schema.ts": {
+    "mtime": 1784662186.0,
+    "ast_hash": "201c4c50c07a453bb943199c0b4022f7",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/lib/api.ts": {
+    "mtime": 1784663801.0,
+    "ast_hash": "b2f1b9dbd35e8c41535ae8b3c3ebb808",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/lib/case-draft-prefill.ts": {
+    "mtime": 1784663757.0,
+    "ast_hash": "616b2bb2facc946ee2e77b9dde713eed",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/lib/case-storage.ts": {
+    "mtime": 1784663757.0,
+    "ast_hash": "011abb88462ebacd48ad3e7973b0c9b2",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/lib/completeness-engine.ts": {
+    "mtime": 1784663757.0,
+    "ast_hash": "d673dadabd13f459e375448b096cde0d",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/lib/draft-blueprints.ts": {
+    "mtime": 1784663757.0,
+    "ast_hash": "d4cdebe99d2c3aa2a30c120be186719c",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/lib/draft-catalog.ts": {
+    "mtime": 1784663757.0,
+    "ast_hash": "caf1b7594ff70c0bcfb1ca64024fb00c",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/lib/export-service.ts": {
+    "mtime": 1784663757.0,
+    "ast_hash": "2a7c16bf682ecbe2d593fb44f7645e08",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/lib/i18n.ts": {
+    "mtime": 1784663757.0,
+    "ast_hash": "08120dc1ac65ad2b3786cdc55d052658",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/lib/output-validator.ts": {
+    "mtime": 1784663757.0,
+    "ast_hash": "c147d3fccd67fbc5ae91a289b2224fd8",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/lib/prompt-compiler.ts": {
+    "mtime": 1784663757.0,
+    "ast_hash": "a784e70b4e9ab33a33964d61c3ac77b3",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/frontend/lib/storage.ts": {
+    "mtime": 1784663757.0,
+    "ast_hash": "54b35c034d750651ef3efb00c34e9670",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/lawyer-agent/manifest.json": {
+    "mtime": 1784741866.0538936,
+    "ast_hash": "1e24f21a26fe6e51855460736f8360fb",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/linkedin-agent/backend/__init__.py": {
+    "mtime": 1784660209.0987003,
+    "ast_hash": "8ca866c43ffc9f3e86bff684c041e81d",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/linkedin-agent/backend/models.py": {
+    "mtime": 1784660209.0988731,
+    "ast_hash": "96d376cb654ced537b0a47edb333daf4",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/linkedin-agent/backend/pr_pipeline.py": {
+    "mtime": 1784660362.257957,
+    "ast_hash": "2229f610fb4e56c09f7569a5fa7f34b5",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/linkedin-agent/backend/router_admin.py": {
+    "mtime": 1784660209.09905,
+    "ast_hash": "c7aac8ba3be194f089366308ad6fffc6",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/linkedin-agent/backend/router_user.py": {
+    "mtime": 1784742418.7280216,
+    "ast_hash": "9f55e21f67d22905cc9902c92315a73f",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/linkedin-agent/backend/schemas.py": {
+    "mtime": 1784741842.0695763,
+    "ast_hash": "ad55b807e12e9666bfeef11a13c02cb6",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/linkedin-agent/backend/service.py": {
+    "mtime": 1784741859.836184,
+    "ast_hash": "06fa567208079eb26be283742ea752c1",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/linkedin-agent/backend/worker.py": {
+    "mtime": 1784661361.4149714,
+    "ast_hash": "907a51ccc3e38a08a7721dcbd3d018ca",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/linkedin-agent/frontend/AdminDashboard.tsx": {
+    "mtime": 1784742416.071674,
+    "ast_hash": "2beb9e99418dda33035d6027065d6156",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/linkedin-agent/frontend/ConfigForm.tsx": {
+    "mtime": 1784742163.5603738,
+    "ast_hash": "32de85eac31aa39b5c52fb3ffe324df2",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/linkedin-agent/frontend/UserDashboard.tsx": {
+    "mtime": 1784742238.347548,
+    "ast_hash": "eb0b64e5f6cacb4b7c33dad6a93d7dc9",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/linkedin-agent/frontend/config-schema.ts": {
+    "mtime": 1784742163.0351257,
+    "ast_hash": "d472efa081184a36603c4547aa753bdd",
+    "semantic_hash": ""
+  },
+  "delegtlabs/packages/agents/linkedin-agent/manifest.json": {
+    "mtime": 1784741865.9568815,
+    "ast_hash": "f5e57e1650348e48a8c6381c877f07bd",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/admin/__init__.py": {
+    "mtime": 1784660209.1038496,
+    "ast_hash": "c8d5ff8ac693ce3c0256f2288c23a685",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/admin/api/__init__.py": {
+    "mtime": 1784660209.1039782,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/admin/api/v1/__init__.py": {
+    "mtime": 1784660209.104196,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/admin/api/v1/endpoints/__init__.py": {
+    "mtime": 1784660209.104389,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/admin/api/v1/endpoints/agents.py": {
+    "mtime": 1784660209.1046202,
+    "ast_hash": "d53f2aaeb8fb932312e04195557ac5e2",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/admin/api/v1/endpoints/audit_log.py": {
+    "mtime": 1784660209.104779,
+    "ast_hash": "dd2757f5034862e5d1517f3f7918193e",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/admin/api/v1/endpoints/clients.py": {
+    "mtime": 1784660209.1049304,
+    "ast_hash": "4ff2d155b50d97602bc894dc0f3a2bcb",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/admin/api/v1/endpoints/health.py": {
+    "mtime": 1784660209.1050756,
+    "ast_hash": "2cbf3f65968052384ad6e351e6411240",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/admin/api/v1/endpoints/plans.py": {
+    "mtime": 1784660209.1052706,
+    "ast_hash": "bfb926f12fe9734fee6c49d427a43b82",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/admin/api/v1/endpoints/subscriptions.py": {
+    "mtime": 1784660209.1055772,
+    "ast_hash": "3eb8e70e84b3da5bad04f353b16fb56e",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/admin/api/v1/router.py": {
+    "mtime": 1784660209.1057541,
+    "ast_hash": "fcb50f3ee68eea99429778723a44a728",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/admin/main.py": {
+    "mtime": 1784661289.0203786,
+    "ast_hash": "060f4790d48a5955ff194ab3d8f3dca7",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/admin/modules/__init__.py": {
+    "mtime": 1784660209.1060565,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/admin/modules/platform/__init__.py": {
+    "mtime": 1784660209.1063945,
+    "ast_hash": "7851c6bb5115c317ca39ff0390b8819b",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/admin/modules/platform/audit.py": {
+    "mtime": 1784660209.1065507,
+    "ast_hash": "e14102f9b6ff7a3de2ecc272ae95e3bf",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/admin/modules/platform/models.py": {
+    "mtime": 1784660666.3063097,
+    "ast_hash": "46c907b129d8b3f2c01ce1014bdc1aaf",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/admin/modules/platform/schemas.py": {
+    "mtime": 1784660209.1069174,
+    "ast_hash": "a9bcf3d4484886f1ed5704cb2ddeee19",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/admin/modules/platform/security.py": {
+    "mtime": 1784660209.1070774,
+    "ast_hash": "bd150deaa6fa794552a182df986d2fe4",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/admin/modules/tenants/__init__.py": {
+    "mtime": 1784660209.1072247,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/alembic/env.py": {
+    "mtime": 1784660209.1076381,
+    "ast_hash": "b21d3c7970a74d55dbcfa6549e8360e1",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/alembic/versions/20260708_01_admin_panel_init.py": {
+    "mtime": 1784660209.108064,
+    "ast_hash": "6bec832cc60c6c1bc3fced3e10ffe057",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/alembic/versions/20260721_02_agent_platform_core.py": {
+    "mtime": 1784660209.1082468,
+    "ast_hash": "9ca40da8178a9104d764ddf6c5edbe9c",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/gateway/__init__.py": {
+    "mtime": 1784660209.1084468,
+    "ast_hash": "8b164b56f33ebc08d082c1239da485f1",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/gateway/main.py": {
+    "mtime": 1784661424.0843146,
+    "ast_hash": "de88e5a454afb96a75e111b2f8428ae5",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/pyproject.toml": {
+    "mtime": 1784660209.108695,
+    "ast_hash": "8199cabc721cc2eb42c673d06d017e9e",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/scripts/dev.sh": {
+    "mtime": 1784660209.1088805,
+    "ast_hash": "84dba8cf020adada9e8c92f484419f0c",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/shared/__init__.py": {
+    "mtime": 1784660209.1090767,
+    "ast_hash": "7eb45e1ec98adcf922e675b6d1f38fe7",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/shared/agent_registry.py": {
+    "mtime": 1784660209.109227,
+    "ast_hash": "de518b9a3de2660d80c2535060061dc7",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/shared/core/__init__.py": {
+    "mtime": 1784660209.1094372,
+    "ast_hash": "6df45554314beb6a96c0c04d29b80bd8",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/shared/core/config.py": {
+    "mtime": 1784660209.1095746,
+    "ast_hash": "7e7fcb4afc3f148072c376ab7a0aa9c9",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/shared/core/exceptions.py": {
+    "mtime": 1784660209.109718,
+    "ast_hash": "f9fc55182d8b37cdfb0e660d141c791f",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/shared/core/logging.py": {
+    "mtime": 1784660209.1098423,
+    "ast_hash": "69b22f61ed3c250789475766715503b5",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/shared/core/middleware.py": {
+    "mtime": 1784660209.1099772,
+    "ast_hash": "13157e9e0ce5e17d1e4081cc192aab8d",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/shared/core/security.py": {
+    "mtime": 1784660209.1101198,
+    "ast_hash": "ad6557fcbf6901410afdb2d8c9a56561",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/shared/db/__init__.py": {
+    "mtime": 1784660209.1102433,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/shared/db/base.py": {
+    "mtime": 1784660209.1104472,
+    "ast_hash": "6c79b244a61c9415530e2a995dbc28b1",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/shared/db/models.py": {
+    "mtime": 1784660209.1105855,
+    "ast_hash": "cb10a6d68a1737fc8ddd8215ef4cc4b4",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/shared/db/session.py": {
+    "mtime": 1784660209.1107185,
+    "ast_hash": "d58b53be4de3fa02f97d06371d9b407c",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/shared/dependencies/__init__.py": {
+    "mtime": 1784660209.1109667,
+    "ast_hash": "6586e7d2c77b2b4ff4ef569490430cf7",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/shared/dependencies/settings.py": {
+    "mtime": 1784660209.1111274,
+    "ast_hash": "4b3ef857fb2b1c40db1a1c590cd9f3ec",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/shared/enums/__init__.py": {
+    "mtime": 1784660209.1113613,
+    "ast_hash": "0564e04b98253e383ccb4c67115ef080",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/shared/enums/surfaces.py": {
+    "mtime": 1784660209.111536,
+    "ast_hash": "cbab8f51b305dd7b49b97aeac2f7fd7e",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/shared/integrations/__init__.py": {
+    "mtime": 1784660209.1117861,
+    "ast_hash": "41954940a5821015d4c54dfc2d24622a",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/shared/integrations/ai_providers/__init__.py": {
+    "mtime": 1784660209.1120439,
+    "ast_hash": "7d22ebd04cbd8bc047ec3405a2735316",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/shared/integrations/email/__init__.py": {
+    "mtime": 1784660209.112285,
+    "ast_hash": "35ce7a16e22d93d6816fc4f9b4adc536",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/shared/integrations/storage/__init__.py": {
+    "mtime": 1784660209.1125774,
+    "ast_hash": "c33c59d860f55a021ff6bace25f6f522",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/shared/integrations/supabase/__init__.py": {
+    "mtime": 1784660209.112855,
+    "ast_hash": "6fb0ffbf08d951c05d761cd32b72fd74",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/shared/schemas/__init__.py": {
+    "mtime": 1784660209.1130934,
+    "ast_hash": "d4093658a7fc68646f20a6883be91b63",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/shared/schemas/common.py": {
+    "mtime": 1784660209.1132388,
+    "ast_hash": "035a9f6c111121f015402e62a7eb8143",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/shared/utils/__init__.py": {
+    "mtime": 1784660209.1134443,
+    "ast_hash": "ab697b117de1a0f6ea9716eaf3a631de",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/shared/utils/strings.py": {
+    "mtime": 1784660209.1135824,
+    "ast_hash": "1c0b7a01aea222c084d0d539320c8c2a",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/tests/test_agent_registry.py": {
+    "mtime": 1784660209.1137872,
+    "ast_hash": "7d54db968a7b72308b392ca4014ff4ee",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/tests/test_gateway.py": {
+    "mtime": 1784661465.801421,
+    "ast_hash": "307d01827b18921bf889a3d8daff432d",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/tests/test_phase2_admin.py": {
+    "mtime": 1784660209.1140573,
+    "ast_hash": "79d81e8362102acae972eae946740521",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/tests/test_phase3_user.py": {
+    "mtime": 1784660209.1142027,
+    "ast_hash": "55b6bbbe2ae740f90fcf208d2c8c9462",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/tests/test_phase4_web.py": {
+    "mtime": 1784660209.1143768,
+    "ast_hash": "c76e37cc34c7260d461b8bd2b9f04398",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/tests/test_phase5_worker.py": {
+    "mtime": 1784660209.1145327,
+    "ast_hash": "79fe43772aef337e7a6680b19fd4996c",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/tests/test_phase6_replication.py": {
+    "mtime": 1784661438.3111827,
+    "ast_hash": "6e3743653daabc75d751033bb991b537",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/tests/test_phase7_reference_agents.py": {
+    "mtime": 1784661412.0606968,
+    "ast_hash": "7b11f012e4ad7cca94c06eb99d1ef8ef",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/user/__init__.py": {
+    "mtime": 1784660209.1148815,
+    "ast_hash": "52e4a49ddb9571d341a5b6c23b30d740",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/user/api/__init__.py": {
+    "mtime": 1784660209.115007,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/user/api/v1/__init__.py": {
+    "mtime": 1784660209.115223,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/user/api/v1/endpoints/__init__.py": {
+    "mtime": 1784660209.1154497,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/user/api/v1/endpoints/health.py": {
+    "mtime": 1784660209.1156716,
+    "ast_hash": "656f05aec179703f5dd29614f250b0ff",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/user/api/v1/endpoints/profile.py": {
+    "mtime": 1784660209.1158817,
+    "ast_hash": "f6684fa0cc7e8892d78adaa056946b97",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/user/api/v1/router.py": {
+    "mtime": 1784741821.1321335,
+    "ast_hash": "47038c939c505d536d5c7fc8c32d197d",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/user/main.py": {
+    "mtime": 1784660209.116219,
+    "ast_hash": "d35c5bdade1cdb99433988858be54e38",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/user/modules/__init__.py": {
+    "mtime": 1784660209.1163476,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/user/modules/agents/__init__.py": {
+    "mtime": 1784660209.1166494,
+    "ast_hash": "cb4651b9f8af0a54f4254af83474735c",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/user/modules/auth/__init__.py": {
+    "mtime": 1784660209.1169345,
+    "ast_hash": "fb5a868a8254d85191cf51a7de28fbf2",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/user/modules/documents/__init__.py": {
+    "mtime": 1784660209.117182,
+    "ast_hash": "e70aa50e7f0f2f99737938f3a1d019c8",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/user/modules/profile/__init__.py": {
+    "mtime": 1784660209.117402,
+    "ast_hash": "3449af7d9f0466e898c1f167fb02aab5",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/user/modules/projects/__init__.py": {
+    "mtime": 1784660209.1176186,
+    "ast_hash": "817b79360f264a0d04e16517c8a14033",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/user/modules/tasks/__init__.py": {
+    "mtime": 1784660209.117828,
+    "ast_hash": "8b0d8c56e44785d87d628f4bd9af944c",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/web/__init__.py": {
+    "mtime": 1784660209.1180143,
+    "ast_hash": "63c83dcced9b7c672ed3afdc63f24ac0",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/web/api/__init__.py": {
+    "mtime": 1784660209.1181328,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/web/api/v1/__init__.py": {
+    "mtime": 1784660209.1183333,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/web/api/v1/endpoints/__init__.py": {
+    "mtime": 1784660209.1185567,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/web/api/v1/endpoints/agents.py": {
+    "mtime": 1784741806.1405113,
+    "ast_hash": "28a7a5c24060db3b609060e0fc42d090",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/web/api/v1/endpoints/health.py": {
+    "mtime": 1784660209.1188228,
+    "ast_hash": "c88045d823e65f7a180fa225e044b465",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/web/api/v1/endpoints/public.py": {
+    "mtime": 1784660209.1189756,
+    "ast_hash": "9af99d385c97ad24298603b98994fa50",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/web/api/v1/router.py": {
+    "mtime": 1784741725.2010942,
+    "ast_hash": "c255f8510e0b1d33ca3c0d060e278412",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/web/main.py": {
+    "mtime": 1784660209.1192632,
+    "ast_hash": "b9f349e69200330a528a608d9a31f63f",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/web/modules/__init__.py": {
+    "mtime": 1784660209.119376,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/web/modules/contact/__init__.py": {
+    "mtime": 1784660209.1196344,
+    "ast_hash": "e825bc41a444a036f2f7b85dd7a03812",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/web/modules/content/__init__.py": {
+    "mtime": 1784660209.1198554,
+    "ast_hash": "c88dc53e6fd4f14638684108603a45b6",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/web/modules/public/__init__.py": {
+    "mtime": 1784660209.1200721,
+    "ast_hash": "d531d4682b7938a7a7adc535775c04cb",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/web/modules/public/checkout.py": {
+    "mtime": 1784741916.6512725,
+    "ast_hash": "770a2a2c1c8584b1bd85fefd0400aec7",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/worker_main.py": {
+    "mtime": 1784660659.6758697,
+    "ast_hash": "f90940f5625a3cf95287eb8c5b042d7e",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/.understand-anything/config.json": {
+    "mtime": 1784468740.8084557,
+    "ast_hash": "45c808d22aac4aad9b19021fa6b17748",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/api/app/__init__.py": {
+    "mtime": 1784468740.8100264,
+    "ast_hash": "40eea8f52f0d1830f7b80a3f12822d11",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/api/app/api/__init__.py": {
+    "mtime": 1784468740.8103123,
+    "ast_hash": "5a2a06d4997799acf458fe77aaf739a5",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/api/app/api/v1/__init__.py": {
+    "mtime": 1784468740.8105674,
+    "ast_hash": "13b4ebf01506e5799cbaebf0b87eff34",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/api/app/api/v1/health.py": {
+    "mtime": 1784468740.8106775,
+    "ast_hash": "76e390e0a83e85b1c70074e1c3334348",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/api/app/api/v1/router.py": {
+    "mtime": 1784468740.8107853,
+    "ast_hash": "6874d6a8a7055586ee31eec084d8a33a",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/api/app/core/__init__.py": {
+    "mtime": 1784468740.8109508,
+    "ast_hash": "9294881a1c9e462745abd56e1e6aea75",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/api/app/core/config.py": {
+    "mtime": 1784468740.8110518,
+    "ast_hash": "2f449ae286dffff6fffe511ca89db1a5",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/api/app/core/cors.py": {
+    "mtime": 1784468740.8111541,
+    "ast_hash": "7c48ca1d0127e37f9a89534c11cc2b78",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/api/app/main.py": {
+    "mtime": 1784468740.8112469,
+    "ast_hash": "0222588fc3882ab6de0ba265dc179334",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/api/app/modules/__init__.py": {
+    "mtime": 1784468740.8113961,
+    "ast_hash": "eb2f8eb49637bf548c5700fa0ab44d99",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/api/app/modules/ai/__init__.py": {
+    "mtime": 1784468740.811543,
+    "ast_hash": "7f1a57d566a4d4efd9885ab4f1e10c23",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/api/app/modules/ai/providers/__init__.py": {
+    "mtime": 1784468740.8116982,
+    "ast_hash": "0f8912cb7b65944037cc7048d0a83b7b",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/api/app/modules/ai/providers/base.py": {
+    "mtime": 1784468740.811792,
+    "ast_hash": "f3e75655bd6e56023bc81af14c0f301a",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/api/app/modules/ai/providers/claude_provider.py": {
+    "mtime": 1784468740.811907,
+    "ast_hash": "5065aded1d6e366ec5d2ea049c2d5422",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/api/app/modules/ai/providers/gemini_provider.py": {
+    "mtime": 1784468740.812007,
+    "ast_hash": "b4f618cf4bed7d5d6c5339fbb2a79e84",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/api/app/modules/ai/providers/mock_provider.py": {
+    "mtime": 1784468740.812163,
+    "ast_hash": "84838e4d5d590561107a967cc3be2aad",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/api/app/modules/ai/providers/openai_provider.py": {
+    "mtime": 1784468740.812266,
+    "ast_hash": "d6bd4ae27e9532c6de9dad6b65a59e8f",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/api/app/modules/ai/router.py": {
+    "mtime": 1784468740.812365,
+    "ast_hash": "3419b9d7b15bff11b996a55a487b420d",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/api/app/modules/ai/schemas.py": {
+    "mtime": 1784468740.8124564,
+    "ast_hash": "1f474945a54ed5da0d0485091f8ed9a6",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/api/app/modules/ai/service.py": {
+    "mtime": 1784468740.8125513,
+    "ast_hash": "cd6354fd96eb011061bc1a27f0bf2539",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/api/app/modules/drafting/__init__.py": {
+    "mtime": 1784468740.8127136,
+    "ast_hash": "53f6f00ab7b3f1c272152c0848e1ae1c",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/api/app/modules/drafting/router.py": {
+    "mtime": 1784468740.8128107,
+    "ast_hash": "7ccd9d70ea2f79e20e598d504dee509d",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/app/cases/[caseId]/drafts/new/page.tsx": {
+    "mtime": 1784468740.8136706,
+    "ast_hash": "208feca0eef265f013add9ff02d1731f",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/app/cases/[caseId]/edit/page.tsx": {
+    "mtime": 1784468740.8139193,
+    "ast_hash": "6a85f4a3fbbc33632ce2efd98dfb2437",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/app/cases/[caseId]/page.tsx": {
+    "mtime": 1784468740.8142996,
+    "ast_hash": "5f267482eb464039c0014003b45629e4",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/app/cases/new/page.tsx": {
+    "mtime": 1784468740.8145633,
+    "ast_hash": "425a9f20dfcda42f6ad6bed15a727cab",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/app/cases/page.tsx": {
+    "mtime": 1784468740.8149166,
+    "ast_hash": "823c95016eef156887f62712990f813f",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/app/dashboard/page.tsx": {
+    "mtime": 1784468740.8151367,
+    "ast_hash": "3eac630dee660c7d80d3e734f944d4d8",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/app/drafts/[draftId]/completeness/page.tsx": {
+    "mtime": 1784468740.8156614,
+    "ast_hash": "41ff34926889dfe8e225551a175aa68b",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/app/drafts/[draftId]/customize/page.tsx": {
+    "mtime": 1784468740.815992,
+    "ast_hash": "2756069a18f25d74b2fb96df061f5ac5",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/app/drafts/[draftId]/intake/page.tsx": {
+    "mtime": 1784468740.8161929,
+    "ast_hash": "c8f9d7bb2bafb8060abcfe2105c7909a",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/app/drafts/[draftId]/plan/page.tsx": {
+    "mtime": 1784468740.8164608,
+    "ast_hash": "bcecfc95214a9cde86068f37da8cfc7b",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/app/drafts/[draftId]/preview/page.tsx": {
+    "mtime": 1784468740.816776,
+    "ast_hash": "fe88aab829859d1011bf62fcdd4aa4a3",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/app/drafts/[draftId]/prompt-preview/page.tsx": {
+    "mtime": 1784468740.8169515,
+    "ast_hash": "eeb762b9509177a437dd0bea82bb51b6",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/app/drafts/new/page.tsx": {
+    "mtime": 1784468740.8173077,
+    "ast_hash": "02aa26f6088f3da478936d68be9b024f",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/app/layout.tsx": {
+    "mtime": 1784468740.817498,
+    "ast_hash": "d33b2a69864b304980d8214f270a9f6c",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/app/page.tsx": {
+    "mtime": 1784468740.8175828,
+    "ast_hash": "d9fd9972c437ab2fea84c5f7bdf1222a",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/components/app-header.tsx": {
+    "mtime": 1784468740.8177443,
+    "ast_hash": "771790fc70a2f4758ad1f91639a96517",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/components/blueprint-section-card.tsx": {
+    "mtime": 1784468740.8178394,
+    "ast_hash": "c6e65b9d07914bc602d40c748c7fa098",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/components/cases/active-cases-empty-state.tsx": {
+    "mtime": 1784468740.8179903,
+    "ast_hash": "5f513c519eaad10c393f3133041a7bf2",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/components/cases/case-card.tsx": {
+    "mtime": 1784468740.8180926,
+    "ast_hash": "d50fde8a2eb138aa8760fae00586b50c",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/components/category-filter.tsx": {
+    "mtime": 1784468740.818191,
+    "ast_hash": "a55d11540fd090627a331e71e78db287",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/components/clause-list.tsx": {
+    "mtime": 1784468740.818284,
+    "ast_hash": "1a9702be1df605662fff4a413f9a8dfd",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/components/completeness/completeness-summary-card.tsx": {
+    "mtime": 1784468740.8184478,
+    "ast_hash": "60a529a0bd595a6a5ee5db2a272305f3",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/components/completeness/missing-fields-list.tsx": {
+    "mtime": 1784468740.8185413,
+    "ast_hash": "c09e9cc0b1161f8a98da22fe87701613",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/components/completeness/validation-results.tsx": {
+    "mtime": 1784468740.818658,
+    "ast_hash": "aa097623274122a32e7b4851357b753e",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/components/completeness/warnings-list.tsx": {
+    "mtime": 1784468740.8187473,
+    "ast_hash": "cb00a36707bb9fcce1e8c6392589d20d",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/components/draft-card.tsx": {
+    "mtime": 1784468740.8188796,
+    "ast_hash": "bf53be940b929e43a0f08572ba0ab375",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/components/empty-state.tsx": {
+    "mtime": 1784468740.8189623,
+    "ast_hash": "0f3fc8ae33ac01378f000eb67a3526d5",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/components/intake/intake-field.tsx": {
+    "mtime": 1784468740.8191223,
+    "ast_hash": "6f329aebefef2666ac1a256a7204ac3c",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/components/intake/intake-progress.tsx": {
+    "mtime": 1784468740.8192234,
+    "ast_hash": "69519ab0de78b74def39c4a204834aa3",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/components/intake/intake-section-nav.tsx": {
+    "mtime": 1784468740.819329,
+    "ast_hash": "3ee34c4718eb166e04c1a15e54ddbdba",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/components/intake/intake-summary.tsx": {
+    "mtime": 1784468740.8194382,
+    "ast_hash": "104da25f936d5a12ec5bcff8e4ac47d6",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/components/intake/intake-wizard.tsx": {
+    "mtime": 1784468740.8196259,
+    "ast_hash": "d2ab83c5227a7c5fcfa738dcc98710bd",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/components/language-selector.tsx": {
+    "mtime": 1784468740.819725,
+    "ast_hash": "73d49d62b7f81f0c91ecad928870df07",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/components/module-card.tsx": {
+    "mtime": 1784468740.8198135,
+    "ast_hash": "4cc2cb5c590fc4f109aff6021b93539e",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/components/preview/draft-document-preview.tsx": {
+    "mtime": 1784468740.819965,
+    "ast_hash": "b38cc395404ed5c18b502053e300e5e1",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/components/preview/output-check-list.tsx": {
+    "mtime": 1784468740.8200634,
+    "ast_hash": "5b24be2f6146e2a79535467123ae377d",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/components/preview/output-validation-card.tsx": {
+    "mtime": 1784468740.8201575,
+    "ast_hash": "115bb4f00c719d717b0d78d6a0619bc4",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/components/preview/preview-action-bar.tsx": {
+    "mtime": 1784468740.820252,
+    "ast_hash": "c3b18a1b73337bbe076f5ad478a95111",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/components/prompt/clause-summary-card.tsx": {
+    "mtime": 1784468740.8204048,
+    "ast_hash": "248f4934125a3bdd2b01181a378e7097",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/components/prompt/developer-prompt-preview.tsx": {
+    "mtime": 1784468740.8204973,
+    "ast_hash": "1805a10b03ce0c0b3d3a50ec8e8624b3",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/components/prompt/facts-summary-card.tsx": {
+    "mtime": 1784468740.82059,
+    "ast_hash": "0e387ddeb521d9c4413af4b395f2f32b",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/components/prompt/guardrails-card.tsx": {
+    "mtime": 1784468740.8206766,
+    "ast_hash": "c6bdc7e277cf7500e39f64d0f93bf8b8",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/components/prompt/output-requirements-card.tsx": {
+    "mtime": 1784468740.8207753,
+    "ast_hash": "55b3ce9d217aa37bf334a63560dba528",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/components/required-field-list.tsx": {
+    "mtime": 1784468740.8208742,
+    "ast_hash": "de50c2129f17e3d08cbb313ab4b530f9",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/lib/api.ts": {
+    "mtime": 1784468740.8210356,
+    "ast_hash": "e51e88a1eff4efce07d27178ee74cc65",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/lib/case-draft-prefill.ts": {
+    "mtime": 1784468740.8211274,
+    "ast_hash": "616b2bb2facc946ee2e77b9dde713eed",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/lib/case-draft-suggestions.ts": {
+    "mtime": 1784468740.8212569,
+    "ast_hash": "076c9d1eb3e59b5de132e2d13ea20670",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/lib/case-storage-audit.test.ts": {
+    "mtime": 1784468740.821387,
+    "ast_hash": "654fcb1ff83b5cc676e5aee4754b132f",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/lib/case-storage.ts": {
+    "mtime": 1784468740.8215916,
+    "ast_hash": "011abb88462ebacd48ad3e7973b0c9b2",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/lib/completeness-engine.ts": {
+    "mtime": 1784468740.8218346,
+    "ast_hash": "d673dadabd13f459e375448b096cde0d",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/lib/draft-blueprints.ts": {
+    "mtime": 1784468740.8219857,
+    "ast_hash": "d4cdebe99d2c3aa2a30c120be186719c",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/lib/draft-catalog.ts": {
+    "mtime": 1784468740.8221822,
+    "ast_hash": "caf1b7594ff70c0bcfb1ca64024fb00c",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/lib/export-service.ts": {
+    "mtime": 1784468740.8225105,
+    "ast_hash": "2a7c16bf682ecbe2d593fb44f7645e08",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/lib/i18n.ts": {
+    "mtime": 1784468740.822772,
+    "ast_hash": "08120dc1ac65ad2b3786cdc55d052658",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/lib/output-validator.ts": {
+    "mtime": 1784468740.823045,
+    "ast_hash": "c147d3fccd67fbc5ae91a289b2224fd8",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/lib/prompt-compiler.ts": {
+    "mtime": 1784468740.823339,
+    "ast_hash": "a784e70b4e9ab33a33964d61c3ac77b3",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/lib/storage.ts": {
+    "mtime": 1784468740.8234587,
+    "ast_hash": "54b35c034d750651ef3efb00c34e9670",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/package.json": {
+    "mtime": 1784468740.8236566,
+    "ast_hash": "84f298c93a3fa74ce4fad2fc3faa98cc",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/postcss.config.mjs": {
+    "mtime": 1784468740.8238618,
+    "ast_hash": "c56b5f3c12f777a86e2513f45daab56a",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/tailwind.config.ts": {
+    "mtime": 1784468740.8239584,
+    "ast_hash": "09be043aed29363de74e93a28e829a96",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/web/tsconfig.json": {
+    "mtime": 1784468740.824055,
+    "ast_hash": "d246b3bb77d62fd1a927fc7b4298fc5c",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/infra/supabase/migrations/20260710000000_schema_v1_drafting_and_cases.sql": {
+    "mtime": 1784468740.825776,
+    "ast_hash": "04f469980dc5d88eb92cbb4bdea4e7c1",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/package.json": {
+    "mtime": 1784468740.826328,
+    "ast_hash": "1206b4489485ea899da4bb12f8d3fdbb",
+    "semantic_hash": ""
+  },
+  "linkedin_pr_agent/config.py": {
+    "mtime": 1783541848.946681,
+    "ast_hash": "ac03df7c3b104bafffa07aad252105b3",
+    "semantic_hash": ""
+  },
+  "linkedin_pr_agent/content_generator.py": {
+    "mtime": 1783352686.9904068,
+    "ast_hash": "96c58e173b290c4e7988b81a10013b74",
+    "semantic_hash": ""
+  },
+  "linkedin_pr_agent/content_optimizer.py": {
+    "mtime": 1783352686.9908574,
+    "ast_hash": "ad5bd713c7d09907920a36a63f25bfdf",
+    "semantic_hash": ""
+  },
+  "linkedin_pr_agent/lead_agent.py": {
+    "mtime": 1783352686.9912677,
+    "ast_hash": "ea4d226bc15ba5c943a6b39cbe1d8654",
+    "semantic_hash": ""
+  },
+  "linkedin_pr_agent/lead_memory.py": {
+    "mtime": 1783352686.9913964,
+    "ast_hash": "58a898bedfbcbdc3e4adb12e73a033a4",
+    "semantic_hash": ""
+  },
+  "linkedin_pr_agent/lead_notifier.py": {
+    "mtime": 1783352686.9915264,
+    "ast_hash": "61d5c67709bdb5e2c2c8c0adf32db2f6",
+    "semantic_hash": ""
+  },
+  "linkedin_pr_agent/lead_searcher.py": {
+    "mtime": 1783352686.991766,
+    "ast_hash": "d7544b479ad894bb2523dfea0a7254af",
+    "semantic_hash": ""
+  },
+  "linkedin_pr_agent/linkedin_accounts.json": {
+    "mtime": 1783544257.9164147,
+    "ast_hash": "db1fcf0c87e818abec5d80da62567981",
+    "semantic_hash": ""
+  },
+  "linkedin_pr_agent/linkedin_api.py": {
+    "mtime": 1783541887.8480506,
+    "ast_hash": "ca427269822bf61a89b7415285a678e0",
+    "semantic_hash": ""
+  },
+  "linkedin_pr_agent/main.py": {
+    "mtime": 1784651707.232385,
+    "ast_hash": "38d2cb79ce41eece7c7fe9edfb8e32ed",
+    "semantic_hash": ""
+  },
+  "linkedin_pr_agent/memory_manager.py": {
+    "mtime": 1783352686.9928827,
+    "ast_hash": "fae005f9ee4bff03b384233184ec798f",
+    "semantic_hash": ""
+  },
+  "linkedin_pr_agent/notifier.py": {
+    "mtime": 1783352686.992995,
+    "ast_hash": "ba836815331835d4a0526855c60237c1",
+    "semantic_hash": ""
+  },
+  "linkedin_pr_agent/oauth_server.py": {
+    "mtime": 1784651707.2324095,
+    "ast_hash": "50c5b489f888ed4358b095a611707c09",
+    "semantic_hash": ""
+  },
+  "linkedin_pr_agent/search_agent.py": {
+    "mtime": 1783352686.993224,
+    "ast_hash": "3fb872afacb37bec2033c5d6a6a9c98c",
+    "semantic_hash": ""
+  },
+  "linkedin_pr_agent/supabase_schema.sql": {
+    "mtime": 1783542221.4828002,
+    "ast_hash": "df5d966246e2b60bd742daf695cd7807",
+    "semantic_hash": ""
+  },
+  "linkedin_pr_agent/supabase_store.py": {
+    "mtime": 1784651707.2318017,
+    "ast_hash": "283b77036fdd9a7a30ba6cd8ec88a350",
+    "semantic_hash": ""
+  },
+  "linkedin_pr_agent/test_lead_agent.py": {
+    "mtime": 1783352686.9935515,
+    "ast_hash": "edc024563e1fca801c8fbd3280810491",
+    "semantic_hash": ""
+  },
+  "linkedin_pr_agent/test_linkedin_bot.py": {
+    "mtime": 1783541920.9170506,
+    "ast_hash": "4c0f84cc5798833759e44821b3e5c2a8",
+    "semantic_hash": ""
+  },
+  "linkedin_pr_agent/test_optimizer.py": {
+    "mtime": 1783352686.9942157,
+    "ast_hash": "67c52cd02bda0b9071a3fffeb9da159f",
+    "semantic_hash": ""
+  },
+  "linkedin_pr_agent/test_phase2.py": {
+    "mtime": 1783352686.9944882,
+    "ast_hash": "17e6d7bb577fb2456d451a994d2e7fa5",
+    "semantic_hash": ""
+  },
+  "STRUCTURE.md": {
+    "mtime": 1784660209.079121,
+    "ast_hash": "9ba13da13722b56554f39d79ade05629",
+    "semantic_hash": ""
+  },
+  "delegtlabs/README.md": {
+    "mtime": 1784660209.0794754,
+    "ast_hash": "eeb245022429a22b046a0111a1184c76",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/AGENTS.md": {
+    "mtime": 1784660209.0799682,
+    "ast_hash": "9e09241799026ac05be315a2f0b50055",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/CLAUDE.md": {
+    "mtime": 1784660209.0800936,
+    "ast_hash": "5c27369b226fcf2be8a6cfe52224e767",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/README.md": {
+    "mtime": 1784660209.080356,
+    "ast_hash": "aede27f4c05ccbaa4e229a546334e5b7",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/user/README.md": {
+    "mtime": 1784660209.0881915,
+    "ast_hash": "39fcfabbb2d30e2bfb490ebaad7c4ba4",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/README.md": {
+    "mtime": 1784660209.090233,
+    "ast_hash": "bf65c74ef0fa6cbff2ac73b819f6a399",
+    "semantic_hash": ""
+  },
+  "delegtlabs/docker-compose.yml": {
+    "mtime": 1784660209.0913758,
+    "ast_hash": "c36842194038771a114f17e0ac468a7b",
+    "semantic_hash": ""
+  },
+  "delegtlabs/server/README.md": {
+    "mtime": 1784660209.1036494,
+    "ast_hash": "a69052e713341a0c18bb9a82646b7013",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/.agents/rules/AGENTS.md": {
+    "mtime": 1784468740.8065126,
+    "ast_hash": "8e1620fa43354e82cbf4af3d9039f6b6",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/README.md": {
+    "mtime": 1784468740.808762,
+    "ast_hash": "6b1e78e2a85dd52834edcd5841f3bc9f",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/apps/api/requirements.txt": {
+    "mtime": 1784468740.8129196,
+    "ast_hash": "575f067a72aacee5a5f1a757e71b22d7",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/docs/REQUIREMENTS.md": {
+    "mtime": 1784469559.5456388,
+    "ast_hash": "db32918f604fe0f9230d283fae14934b",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/docs/lawyer-agent/00_Master_Product_Blueprint.md": {
+    "mtime": 1784468740.8248074,
+    "ast_hash": "b8c7fe03004e0ce09e7efabab01e0959",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/docs/lawyer-agent/01_Implementation_Roadmap.md": {
+    "mtime": 1784468740.82492,
+    "ast_hash": "2fd107d5eb4512f8de62149561ed3763",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/docs/lawyer-agent/08_Export_Architecture.md": {
+    "mtime": 1784468740.8250313,
+    "ast_hash": "8b4f22e1c8a3fe45d695209739629030",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/docs/lawyer-agent/09_Print_Testing.md": {
+    "mtime": 1784468740.825124,
+    "ast_hash": "99640554c7fe82a6e9896694f9f22ae5",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/docs/lawyer-agent/10_Level_13_Schema_Specifications.md": {
+    "mtime": 1784468740.8252614,
+    "ast_hash": "5e01fdf45f639a52ad1a86d12f38f8bc",
+    "semantic_hash": ""
+  },
+  "lawyer-agent/delegatlabs-lawyer-agent/openspec/config.yaml": {
+    "mtime": 1784468740.825932,
+    "ast_hash": "98b2174d238e7e6286547fa8384b5358",
+    "semantic_hash": ""
+  },
+  "linkedin_pr_agent/.agents/AGENTS.md": {
+    "mtime": 1783352686.9876738,
+    "ast_hash": "013819f2d28852ea198ffa3a63d267c9",
+    "semantic_hash": ""
+  },
+  "linkedin_pr_agent/.agents/skills/linkedin-agent/SKILL.md": {
+    "mtime": 1783352686.9884434,
+    "ast_hash": "c818767353bcebbddc13c7ae4e90b833",
+    "semantic_hash": ""
+  },
+  "linkedin_pr_agent/AGENT_RULES.md": {
+    "mtime": 1783352686.9889867,
+    "ast_hash": "33ad253fca4145eb67e1af70f35ee1f7",
+    "semantic_hash": ""
+  },
+  "linkedin_pr_agent/LINKEDIN_AGENT_SKILL.md": {
+    "mtime": 1783352686.9893458,
+    "ast_hash": "1c50fecb2df293db16e56977ae792776",
+    "semantic_hash": ""
+  },
+  "linkedin_pr_agent/README.md": {
+    "mtime": 1783542196.7004259,
+    "ast_hash": "14e0164912d7d3b05a8a730ae215b994",
+    "semantic_hash": ""
+  },
+  "linkedin_pr_agent/index.html": {
+    "mtime": 1783352686.9910464,
+    "ast_hash": "c84ef151825566eb72139cb8db1c61a6",
+    "semantic_hash": ""
+  },
+  "linkedin_pr_agent/requirements.txt": {
+    "mtime": 1783541899.107662,
+    "ast_hash": "27237e9c2bbbe818e9d3683472b88426",
+    "semantic_hash": ""
+  },
+  "linkedin_pr_agent/workflow.html": {
+    "mtime": 1783352686.9946296,
+    "ast_hash": "c84ef151825566eb72139cb8db1c61a6",
+    "semantic_hash": ""
+  },
+  "prompt.md": {
+    "mtime": 1784720602.0178287,
+    "ast_hash": "005047421f85eb8717d1e9ff27844cf9",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/public/file.svg": {
+    "mtime": 1784660209.0814326,
+    "ast_hash": "d09f95206c3fa0bb9bd9fefabfd0ea71",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/public/globe.svg": {
+    "mtime": 1784660209.0815697,
+    "ast_hash": "2aaafa6a49b6563925fe440891e32717",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/public/next.svg": {
+    "mtime": 1784660209.0817034,
+    "ast_hash": "8e061864f388b47f33a1c3780831193e",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/public/vercel.svg": {
+    "mtime": 1784660209.081825,
+    "ast_hash": "c0af2f507b369b085b35ef4bbe3bcf1e",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/admin/public/window.svg": {
+    "mtime": 1784660209.0819497,
+    "ast_hash": "a2760511c65806022ad20adf74370ff3",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/agents/lawyer-agent/AdminDashboard.tsx": {
+    "mtime": 1784743079.380444,
+    "ast_hash": "e366a62ddfa2ae85add5b838ee331369",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/agents/lawyer-agent/ConfigForm.tsx": {
+    "mtime": 1784743079.3795848,
+    "ast_hash": "3224f6866bf34d00ba4ed310e1dcdffe",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/agents/lawyer-agent/UserDashboard.tsx": {
+    "mtime": 1784743079.3788016,
+    "ast_hash": "a34d9a8051669da7f9a2df11e06ab79c",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/agents/lawyer-agent/config-schema.ts": {
+    "mtime": 1784743079.3810084,
+    "ast_hash": "201c4c50c07a453bb943199c0b4022f7",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/agents/lawyer-agent/lib/api.ts": {
+    "mtime": 1784743079.3861842,
+    "ast_hash": "b2f1b9dbd35e8c41535ae8b3c3ebb808",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/agents/linkedin-agent/AdminDashboard.tsx": {
+    "mtime": 1784743079.3729663,
+    "ast_hash": "2beb9e99418dda33035d6027065d6156",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/agents/linkedin-agent/ConfigForm.tsx": {
+    "mtime": 1784743079.3724644,
+    "ast_hash": "32de85eac31aa39b5c52fb3ffe324df2",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/agents/linkedin-agent/UserDashboard.tsx": {
+    "mtime": 1784743079.371891,
+    "ast_hash": "eb0b64e5f6cacb4b7c33dad6a93d7dc9",
+    "semantic_hash": ""
+  },
+  "delegtlabs/client/web/src/agents/linkedin-agent/config-schema.ts": {
+    "mtime": 1784743079.3734443,
+    "ast_hash": "d472efa081184a36603c4547aa753bdd",
+    "semantic_hash": ""
+  }
+}

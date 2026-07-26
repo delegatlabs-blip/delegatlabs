@@ -1,1 +1,0 @@
-"""Public-facing content endpoints."""

@@ -31,8 +31,9 @@ services:
 
   server:
     build:
-      context: ./server
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: server/Dockerfile
+    image: delegtlabs-server:local
     container_name: delegtlabs-server
     restart: unless-stopped
     depends_on:
@@ -48,7 +49,7 @@ services:
       DEBUG: "true"
       HOST: 0.0.0.0
       PORT: 8000
-      CORS_ORIGINS: http://localhost:3000
+      CORS_ORIGINS: http://localhost:3000,http://localhost:3001,http://localhost:3002
       DATABASE_URL: postgresql+asyncpg://postgres:postgres@db:5432/delegtlabs
       REDIS_URL: redis://redis:6379/0
       SECRET_KEY: docker-dev-secret
@@ -58,6 +59,7 @@ services:
       SUPABASE_JWT_AUDIENCE: authenticated
       ADMIN_REQUIRED_ROLE: ops_admin
       DISABLE_ADMIN_AUTH: "true"
+      AGENTS_DIR: /app/packages/agents
     ports:
       - "8000:8000"
     healthcheck:
@@ -67,34 +69,74 @@ services:
       retries: 12
 
   worker:
-    build:
-      context: ./server
-      dockerfile: Dockerfile
+    image: delegtlabs-server:local
     container_name: delegtlabs-worker
-    restart: unless-stopped
+    # One-shot agent cycle on start; re-run with: docker compose run --rm worker
+    restart: on-failure
     command: python worker_main.py
     depends_on:
       db:
         condition: service_healthy
       redis:
         condition: service_healthy
+      server:
+        condition: service_started
     environment:
       DATABASE_URL: postgresql+asyncpg://postgres:postgres@db:5432/delegtlabs
       REDIS_URL: redis://redis:6379/0
+      AGENTS_DIR: /app/packages/agents
 
   admin:
     build:
       context: ./client/admin
       dockerfile: Dockerfile
+      args:
+        VITE_ADMIN_API_URL: http://localhost:8000/api/admin
     container_name: delegtlabs-admin
     restart: unless-stopped
     depends_on:
       server:
         condition: service_healthy
     environment:
-      NEXT_PUBLIC_API_BASE_URL: http://localhost:8000
+      PORT: 3000
+      HOST: 0.0.0.0
     ports:
       - "3000:3000"
+
+  web:
+    build:
+      context: ./client/web
+      dockerfile: Dockerfile
+      args:
+        VITE_WEB_API_URL: http://localhost:8000/web/api/v1
+    container_name: delegtlabs-web
+    restart: unless-stopped
+    depends_on:
+      server:
+        condition: service_healthy
+    environment:
+      PORT: 3001
+      NODE_ENV: production
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+    ports:
+      - "3001:3001"
+
+  user:
+    build:
+      context: ./client/user
+      dockerfile: Dockerfile
+      args:
+        VITE_USER_API_URL: http://localhost:8000/user/api/v1
+    container_name: delegtlabs-user
+    restart: unless-stopped
+    depends_on:
+      server:
+        condition: service_healthy
+    environment:
+      PORT: 3002
+      HOST: 0.0.0.0
+    ports:
+      - "3002:3002"
 
 volumes:
   postgres_data:

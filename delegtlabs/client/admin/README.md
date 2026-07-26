@@ -1,19 +1,29 @@
-# DelegtLabs Admin Client
+# Welcome to your Lovable project
 
-Next.js app for the administration console.
+This project was built with [Lovable](https://lovable.dev).
 
-## Run
+## Build with Lovable
 
-```bash
-cd client/admin
-cp .env.example .env.local
-npm install
+Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+
+- **Ship faster**: describe what you want to build and Lovable handles the code.
+- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
+- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+
+## Development
+
+Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+
+```sh
+git clone <this-repository-url>
+cd <repository-name>
+npm i
 npm run dev
 ```
 
-Opens on http://localhost:3000 — expects the monolith API on http://localhost:8000.
+## Built with
 
-## Layout
-
-This folder is self-contained so it can move to its own repo/deployment later.
-Keep admin-only UI, API clients, and env here — never mix with `client/user` or `client/web`.
+- TanStack Start
+- TypeScript
+- React
+- Tailwind CSS
