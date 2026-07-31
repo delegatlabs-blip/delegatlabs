@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "DATABASE_URL=\"${DATABASE_URL:-postgresql://postgres:postgres@127.0.0.1:5432/delegtlabs}\" npm run db:generate && next build",
     "start": "next start -p 3000",
     "lint": "eslint",
     "db:generate": "node scripts/collect-prisma.cjs && prisma generate",
