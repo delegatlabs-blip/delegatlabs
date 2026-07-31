@@ -1,29 +1,48 @@
-# Welcome to your Lovable project
+# DelegtLabs — User App (Next.js)
 
-This project was built with [Lovable](https://lovable.dev).
+Tenant-scoped product console built with **domain-driven** layers.
 
-## Build with Lovable
+## Architecture
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+```
+src/
+├── lib/
+│   ├── api.ts           # shared userRequest HTTP client
+│   └── domains/         # auth, member (controllers / services / utils / types)
+├── components/          # presentation
+├── store/               # UI-only state (theme, command palette)
+└── app/                 # Next.js routes (/login, /register, /users, …)
+```
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+## Tenant model
 
-## Development
+1. **Register / login** → server issues a JWT with `tenant_id`.
+2. **Every request** sends `Authorization: Bearer <token>`.
+3. **Server** extracts `tenant_id` and runs CRUDs through:
+   - `require_tenant_id(ctx)`
+   - `apply_tenant_filter(stmt, Model, tenant_id)`
+   - `stamp_tenant_id(values, tenant_id)` on creates
+4. **Client** fails fast via `requireTenantId` / `requireSessionTenantId` before calling the API.
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Never send `tenant_id` in request bodies for scoping — the server always overwrites it from the JWT.
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+## Setup
+
+```bash
+cp .env.example .env
+npm install
 npm run dev
 ```
 
-## Built with
+Open http://localhost:3002
 
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+| Env | Purpose |
+| --- | --- |
+| `NEXT_PUBLIC_USER_API_URL` | User API base (`…/user/api/v1`) |
+| `NEXT_PUBLIC_DISABLE_USER_AUTH` | Skip client auth gate (Docker demo; server uses demo tenant) |
+
+## Auth flow
+
+- `/register` — creates tenant + owner, stores JWT
+- `/login` — issues JWT with that user's `tenant_id`
+- `/users` — lists/creates members scoped to the JWT tenant

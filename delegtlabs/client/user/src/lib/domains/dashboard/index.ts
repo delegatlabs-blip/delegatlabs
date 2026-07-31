@@ -1,0 +1,2 @@
+/** Dashboard presentation domain. */
+export {};

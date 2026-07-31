@@ -1,6 +1,6 @@
 import importlib.util
 import pytest
-from shared.agent_registry import get_worker_entrypoints
+from app.agent_registry import get_worker_entrypoints
 
 
 @pytest.mark.asyncio

@@ -1,30 +1,40 @@
-# Admin + Web APIs (Supabase)
+# Admin + Web APIs (PostgreSQL)
 
 ## Run (monolith gateway)
 
 ```bash
 cd delegtlabs/server
-source .venv/bin/activate   # or create venv
-uvicorn gateway.main:app --reload --port 8000
+source .venv/bin/activate
+alembic upgrade head
+uvicorn app.main:app --reload --port 8000
+```
+
+Or via Docker Compose (runs migrations on start):
+
+```bash
+cd delegtlabs
+docker compose up --build
 ```
 
 - Admin: `http://localhost:8000/api/admin`
 - Web: `http://localhost:8000/web/api/v1`
 - Docs: `http://localhost:8000/docs`
 
-## Supabase
+## PostgreSQL
 
-1. Create a Supabase project.
-2. Run SQL in `supabase/migrations/001_agents_users_customers.sql`.
-3. Set in `.env`:
+Set in `.env` / compose:
 
 ```env
-SUPABASE_URL=https://YOUR_PROJECT.supabase.co
-SUPABASE_SERVICE_ROLE_KEY=YOUR_SERVICE_ROLE_KEY
-DISABLE_ADMIN_AUTH=true
+DATABASE_URL=postgresql+asyncpg://postgres:postgres@localhost:5432/delegtlabs
 ```
 
-If keys are empty, APIs use an **in-memory fallback** (seeded LinkedIn + Lawyer agents).
+In Docker Compose the host is `db` instead of `localhost`.
+
+Admin catalog tables (migration `20260727_03`):
+
+- `admin_agents`
+- `admin_users`
+- `admin_customers`
 
 ## Endpoints
 

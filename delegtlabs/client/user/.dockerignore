@@ -1,13 +1,8 @@
 node_modules
-.output
-.tanstack
-.nitro
-.vinxi
-.wrangler
+.next
+out
 dist
-dist-ssr
 .git
-.lovable
 .env
 .env.*
 !.env.example

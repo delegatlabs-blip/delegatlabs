@@ -4,7 +4,7 @@ import logging
 import os
 import sys
 
-from shared.agent_registry import get_worker_entrypoints, get_registered_agents
+from app.agent_registry import get_worker_entrypoints, get_registered_agents
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("worker_main")

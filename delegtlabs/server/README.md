@@ -1,86 +1,59 @@
 # DelegtLabs Server
 
-Modular monolith FastAPI backend with **three extractable surfaces**: `admin`, `user`, and `web`.
+FastAPI modular monolith with **admin**, **user**, and **web** surfaces under a scalable `app/` layout.
 
-## Why this layout
+See [STRUCTURE.md](./STRUCTURE.md) for the full tree.
 
-| Layer | Role |
-|-------|------|
-| `gateway/` | Single process that mounts all surfaces (today) |
-| `admin/`, `user/`, `web/` | Independent domain packages with own `api/`, `modules/`, `tests/` |
-| `shared/` | Kernel (config, db, security, integrations) shared until extraction |
+## Layout (summary)
 
-When you split to microservices: deploy each surface's `main.py`, keep `shared` as a package (or duplicate thin adapters), and retire `gateway/`.
+| Path | Role |
+|------|------|
+| `app/main.py` | FastAPI instance, mounts routers, lifespan |
+| `app/core/` | config, security (JWT + tenant claims), SQLAlchemy |
+| `app/domain/tenant/` | **Common tenant helpers** — `require_tenant_id`, `apply_tenant_filter`, `stamp_tenant_id` |
+| `app/models/` | ORM models (tenants, tenant_members, admin_*, …) |
+| `app/schemas/` | Pydantic schemas |
+| `app/api/v1/{admin,user,web}/` | Thin route handlers |
+| `app/services/` | Business logic (auth issues JWT with `tenant_id`) |
+| `app/repositories/` | SQLAlchemy query layer (always tenant-filtered on user surface) |
+| `app/utils/` | exceptions, helpers |
+| `alembic/` | Migrations |
+| `tests/` | Pytest |
 
-## Versioning
-
-| Kind | Source | How clients see it |
-|------|--------|--------------------|
-| **App version** | `APP_VERSION` / `settings.app_version` | `/version`, `X-App-Version` header |
-| **API version** | `API_VERSION` / URL prefix | `/api/admin/...`, `X-API-Version` header |
-
-Bump `APP_VERSION` for product releases. Introduce `api/v2/` routers when breaking HTTP contracts.
-
-## Routes (monolith)
-
-```
-GET  /                         # gateway info
-GET  /health
-GET  /version
-GET  /api/admin/health
-GET  /api/admin/agents
-GET  /api/admin/plans
-GET  /api/admin/users
-GET  /api/admin/customers
-GET  /user/api/v1/health
-GET  /user/api/v1/profile/me
-GET  /web/api/v1/health
-GET  /web/api/v1/public/meta
-```
-
-## Quick start
+## Run
 
 ```bash
 cd server
-python3 -m venv .venv
 source .venv/bin/activate
-pip install -e ".[dev]"
-cp .env.example .env
-export PYTHONPATH=.
-uvicorn gateway.main:app --reload --port 8000
+pip install -e ".[dev]"   # or: pip install -r requirements.txt && pip install -e .
+alembic upgrade head
+uvicorn app.main:app --reload --port 8000
 ```
 
-Or: `bash scripts/dev.sh`
-
-Docs: http://localhost:8000/docs
-
-## Run a single surface
+Docker Compose (from monorepo `delegtlabs/`):
 
 ```bash
-uvicorn admin.main:app --reload --port 8001
-uvicorn user.main:app --reload --port 8002
-uvicorn web.main:app --reload --port 8003
+docker compose up --build
 ```
 
-## Folder map
+Entrypoint: `uvicorn app.main:app`
+
+## Routes
 
 ```
-server/
-├── gateway/main.py          # monolith entry
-├── shared/                  # kernel
-│   ├── core/                # config, security, middleware, …
-│   ├── db/
-│   ├── schemas/, enums/, utils/, dependencies/
-│   └── integrations/
-├── admin/                   # admin surface
-│   ├── main.py
-│   ├── api/v1/
-│   ├── modules/
-│   └── tests/
-├── user/                    # user surface
-├── web/                     # public web surface
-├── alembic/
-├── scripts/
-├── pyproject.toml
-└── .env.example
+GET  /                         # app info
+GET  /health
+GET  /api/admin/health
+GET|POST /api/admin/agents
+GET|PUT|DELETE /api/admin/agents/{id}
+GET|POST /api/admin/users
+GET|POST /api/admin/customers
+GET  /user/api/v1/health
+GET  /user/api/v1/profile/me
+GET  /web/api/v1/health
+GET  /web/api/v1/agents
 ```
+
+## Storage
+
+PostgreSQL via SQLAlchemy async (`DATABASE_URL`). Admin catalog tables: `admin_agents`, `admin_users`, `admin_customers`.

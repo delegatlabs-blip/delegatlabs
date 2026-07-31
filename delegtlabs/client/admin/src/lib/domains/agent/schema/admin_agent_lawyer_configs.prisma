@@ -1,0 +1,18 @@
+/// Table: admin_agent_lawyer_configs — 1:1 Lawyer agent runtime config
+model AdminAgentLawyerConfig {
+  id               String   @id @default(uuid()) @db.Uuid
+  agentId          String   @unique @map("agent_id") @db.Uuid
+  jurisdiction     String   @default("")
+  uiLanguage       String   @default("en") @map("ui_language")
+  draftLanguage    String   @default("en") @map("draft_language")
+  aiProvider       String   @default("mock") @map("ai_provider")
+  firmName         String   @default("") @map("firm_name")
+  practiceAreas    String[] @default([]) @map("practice_areas")
+  userInstructions String   @default("") @map("user_instructions") @db.Text
+  createdAt        DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt        DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  agent AdminAgent @relation(fields: [agentId], references: [id], onDelete: Cascade)
+
+  @@map("admin_agent_lawyer_configs")
+}

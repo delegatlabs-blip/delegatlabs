@@ -1,9 +1,10 @@
 node_modules
-dist
+.next
 .git
-.env
-.env.*
+.gitignore
+*.md
+.env*
 !.env.example
-*.log
-.DS_Store
-README.md
+npm-debug.log*
+Dockerfile
+.dockerignore

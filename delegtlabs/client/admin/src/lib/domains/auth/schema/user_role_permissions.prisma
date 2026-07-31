@@ -1,0 +1,12 @@
+/// Table: user_role_permissions
+model UserRolePermission {
+  id           String @id @default(uuid()) @db.Uuid
+  roleId       String @map("role_id") @db.Uuid
+  permissionId String @map("permission_id") @db.Uuid
+
+  role       Role           @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  permission UserPermission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+
+  @@unique([roleId, permissionId])
+  @@map("user_role_permissions")
+}

@@ -1,29 +1,49 @@
-# Welcome to your Lovable project
+# Delegate Labs — Admin Panel
 
-This project was built with [Lovable](https://lovable.dev).
+The Delegate Labs admin console, built with [Next.js 15](https://nextjs.org) (App Router), React 19, and Tailwind CSS 4. Talks to the FastAPI admin surface at `/api/admin`.
 
-## Build with Lovable
+## Stack
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+- Next.js 15 App Router, `output: "standalone"` for lean Docker images
+- Tailwind CSS 4 with the shadcn/ui "new-york" component set
+- TanStack Query, TanStack Table, React Hook Form + Zod
+- Recharts, Framer Motion, Radix UI primitives
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+## Getting started
 
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+```bash
+cp .env.example .env
+npm install
 npm run dev
 ```
 
-## Built with
+Open [http://localhost:3000](http://localhost:3000) to view the app.
 
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+## Environment variables
+
+| Variable | Description | Default |
+| --- | --- | --- |
+| `NEXT_PUBLIC_ADMIN_API_URL` | Base URL of the admin API consumed by the agents module | `http://localhost:8000/api/admin` |
+
+## Scripts
+
+- `npm run dev` — start the dev server
+- `npm run build` — production build
+- `npm run start` — run the production server (`next start -p 3000`)
+- `npm run lint` — run ESLint
+
+## Docker
+
+```bash
+docker build -t delegtlabs-admin \
+  --build-arg NEXT_PUBLIC_ADMIN_API_URL=https://api.example.com/api/admin .
+docker run -p 3000:3000 delegtlabs-admin
+```
+
+## Routes
+
+- `/` — dashboard
+- `/agents`, `/agents/[agentId]` — agent catalog & management
+- `/users` — user management
+- `/customers` — customer management
+- `/settings` — workspace settings

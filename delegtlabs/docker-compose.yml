@@ -10,7 +10,8 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
-      - "5432:5432"
+      # 5433 on host avoids clash with local Mac Postgres on 5432
+      - "5433:5432"
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres -d delegtlabs"]
       interval: 5s
@@ -50,15 +51,14 @@ services:
       HOST: 0.0.0.0
       PORT: 8000
       CORS_ORIGINS: http://localhost:3000,http://localhost:3001,http://localhost:3002
+      # Compose Postgres service (admin agents/users/customers CRUD)
       DATABASE_URL: postgresql+asyncpg://postgres:postgres@db:5432/delegtlabs
       REDIS_URL: redis://redis:6379/0
       SECRET_KEY: docker-dev-secret
       ACCESS_TOKEN_EXPIRE_MINUTES: 30
-      SUPABASE_JWKS_URL: https://project-id.supabase.co/auth/v1/.well-known/jwks.json
-      SUPABASE_JWT_ISSUER: https://project-id.supabase.co/auth/v1
-      SUPABASE_JWT_AUDIENCE: authenticated
       ADMIN_REQUIRED_ROLE: ops_admin
       DISABLE_ADMIN_AUTH: "true"
+      DISABLE_USER_AUTH: "true"
       AGENTS_DIR: /app/packages/agents
     ports:
       - "8000:8000"
@@ -91,15 +91,18 @@ services:
       context: ./client/admin
       dockerfile: Dockerfile
       args:
-        VITE_ADMIN_API_URL: http://localhost:8000/api/admin
+        NEXT_PUBLIC_ADMIN_API_URL: http://localhost:8000/api/admin
     container_name: delegtlabs-admin
     restart: unless-stopped
     depends_on:
+      db:
+        condition: service_healthy
       server:
         condition: service_healthy
     environment:
       PORT: 3000
-      HOST: 0.0.0.0
+      HOSTNAME: 0.0.0.0
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/delegtlabs
     ports:
       - "3000:3000"
 
@@ -108,15 +111,19 @@ services:
       context: ./client/web
       dockerfile: Dockerfile
       args:
-        VITE_WEB_API_URL: http://localhost:8000/web/api/v1
+        NEXT_PUBLIC_WEB_API_URL: http://localhost:8000/web/api/v1
     container_name: delegtlabs-web
     restart: unless-stopped
     depends_on:
+      db:
+        condition: service_healthy
       server:
         condition: service_healthy
     environment:
       PORT: 3001
+      HOSTNAME: 0.0.0.0
       NODE_ENV: production
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/delegtlabs
       GEMINI_API_KEY: ${GEMINI_API_KEY:-}
     ports:
       - "3001:3001"
@@ -126,15 +133,19 @@ services:
       context: ./client/user
       dockerfile: Dockerfile
       args:
-        VITE_USER_API_URL: http://localhost:8000/user/api/v1
+        NEXT_PUBLIC_USER_API_URL: http://localhost:8000/user/api/v1
+        NEXT_PUBLIC_DISABLE_USER_AUTH: "true"
     container_name: delegtlabs-user
     restart: unless-stopped
     depends_on:
+      db:
+        condition: service_healthy
       server:
         condition: service_healthy
     environment:
       PORT: 3002
-      HOST: 0.0.0.0
+      HOSTNAME: 0.0.0.0
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/delegtlabs
     ports:
       - "3002:3002"
 

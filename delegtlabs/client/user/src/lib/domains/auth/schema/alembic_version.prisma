@@ -1,0 +1,6 @@
+/// Preserved so `prisma db push` from user app does not drop Alembic state.
+model AlembicVersion {
+  versionNum String @id @map("version_num") @db.VarChar(32)
+
+  @@map("alembic_version")
+}

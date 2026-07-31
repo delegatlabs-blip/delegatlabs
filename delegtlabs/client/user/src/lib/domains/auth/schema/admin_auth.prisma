@@ -1,0 +1,18 @@
+/// Table: admin_auth — Owner portal credentials (adminId → admin_users.id)
+model AdminAuth {
+  id           String   @id @default(uuid()) @db.Uuid
+  email        String   @unique
+  password     String   @default("")
+  roleId       String   @map("role_id") @db.Uuid
+  permissionId String?  @map("permission_id") @db.Uuid
+  adminId      String   @unique @map("admin_id") @db.Uuid
+  mustReset    Boolean  @default(true) @map("must_reset")
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt    DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  role  Role      @relation(fields: [roleId], references: [id])
+  admin AdminUser @relation(fields: [adminId], references: [id], onDelete: Cascade)
+
+  @@index([adminId])
+  @@map("admin_auth")
+}

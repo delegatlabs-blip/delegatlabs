@@ -1,4 +1,4 @@
-from shared.agent_registry import get_registered_agents, get_worker_entrypoints
+from app.agent_registry import get_registered_agents, get_worker_entrypoints
 
 
 def test_reference_agents_registered():

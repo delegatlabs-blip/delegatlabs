@@ -1,0 +1,19 @@
+/// Table: admin_customers
+model AdminCustomer {
+  id              String   @id @default(uuid()) @db.Uuid
+  name            String
+  email           String   @unique
+  phone           String   @default("")
+  company         String   @default("")
+  plan            String   @default("Starter")
+  status          String   @default("active")
+  agentsPurchased Int      @default(0) @map("agents_purchased")
+  totalSpend      Decimal  @default(0) @map("total_spend") @db.Decimal(12, 2)
+  notes           String   @default("")
+  createdAt       DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt       DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  auth UserAuth?
+
+  @@map("admin_customers")
+}

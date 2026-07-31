@@ -1,7 +1,7 @@
 """Phase 6 tests that all replicated agents are auto discovered by agent_registry.
 """
 
-from shared.agent_registry import get_registered_agents, get_worker_entrypoints
+from app.agent_registry import get_registered_agents, get_worker_entrypoints
 
 
 def test_active_agents_auto_discovered():

@@ -1,4 +1,6 @@
-import { useNavigate } from "@tanstack/react-router";
+"use client";
+
+import { useRouter } from "next/navigation";
 import {
   LayoutDashboard,
   Users,
@@ -28,12 +30,12 @@ export function CommandPalette({
   open: boolean;
   onOpenChange: (v: boolean) => void;
 }) {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { theme, setTheme } = useTheme();
 
   const go = (to: string) => {
     onOpenChange(false);
-    navigate({ to });
+    router.push(to);
   };
 
   return (

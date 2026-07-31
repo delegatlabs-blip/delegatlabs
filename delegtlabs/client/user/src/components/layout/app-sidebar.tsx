@@ -1,4 +1,7 @@
-import { Link, useRouterState } from "@tanstack/react-router";
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   LayoutDashboard,
   Users,
@@ -45,7 +48,7 @@ const system = [
 export function AppSidebar() {
   const { state } = useSidebar();
   const collapsed = state === "collapsed";
-  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const pathname = usePathname();
   const isActive = (url: string) => (url === "/" ? pathname === "/" : pathname.startsWith(url));
 
   return (
@@ -92,7 +95,7 @@ export function AppSidebar() {
                         tooltip={item.title}
                         className="group/menu-btn h-9 rounded-lg data-[active=true]:bg-sidebar-accent data-[active=true]:text-sidebar-accent-foreground data-[active=true]:shadow-sm"
                       >
-                        <Link to={item.url as never}>
+                        <Link href={item.url}>
                           <item.icon className="size-4 shrink-0 transition-transform group-hover/menu-btn:scale-110" />
                           <span className="text-[13px] font-medium">{item.title}</span>
                           {active && (

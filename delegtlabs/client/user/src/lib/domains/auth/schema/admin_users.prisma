@@ -1,0 +1,17 @@
+/// Table: admin_users
+model AdminUser {
+  id        String   @id @default(uuid()) @db.Uuid
+  name      String
+  email     String   @unique
+  phone     String   @default("")
+  company   String   @default("")
+  role      String   @default("Viewer")
+  status    String   @default("active")
+  notes     String   @default("")
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  auth AdminAuth?
+
+  @@map("admin_users")
+}

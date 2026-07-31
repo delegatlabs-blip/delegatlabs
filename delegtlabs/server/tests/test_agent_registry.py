@@ -1,5 +1,5 @@
-from shared.agent_registry import get_registered_agents, get_agent_manifest, get_worker_entrypoints
-from shared.db.models import AgentConfig, AgentRun, AgentMetricDaily, AgentCredential
+from app.agent_registry import get_registered_agents, get_agent_manifest, get_worker_entrypoints
+from app.models import AgentConfig, AgentRun, AgentMetricDaily, AgentCredential
 
 
 def test_agent_registry_empty_or_valid():

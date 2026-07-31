@@ -1,0 +1,21 @@
+/// Table: tenant_members
+model TenantMember {
+  id           String    @id @default(uuid()) @db.Uuid
+  tenantId     String    @map("tenant_id") @db.Uuid
+  email        String
+  name         String
+  passwordHash String    @default("") @map("password_hash")
+  role         String    @default("Viewer")
+  status       String    @default("active")
+  department   String    @default("")
+  notes        String    @default("")
+  lastLoginAt  DateTime? @map("last_login_at") @db.Timestamptz(6)
+  createdAt    DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt    DateTime  @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+  tenant       Tenant    @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@unique([tenantId, email], map: "uq_tenant_members_tenant_email")
+  @@index([tenantId])
+  @@index([email])
+  @@map("tenant_members")
+}

@@ -1,0 +1,34 @@
+/// Table: admin_agents
+model AdminAgent {
+  id                  String   @id @default(uuid()) @db.Uuid
+  name                String
+  slug                String
+  category            String   @default("")
+  status              String   @default("draft")
+  version             String   @default("1.0.0")
+  description         String   @default("")
+  shortDescription    String   @default("") @map("short_description")
+  detailedDescription String   @default("") @map("detailed_description")
+  tags                Json     @default("[]")
+  features            Json     @default("[]")
+  redirectUrl         String   @default("") @map("redirect_url")
+  demoUrl             String   @default("") @map("demo_url")
+  documentationUrl    String   @default("") @map("documentation_url")
+  paymentType         String   @default("subscription") @map("payment_type")
+  price               Decimal  @default(0) @db.Decimal(12, 2)
+  currency            String   @default("USD")
+  billingInterval     String   @default("monthly") @map("billing_interval")
+  planName            String   @default("") @map("plan_name")
+  listedOnWebsite     Boolean  @default(true) @map("listed_on_website")
+  featured            Boolean  @default(false)
+  createdAt           DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt           DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  subscriptionPlans AdminAgentSubscriptionPlan[]
+  creditPacks       AdminAgentCreditPack[]
+  linkedInConfig    AdminAgentLinkedInConfig?
+  lawyerConfig      AdminAgentLawyerConfig?
+
+  @@index([slug])
+  @@map("admin_agents")
+}

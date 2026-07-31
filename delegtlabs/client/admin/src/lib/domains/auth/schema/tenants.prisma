@@ -1,0 +1,12 @@
+/// Table: tenants
+model Tenant {
+  id        String         @id @default(uuid()) @db.Uuid
+  name      String
+  slug      String         @unique
+  status    String         @default("active")
+  createdAt DateTime       @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt DateTime       @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+  members   TenantMember[]
+
+  @@map("tenants")
+}

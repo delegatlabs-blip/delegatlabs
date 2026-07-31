@@ -1,30 +1,25 @@
 # DelegtLabs
 
-Monorepo for **DelegtLabs**: modular-monolith FastAPI backend + separate Vite clients.
+Monorepo for **DelegtLabs**: modular-monolith FastAPI backend + Next.js clients.
 
 ```
 delegtlabs/
 ├── client/
-│   ├── admin/     # Admin console (TanStack Start)
-│   ├── user/      # Product app (TanStack Start)
-│   └── web/       # Marketing / marketplace site
+│   ├── admin/     # Internal admin console (Next.js 15)
+│   ├── user/      # Product / tenant app (Next.js 15)
+│   └── web/       # Marketing / marketplace site (Next.js 15)
 ├── packages/
 │   └── agents/    # Pluggable agent packages
 └── server/
-    ├── gateway/   # Monolith entry — mounts all surfaces
-    ├── shared/    # Kernel (config, db, security, integrations)
-    ├── admin/     # Admin API surface
-    ├── user/      # User API surface
-    └── web/       # Public web API surface
+    └── app/       # FastAPI monolith — admin / user / web surfaces
 ```
 
 ## Design goals
 
-1. **Monolith today** — one FastAPI process via `gateway/`.
-2. **Microservice-ready** — `admin/`, `user/`, `web/` are isolated packages (own routers, modules, tests, `main.py`).
+1. **Monolith today** — one FastAPI process via `app.main:app`.
+2. **Surface isolation** — admin, user, and web routers stay separate under `app/api/v1/`.
 3. **API versioning** — routes under `/api/admin`, `/user/api/v1`, `/web/api/v1`.
-4. **App versioning** — `APP_VERSION` on `/version` and `X-App-Version` response headers.
-5. **Client isolation** — each frontend lives in its own folder for independent deploys.
+4. **Client isolation** — each frontend lives in its own folder for independent deploys.
 
 ## Quick start
 
@@ -34,6 +29,10 @@ From this directory (`delegtlabs/`):
 
 ```bash
 docker compose up --build
+
+# Admin UI hot-reload (auto-refresh on save — no rebuild each change)
+docker compose -f docker-compose.yml -f docker-compose.dev.yml up --build admin
+# or: ./scripts/dev-admin.sh
 ```
 
 Services:
@@ -44,15 +43,13 @@ Services:
 | Web / marketplace | http://localhost:3001 |
 | User app | http://localhost:3002 |
 | API docs | http://localhost:8000/docs |
-| Postgres | localhost:5432 (`postgres` / `postgres`) |
+| Postgres | localhost:5433 (`postgres` / `postgres`) — host port 5433 avoids clash with local Mac Postgres |
 | Redis | localhost:6379 |
-
-Optional: set `GEMINI_API_KEY` in the environment (or a `.env` next to this compose file) for the web app's agent invoke endpoint.
 
 Notes:
 - Admin JWT auth is disabled via `DISABLE_ADMIN_AUTH=true` for local Docker convenience.
-- Re-enable auth by setting it to `false` and providing real Supabase JWT config.
-- Stop with `Ctrl+C`, or run detached: `docker compose up --build -d`.
+- Auth is custom JWT (not Supabase Auth). Re-enable by setting `DISABLE_ADMIN_AUTH=false` and configuring `SECRET_KEY` / token settings on the server.
+- Frontends are Next.js 15 (App Router). API base URLs use `NEXT_PUBLIC_*_API_URL` build args.
 
 ### Backend
 
@@ -62,30 +59,27 @@ python3 -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"
 cp .env.example .env
 export PYTHONPATH=.
-uvicorn gateway.main:app --reload --port 8000
+alembic upgrade head
+uvicorn app.main:app --reload --port 8000
 ```
 
 - Docs: http://localhost:8000/docs
-- Version: http://localhost:8000/version
+- Admin API: http://localhost:8000/api/admin
 
 ### Clients
 
 ```bash
-# Admin
+# Admin (Next.js)
 cd client/admin && cp .env.example .env && npm install && npm run dev
 
 # Web
 cd client/web && cp .env.example .env && npm install && npm run dev
 
 # User
-cd client/user && npm install && npm run dev
+cd client/user && cp .env.example .env && npm install && npm run dev
 ```
 
-## Extraction path
-
-When a surface needs its own service:
-
-1. Deploy `admin.main:app` (or user/web) alone.
-2. Keep importing `shared` as a library, or copy thin adapters.
-3. Point the matching client (`client/admin`, etc.) at the new host.
-4. Remove that surface from `gateway/main.py`.
+Env vars (see each app’s `.env.example`):
+- Admin: `NEXT_PUBLIC_ADMIN_API_URL` → `http://localhost:8000/api/admin`
+- Web: `NEXT_PUBLIC_WEB_API_URL` → `http://localhost:8000/web/api/v1`
+- User: `NEXT_PUBLIC_USER_API_URL` → `http://localhost:8000/user/api/v1`

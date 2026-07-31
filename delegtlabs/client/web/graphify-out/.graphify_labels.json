@@ -1,0 +1,13 @@
+{
+  "0": "devDependencies",
+  "1": "compilerOptions",
+  "2": "package.json",
+  "3": "json-ld.tsx",
+  "4": "layout.tsx",
+  "5": "page.tsx",
+  "6": "include",
+  "7": "eslint.config.mjs",
+  "8": "DelegtLabs public marketing site (homepage)",
+  "9": "next.config.ts",
+  "10": "postcss.config.mjs"
+}

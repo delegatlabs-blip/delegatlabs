@@ -1,0 +1,35 @@
+/// Table: admin_agent_linkedin_configs — 1:1 LinkedIn agent runtime config
+model AdminAgentLinkedInConfig {
+  id        String @id @default(uuid()) @db.Uuid
+  agentId   String @unique @map("agent_id") @db.Uuid
+
+  // lead_gen
+  targetJobTitles           String[] @default([]) @map("target_job_titles")
+  industries                String[] @default([])
+  companySize               String[] @default([]) @map("company_size")
+  geography                 String[] @default([])
+  targetAudience            String   @default("") @map("target_audience")
+  scoreThreshold            Int      @default(70) @map("score_threshold")
+  connectionMessageTemplate String   @default("") @map("connection_message_template") @db.Text
+  dailyConnectionCap        Int      @default(25) @map("daily_connection_cap")
+
+  // post_gen
+  contentPillars    String[] @default([]) @map("content_pillars")
+  postTypes         String[] @default([]) @map("post_types")
+  topicWeights      Json     @default("{}") @map("topic_weights")
+  newsSources       String[] @default([]) @map("news_sources")
+  tone              String   @default("")
+  postingFrequency  String   @default("3x_per_week") @map("posting_frequency")
+  approvalMode      String   @default("review_first") @map("approval_mode")
+  imageQuality      String   @default("high") @map("image_quality")
+  imageStyle        String   @default("") @map("image_style")
+  aiModel           String   @default("gpt-4o") @map("ai_model")
+  userInstructions  String   @default("") @map("user_instructions") @db.Text
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  agent AdminAgent @relation(fields: [agentId], references: [id], onDelete: Cascade)
+
+  @@map("admin_agent_linkedin_configs")
+}

@@ -1,10 +1,15 @@
-import { useRouterState } from "@tanstack/react-router";
-import { Bell, Moon, Search, Sun, MessageSquare } from "lucide-react";
+"use client";
+
+import { usePathname } from "next/navigation";
+import { Bell, Moon, Search, Sun, MessageSquare, LogOut } from "lucide-react";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import { useUIStore } from "@/store/ui-store";
+import { AUTH_DISABLED } from "@/lib/api";
+import { logoutUseCase, useAuthStore } from "@/lib/domains/auth";
+import { useRouter } from "next/navigation";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -15,7 +20,7 @@ import {
 } from "@/components/ui/breadcrumb";
 
 function useCrumbs() {
-  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const pathname = usePathname();
   const parts = pathname.split("/").filter(Boolean);
   if (parts.length === 0) return [{ label: "Dashboard", href: "/" }];
   return [
@@ -30,6 +35,16 @@ function useCrumbs() {
 export function Topbar() {
   const { theme, toggleTheme, setCommandOpen } = useUIStore();
   const crumbs = useCrumbs();
+  const router = useRouter();
+  const name = useAuthStore((s) => s.name);
+  const claims = useAuthStore((s) => s.claims);
+  const initials = (name || claims?.email || "U")
+    .split(" ")
+    .map((s) => s[0])
+    .filter(Boolean)
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
 
   return (
     <header className="sticky top-0 z-30 flex h-16 shrink-0 items-center gap-3 border-b border-border/60 bg-background/70 px-4 backdrop-blur-xl md:px-6">
@@ -85,9 +100,23 @@ export function Topbar() {
         </Button>
         <Avatar className="size-8 ring-2 ring-border/60">
           <AvatarFallback className="bg-[image:var(--gradient-primary)] text-xs font-semibold text-white">
-            MC
+            {initials || "U"}
           </AvatarFallback>
         </Avatar>
+        {!AUTH_DISABLED && (
+          <Button
+            variant="ghost"
+            size="icon"
+            className="size-9 rounded-full"
+            aria-label="Sign out"
+            onClick={() => {
+              logoutUseCase();
+              router.replace("/login");
+            }}
+          >
+            <LogOut className="size-4" />
+          </Button>
+        )}
       </div>
     </header>
   );

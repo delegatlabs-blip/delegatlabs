@@ -11,6 +11,7 @@ dependencies = [
   "pydantic-settings>=2.6.0",
   "python-dotenv>=1.0.0",
   "sqlalchemy>=2.0.36",
+  "greenlet>=3.0.0",
   "alembic>=1.14.0",
   "httpx>=0.28.0",
   "python-jose[cryptography]>=3.3.0",
@@ -31,8 +32,8 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["shared*", "admin*", "user*", "web*", "gateway*"]
+include = ["app*"]
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
-testpaths = ["tests", "admin/tests", "user/tests", "web/tests"]
+testpaths = ["tests"]

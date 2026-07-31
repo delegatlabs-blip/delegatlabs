@@ -1,6 +1,10 @@
+"use client";
+
 import { useState, useEffect } from "react";
-import { Link, useRouterState } from "@tanstack/react-router";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { Search, Bell, Moon, Sun, Command as CommandIcon, Plus, Sparkles } from "lucide-react";
+import { toast } from "sonner";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
@@ -14,6 +18,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { logoutOwnerAction } from "@/lib/domains/auth/controllers/auth.controller";
+import { useAdminAuthStore } from "@/lib/domains/auth/session-store";
 import { useTheme } from "./theme-provider";
 import { CommandPalette } from "./command-palette";
 
@@ -25,7 +31,21 @@ const labelFromPath = (segment: string) =>
 export function TopNav() {
   const [openCmd, setOpenCmd] = useState(false);
   const { theme, toggle } = useTheme();
-  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const pathname = usePathname();
+  const router = useRouter();
+  const session = useAdminAuthStore((s) => s.session);
+  const clearSession = useAdminAuthStore((s) => s.clear);
+
+  const onSignOut = async () => {
+    try {
+      await logoutOwnerAction();
+    } catch {
+      /* still clear local session */
+    }
+    clearSession();
+    toast.success("Signed out");
+    router.replace("/login");
+  };
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -45,7 +65,7 @@ export function TopNav() {
       <SidebarTrigger className="-ml-1" />
       <Separator orientation="vertical" className="h-6" />
       <nav className="hidden items-center gap-1.5 text-sm md:flex">
-        <Link to="/" className="text-muted-foreground transition-colors hover:text-foreground">
+        <Link href="/" className="text-muted-foreground transition-colors hover:text-foreground">
           Delegate Labs
         </Link>
         {segments.map((seg, i) => (
@@ -117,15 +137,25 @@ export function TopNav() {
           <DropdownMenuTrigger asChild>
             <button className="rounded-full outline-none ring-offset-background focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
               <Avatar className="h-9 w-9 ring-2 ring-primary/20 transition-all hover:ring-primary/40">
-                <AvatarImage src="https://i.pravatar.cc/64?img=13" alt="Avery Chen" />
-                <AvatarFallback>AC</AvatarFallback>
+                <AvatarImage src="https://i.pravatar.cc/64?img=13" alt={session?.name || "Admin"} />
+                <AvatarFallback>
+                  {(session?.name || "AD")
+                    .split(" ")
+                    .map((s) => s[0])
+                    .filter(Boolean)
+                    .slice(0, 2)
+                    .join("")
+                    .toUpperCase()}
+                </AvatarFallback>
               </Avatar>
             </button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-56">
             <div className="px-2 py-1.5">
-              <p className="text-sm font-medium">Avery Chen</p>
-              <p className="text-xs text-muted-foreground">avery@delegatelabs.com</p>
+              <p className="text-sm font-medium">{session?.name || "Admin"}</p>
+              <p className="text-xs text-muted-foreground">
+                {session?.email || "admin@delegtlabs.com"}
+              </p>
             </div>
             <DropdownMenuSeparator />
             <DropdownMenuItem>Profile</DropdownMenuItem>
@@ -136,7 +166,15 @@ export function TopNav() {
               <Sparkles className="h-4 w-4" /> Upgrade to Pro
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem className="text-destructive focus:text-destructive">Sign out</DropdownMenuItem>
+            <DropdownMenuItem
+              className="text-destructive focus:text-destructive"
+              onSelect={(e) => {
+                e.preventDefault();
+                void onSignOut();
+              }}
+            >
+              Sign out
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>

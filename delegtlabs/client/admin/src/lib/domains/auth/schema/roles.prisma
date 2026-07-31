@@ -1,0 +1,15 @@
+/// Table: roles — Owner (admin portal) | User (user portal)
+model Role {
+  id        String   @id @default(uuid()) @db.Uuid
+  name      String   @unique
+  label     String   @default("")
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  adminAuths            AdminAuth[]
+  userAuths             UserAuth[]
+  adminRolePermissions  AdminRolePermission[]
+  userRolePermissions   UserRolePermission[]
+
+  @@map("roles")
+}

@@ -1,0 +1,19 @@
+/// Table: admin_agent_subscription_plans
+model AdminAgentSubscriptionPlan {
+  id              String   @id @default(uuid()) @db.Uuid
+  agentId         String   @map("agent_id") @db.Uuid
+  name            String
+  price           Decimal  @default(0) @db.Decimal(12, 2)
+  currency        String   @default("USD")
+  billingInterval String   @default("monthly") @map("billing_interval")
+  features        Json     @default("[]")
+  active          Boolean  @default(true)
+  sortOrder       Int      @default(0) @map("sort_order")
+  createdAt       DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt       DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  agent AdminAgent @relation(fields: [agentId], references: [id], onDelete: Cascade)
+
+  @@index([agentId])
+  @@map("admin_agent_subscription_plans")
+}
