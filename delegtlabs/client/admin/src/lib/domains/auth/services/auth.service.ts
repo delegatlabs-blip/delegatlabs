@@ -7,7 +7,7 @@ import {
   verifyPassword,
   verifyToken,
 } from "../utils/crypto";
-import { getDevOtp, sendOtpEmail, useDevOtp } from "./mail.service";
+import { getDevOtp, isDevOtpEnabled, sendOtpEmail } from "./mail.service";
 
 export type AuthLoginResult = {
   accessToken: string;
@@ -132,9 +132,9 @@ export async function requestOwnerPasswordOtp(emailRaw: string) {
   const auth = await prisma.adminAuth.findUnique({ where: { email } });
   if (!auth) {
     // Avoid email enumeration
-    return { ok: true as const, usedDevOtp: useDevOtp() };
+    return { ok: true as const, usedDevOtp: isDevOtpEnabled() };
   }
-  const otp = useDevOtp() ? getDevOtp() : generateNumericOtp();
+  const otp = isDevOtpEnabled() ? getDevOtp() : generateNumericOtp();
   await prisma.authentication.upsert({
     where: { email_kind: { email, kind: "owner" } },
     create: {
@@ -149,7 +149,7 @@ export async function requestOwnerPasswordOtp(emailRaw: string) {
     },
   });
   const mail = await sendOtpEmail({ to: email, otp, kind: "owner" });
-  return { ok: true as const, usedDevOtp: mail.usedDevOtp || useDevOtp() };
+  return { ok: true as const, usedDevOtp: mail.usedDevOtp || isDevOtpEnabled() };
 }
 
 export async function verifyOwnerOtp(emailRaw: string, otp: string) {
