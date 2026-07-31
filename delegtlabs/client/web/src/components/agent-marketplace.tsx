@@ -48,7 +48,7 @@ export function AgentMarketplace({ agents, total }: AgentMarketplaceProps) {
   return (
     <>
       <section
-        className="site-section grid-wrap"
+        className="site-section grid-wrap pt-16 md:pt-24 pb-16 md:pb-24"
         id="agents"
         aria-labelledby="agents-heading"
       >
@@ -118,7 +118,7 @@ export function AgentMarketplace({ agents, total }: AgentMarketplaceProps) {
           ))}
         </div>
 
-        <AnimatedSection className="mt-12 flex justify-center">
+        <AnimatedSection className="mt-12 mb-4 flex justify-center md:mb-8">
           <Link
             href="/agents"
             className="group inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-7 py-3.5 text-sm font-semibold text-slate-800 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-primary-300 hover:text-primary-700 hover:shadow-md"

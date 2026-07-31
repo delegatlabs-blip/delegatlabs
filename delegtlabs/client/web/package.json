@@ -4,11 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3001",
-    "build": "next build",
+    "build": "DATABASE_URL=\"${DATABASE_URL:-postgresql://postgres:postgres@127.0.0.1:5432/delegtlabs}\" npm run db:generate && next build",
     "start": "next start -p 3001",
-    "lint": "eslint"
+    "lint": "eslint",
+    "db:generate": "prisma generate --schema src/lib/db/schema.prisma"
   },
   "dependencies": {
+    "@prisma/client": "^5.22.0",
     "framer-motion": "^12.43.0",
     "gsap": "^3.15.0",
     "next": "15.5.14",
@@ -25,6 +27,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.5.14",
+    "prisma": "^5.22.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

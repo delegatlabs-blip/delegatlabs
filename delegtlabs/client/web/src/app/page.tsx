@@ -5,6 +5,7 @@ import { AboutSection, ServicesSection } from "@/components/sections";
 import { homePageServiceItems } from "@/data/services";
 import { listAgents } from "@/server/agents/repository";
 
+/** Featured cards on home: 0–4 listed agents from the database. */
 const HOME_AGENT_COUNT = 4;
 
 const PortfolioSection = dynamic(() =>
@@ -31,8 +32,12 @@ const ContactSection = dynamic(() =>
   import("@/components/sections/ContactSection").then((mod) => mod.ContactSection),
 );
 
-export default function HomePage() {
-  const { items, total } = listAgents({ page: 1, pageSize: HOME_AGENT_COUNT });
+export default async function HomePage() {
+  const { items, total } = await listAgents({
+    page: 1,
+    pageSize: HOME_AGENT_COUNT,
+    featured: true,
+  });
 
   return (
     <main>

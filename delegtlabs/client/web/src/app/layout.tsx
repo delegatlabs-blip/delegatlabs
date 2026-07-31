@@ -9,8 +9,8 @@ import { siteConfig } from "@/lib/site";
 import { listAgents } from "@/server/agents/repository";
 import "./globals.css";
 
-/** Keep the nav dropdown a fixed size no matter how large the catalog grows. */
-const NAV_AGENT_LIMIT = 6;
+/** Navbar agents dropdown: 0–30 listed agents from the database. */
+const NAV_AGENT_LIMIT = 30;
 
 const inter = Inter({
   subsets: ["latin"],
@@ -71,12 +71,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const { items } = listAgents({ page: 1, pageSize: NAV_AGENT_LIMIT });
+  const { items } = await listAgents({ page: 1, pageSize: NAV_AGENT_LIMIT });
   const agentLinks = items.map((agent) => ({
     href: `/agents/${agent.slug}`,
     label: agent.name,

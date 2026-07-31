@@ -22,7 +22,7 @@ export async function GET(request: Request) {
 
   const featuredParam = params.get("featured");
 
-  const result = listAgents({
+  const result = await listAgents({
     page,
     pageSize,
     q: params.get("q") ?? undefined,

@@ -15,7 +15,7 @@ const paths = [
   "/copyright",
 ] as const;
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const lastModified = new Date();
 
   const staticEntries = paths.map((path) => ({
@@ -26,7 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: path === "/" ? 1 : 0.6,
   }));
 
-  const agentEntries = listAgentSlugs().map((slug) => ({
+  const agentEntries = (await listAgentSlugs()).map((slug) => ({
     url: `${siteConfig.url}/agents/${slug}`,
     lastModified,
     changeFrequency: "monthly" as const,

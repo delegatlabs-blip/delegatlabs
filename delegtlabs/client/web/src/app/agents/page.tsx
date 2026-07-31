@@ -25,7 +25,10 @@ export default async function AgentsPage({
   searchParams: Promise<{ page?: string | string[] }>;
 }) {
   const { page } = await searchParams;
-  const data = listAgents({ page: parsePage(page), pageSize: DEFAULT_PAGE_SIZE });
+  const data = await listAgents({
+    page: parsePage(page),
+    pageSize: DEFAULT_PAGE_SIZE,
+  });
 
   return (
     <main className="overflow-x-hidden bg-white">

@@ -10,13 +10,14 @@ import { getAgentBySlug, listAgentSlugs } from "@/server/agents/repository";
 
 type PageProps = { params: Promise<{ slug: string }> };
 
-export function generateStaticParams() {
-  return listAgentSlugs().map((slug) => ({ slug }));
+export async function generateStaticParams() {
+  const slugs = await listAgentSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const agent = getAgentBySlug(slug);
+  const agent = await getAgentBySlug(slug);
   if (!agent) return { title: "Agent not found" };
 
   return {
@@ -29,7 +30,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function AgentDetailPage({ params }: PageProps) {
   const { slug } = await params;
-  const agent = getAgentBySlug(slug);
+  const agent = await getAgentBySlug(slug);
   if (!agent) notFound();
 
   return (
