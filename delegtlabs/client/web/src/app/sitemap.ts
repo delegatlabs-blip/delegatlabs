@@ -8,11 +8,14 @@ const paths = [
   "/agents",
   "/blog",
   "/careers",
+  "/changelog",
   "/contact",
+  "/cookies",
+  "/copyright",
   "/portfolio",
   "/privacy",
+  "/security",
   "/terms",
-  "/copyright",
 ] as const;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -22,7 +25,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${siteConfig.url}${path === "/" ? "" : path}`,
     lastModified,
     changeFrequency:
-      path === "/" || path === "/blog" ? ("weekly" as const) : ("monthly" as const),
+      path === "/" || path === "/blog" || path === "/changelog"
+        ? ("weekly" as const)
+        : ("monthly" as const),
     priority: path === "/" ? 1 : 0.6,
   }));
 

@@ -18,7 +18,7 @@ function SocialIcon({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 text-white/70 transition-all duration-200 hover:bg-gradient-to-br hover:from-blue-500 hover:to-cyan-500 hover:text-white"
+      className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 text-white/70 transition-all duration-200 hover:bg-gradient-to-br hover:from-blue-500 hover:to-cyan-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-400/50"
       data-cursor-exclude
     >
       {children}
@@ -36,7 +36,7 @@ export function SiteFooter() {
           <div>
             <Link
               href="/"
-              className="inline-flex items-center gap-2 text-lg font-bold tracking-tight text-white"
+              className="inline-flex items-center gap-2 text-lg font-bold tracking-tight text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
             >
               <span
                 className="inline-block h-2.5 w-2.5 rounded-full bg-gradient-to-br from-blue-400 to-emerald-400"
@@ -69,7 +69,7 @@ export function SiteFooter() {
                 />
                 <button
                   type="submit"
-                  className="shrink-0 rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-700"
+                  className="shrink-0 rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   data-cursor-exclude
                 >
                   Join
@@ -98,7 +98,7 @@ export function SiteFooter() {
             <p className="mt-6 text-sm text-white/50">
               <a
                 href={`mailto:${siteConfig.contactEmail}`}
-                className="transition hover:text-cyan-300"
+                className="transition hover:text-cyan-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
               >
                 {siteConfig.contactEmail}
               </a>
@@ -118,7 +118,7 @@ export function SiteFooter() {
                     <li key={link.label}>
                       <Link
                         href={link.href}
-                        className={`text-sm text-white/60 transition-colors duration-200 ${col.hover}`}
+                        className={`text-sm text-white/60 transition-colors duration-200 ${col.hover} focus:outline-none focus:ring-2 focus:ring-blue-400`}
                       >
                         {link.label}
                       </Link>
@@ -134,20 +134,26 @@ export function SiteFooter() {
           <p>
             © {year} {siteConfig.name}. All rights reserved.
           </p>
-          <div className="flex flex-wrap gap-4">
-            <Link href="/privacy" className="hover:text-white/80">
+          <nav aria-label="Legal & Information Links" className="flex flex-wrap gap-4">
+            <Link href="/privacy" className="hover:text-white/80 focus:outline-none focus:ring-2 focus:ring-blue-400">
               Privacy
             </Link>
-            <Link href="/terms" className="hover:text-white/80">
+            <Link href="/terms" className="hover:text-white/80 focus:outline-none focus:ring-2 focus:ring-blue-400">
               Terms
             </Link>
-            <Link href="/copyright" className="hover:text-white/80">
+            <Link href="/cookies" className="hover:text-white/80 focus:outline-none focus:ring-2 focus:ring-blue-400">
+              Cookies
+            </Link>
+            <Link href="/security" className="hover:text-white/80 focus:outline-none focus:ring-2 focus:ring-blue-400">
+              Security
+            </Link>
+            <Link href="/copyright" className="hover:text-white/80 focus:outline-none focus:ring-2 focus:ring-blue-400">
               Copyright
             </Link>
-            <Link href="/contact" className="hover:text-white/80">
+            <Link href="/contact" className="hover:text-white/80 focus:outline-none focus:ring-2 focus:ring-blue-400">
               Contact
             </Link>
-          </div>
+          </nav>
         </div>
       </div>
     </footer>

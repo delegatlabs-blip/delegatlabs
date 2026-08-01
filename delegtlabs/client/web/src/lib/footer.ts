@@ -29,7 +29,7 @@ export const footerColumns: FooterColumn[] = [
     links: [
       { label: "About", href: "/about" },
       { label: "Blog", href: "/blog" },
-      { label: "Changelog", href: "/blog" },
+      { label: "Changelog", href: "/changelog" },
       { label: "Careers", href: "/careers" },
     ],
   },
@@ -51,8 +51,8 @@ export const footerColumns: FooterColumn[] = [
     links: [
       { label: "Privacy Policy", href: "/privacy" },
       { label: "Terms of Service", href: "/terms" },
-      { label: "Cookie Policy", href: "/privacy" },
-      { label: "Security", href: "/copyright" },
+      { label: "Cookie Policy", href: "/cookies" },
+      { label: "Security", href: "/security" },
     ],
   },
 ];
