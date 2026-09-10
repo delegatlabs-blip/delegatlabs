@@ -9,7 +9,7 @@ import {
   verifyPassword,
   verifyToken,
 } from "../utils/crypto";
-import { getDevOtp, sendOtpEmail, useDevOtp } from "./mail.service";
+import { getDevOtp, isDevOtpEnabled, sendOtpEmail } from "./mail.service";
 
 const MAX_ATTEMPTS = 8;
 const OTP_TTL_MS = 15 * 60 * 1000;
@@ -170,15 +170,15 @@ export async function refreshUserTokens(refreshToken: string): Promise<AuthSessi
 export async function requestUserPasswordOtp(emailRaw: string) {
   const email = emailRaw.trim().toLowerCase();
   const auth = await prisma.userAuth.findUnique({ where: { email } });
-  if (!auth) return { ok: true as const, usedDevOtp: useDevOtp() };
-  const otp = useDevOtp() ? getDevOtp() : generateNumericOtp();
+  if (!auth) return { ok: true as const, usedDevOtp: isDevOtpEnabled() };
+  const otp = isDevOtpEnabled() ? getDevOtp() : generateNumericOtp();
   await prisma.authentication.upsert({
     where: { email_kind: { email, kind: "user" } },
     create: { email, kind: "user", tempOtp: hashPassword(otp), attemptsCount: 0 },
     update: { tempOtp: hashPassword(otp), attemptsCount: 0 },
   });
   const mail = await sendOtpEmail({ to: email, otp, kind: "user" });
-  return { ok: true as const, usedDevOtp: mail.usedDevOtp || useDevOtp() };
+  return { ok: true as const, usedDevOtp: mail.usedDevOtp || isDevOtpEnabled() };
 }
 
 export async function verifyUserOtp(emailRaw: string, otp: string) {

@@ -9,6 +9,9 @@ import { siteConfig } from "@/lib/site";
 import { listAgents } from "@/server/agents/repository";
 import "./globals.css";
 
+/** Agents come from Postgres at request time (Compose `db` is not available during image build). */
+export const dynamic = "force-dynamic";
+
 /** Navbar agents dropdown: 0–30 listed agents from the database. */
 const NAV_AGENT_LIMIT = 30;
 

@@ -48,7 +48,7 @@ export function AgentMarketplace({ agents, total }: AgentMarketplaceProps) {
   return (
     <>
       <section
-        className="site-section grid-wrap pt-16 md:pt-24 pb-16 md:pb-24"
+        className="site-section grid-wrap"
         id="agents"
         aria-labelledby="agents-heading"
       >

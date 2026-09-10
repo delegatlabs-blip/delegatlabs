@@ -1,0 +1,309 @@
+/*
+ * Auth form styling, adapted from the Uiverse.io "Register" form by micaelgomestavares.
+ *
+ * Two deliberate departures from the original:
+ *   - Hardcoded #fff / royalblue / grey are wired to the app's theme tokens, so the
+ *     card stays legible in dark mode instead of turning white-on-white.
+ *   - No password fields. Sign-in here is a one-time email code, so the reference's
+ *     password + confirm-password pair has nothing to bind to.
+ */
+
+.auth-shell {
+  display: flex;
+  min-height: 100dvh;
+  align-items: center;
+  justify-content: center;
+  padding: max(16px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(16px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  background-color: var(--background);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 380px;
+  background-color: var(--card);
+  padding: 24px;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border);
+}
+
+.title {
+  font-size: 28px;
+  color: var(--primary);
+  font-weight: 600;
+  letter-spacing: -1px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  margin: 0;
+}
+
+.title::before,
+.title::after {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  left: 0;
+  background-color: var(--primary);
+}
+
+.title::after {
+  animation: auth-pulse 1s linear infinite;
+}
+
+.message,
+.signin {
+  color: var(--muted-foreground);
+  font-size: 14px;
+  margin: 0;
+}
+
+.signin {
+  text-align: center;
+}
+
+.signin button {
+  color: var(--primary);
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.signin button:hover {
+  text-decoration: underline;
+}
+
+.flex {
+  display: flex;
+  width: 100%;
+  gap: 6px;
+}
+
+.form label {
+  position: relative;
+}
+
+/* Only the side-by-side row splits its width; a `flex: 1` on every label would
+   stretch them vertically inside the column-direction form. */
+.flex label {
+  flex: 1;
+  min-width: 0;
+}
+
+.form label .input {
+  width: 100%;
+  padding: 20px 10px 10px 10px;
+  outline: 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background-color: var(--card);
+  color: var(--card-foreground);
+  font-size: 0.95em;
+}
+
+.form label .input:focus {
+  border-color: var(--primary);
+}
+
+.form label .input + span {
+  position: absolute;
+  left: 10px;
+  top: 14px;
+  color: var(--muted-foreground);
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+  pointer-events: none;
+}
+
+.form label .input:placeholder-shown + span {
+  top: 14px;
+  font-size: 0.9em;
+}
+
+.form label .input:focus + span,
+.form label .input:valid + span {
+  top: 4px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.form label .input:valid + span {
+  color: var(--success);
+}
+
+/* One-time code: wide tracking so the six digits read as separate characters. */
+.form label .input.code {
+  text-align: center;
+  font-size: 1.15em;
+  letter-spacing: 0.5em;
+  padding-right: 0;
+  text-indent: 0.5em;
+}
+
+.submit {
+  border: none;
+  outline: none;
+  background-color: var(--primary);
+  padding: 12px;
+  border-radius: 8px;
+  color: var(--primary-foreground);
+  font-size: 16px;
+  min-height: 44px;
+  transition: background-color 0.18s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.submit:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+  cursor: pointer;
+}
+
+.submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Secondary action (LinkedIn) — same geometry, outlined instead of filled. */
+.oauth-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  min-height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background-color: var(--card);
+  color: var(--card-foreground);
+  font-size: 15px;
+  text-decoration: none;
+  transition: background-color 0.18s ease;
+}
+
+.oauth-button:hover {
+  background-color: var(--muted);
+  cursor: pointer;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted-foreground);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: var(--border);
+}
+
+.form-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.form-meta button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: var(--muted-foreground);
+  cursor: pointer;
+}
+
+.form-meta button:hover:not(:disabled) {
+  color: var(--foreground);
+}
+
+.form-meta button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.dev-hint {
+  border-radius: 10px;
+  background-color: var(--muted);
+  padding: 8px 10px;
+  font-size: 12px;
+  color: var(--muted-foreground);
+  margin: 0;
+}
+
+@keyframes auth-pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .title::after {
+    animation: none;
+    opacity: 0;
+  }
+
+  .form label .input + span {
+    transition: none;
+  }
+}
+
+/* Escape hatch under the LinkedIn button for accounts created with "Continue with
+   Google" — LinkedIn's OAuth login page offers no Google option, but arriving with a
+   live linkedin.com session skips that page entirely. */
+.oauth-hint {
+  margin: -4px 0 0;
+  color: var(--muted-foreground);
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.oauth-hint a {
+  color: var(--primary);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* A button that has to read as a link — "Forgot password?" sits inside a sentence, so
+   the native button chrome has to go entirely. */
+.linklike {
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+
+.linklike:hover {
+  opacity: 0.8;
+}

@@ -31,7 +31,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: path === "/" ? 1 : 0.6,
   }));
 
-  const agentEntries = (await listAgentSlugs()).map((slug) => ({
+  let agentSlugs: string[] = [];
+  try {
+    agentSlugs = await listAgentSlugs();
+  } catch {
+    // DB unavailable during Docker image build — static paths still ship.
+  }
+
+  const agentEntries = agentSlugs.map((slug) => ({
     url: `${siteConfig.url}/agents/${slug}`,
     lastModified,
     changeFrequency: "monthly" as const,

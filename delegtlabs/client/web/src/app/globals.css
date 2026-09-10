@@ -101,7 +101,7 @@ body.has-advanced-cursor select {
 }
 
 .hero {
-  padding: 72px 32px 48px;
+  padding: 72px 32px 80px;
   text-align: center;
   background:
     radial-gradient(900px 420px at 20% -10%, rgba(59, 130, 246, 0.12), transparent 55%),

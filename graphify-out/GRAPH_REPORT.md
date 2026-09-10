@@ -1,16 +1,16 @@
-# Graph Report - delegtlabs  (2026-07-22)
+# Graph Report - delegtlabs  (2026-09-06)
 
 ## Corpus Check
-- 446 files · ~173,434 words
+- 784 files · ~563,416 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2199 nodes · 3954 edges · 203 communities (133 shown, 70 thin omitted)
-- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 94 edges (avg confidence: 0.68)
+- 5349 nodes · 9897 edges · 466 communities (282 shown, 184 thin omitted)
+- Extraction: 92% EXTRACTED · 8% INFERRED · 0% AMBIGUOUS · INFERRED: 754 edges (avg confidence: 0.76)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `f08651b7`
+- Built from commit: `ba911392`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -63,7 +63,6 @@
 - preview/page.tsx
 - 5. Functional requirements
 - Autonomous LinkedIn PR and Lead Agent Suite
-- DraftBlueprint
 - completeness/page.tsx
 - lawyer-agent/manifest.json
 - Delegtlabs Multi-Agent Platform Build Prompt
@@ -74,9 +73,9 @@
 - MockAIProvider
 - [caseId]/drafts/new/page.tsx
 - Product Modules (Expanded V1.5 Scope)
-- 1. Core Drafting Persistence Tables
+- member-use-cases.ts
 - delegatlabs-lawyer-agent/package.json
-- BaseAIProvider
+- HTTPException
 - admin/src/agents/lawyer-agent/components/intake/intake-wizard.tsx
 - Downstream Milestones
 - app/main.py
@@ -93,6 +92,7 @@
 - OpenAIProvider
 - 2. Case Management Tables
 - AdminNavbar.tsx
+- test_gateway.py
 - web/api/v1/router.py
 - web/src/agents/lawyer-agent/UserDashboard.tsx
 - admin/src/app/admin/agents/[slug]/dashboard/page.tsx
@@ -110,10 +110,12 @@
 - admin/src/app/layout.tsx
 - lawyer-agent/frontend/AdminDashboard.tsx
 - linkedin-agent/frontend/AdminDashboard.tsx
+- test_phase3_user.py
+- test_phase4_web.py
 - Workspace Agent Rules for DelegatLabs Lawyer Agent
 - admin/src/lib/api.ts
 - Autonomous LinkedIn PR Agent: Skills and Rules
-- admin/src/agents/lawyer-agent/AdminDashboard.tsx
+- theme-provider.tsx
 - admin/src/agents/lawyer-agent/components/empty-state.tsx
 - admin/src/agents/lawyer-agent/components/prompt/developer-prompt-preview.tsx
 - admin/src/agents/lawyer-agent/components/prompt/guardrails-card.tsx
@@ -128,6 +130,7 @@
 - src/app/dashboard/page.tsx
 - user/src/app/layout.tsx
 - web/next.config.ts
+- checkout/page.tsx
 - pricing/page.tsx
 - frontend/components/cases/active-cases-empty-state.tsx
 - frontend/components/empty-state.tsx
@@ -138,17 +141,21 @@
 - web/src/agents/linkedin-agent/UserDashboard.tsx
 - utils/__init__.py
 - web/app/layout.tsx
-- module-card.tsx
 - Delegtlabs — Project Structure
 - admin/AGENTS.md
 - eslint.config.mjs
 - admin/next.config.ts
 - admin/postcss.config.mjs
+- admin/src/app/page.tsx
+- temp.js
 - user/next.config.ts
 - user/postcss.config.mjs
 - user/README.md
+- user/src/app/page.tsx
 - client/web/postcss.config.mjs
 - web/README.md
+- web/src/app/page.tsx
+- settings/page.tsx
 - admin/__init__.py
 - gateway/__init__.py
 - shared/__init__.py
@@ -169,446 +176,1248 @@
 - apps/web/postcss.config.mjs
 - tailwind.config.ts
 - .agents/AGENTS.md
+- linkedin_pr_agent/config.py
+- CLAUDE.md
+- linkedin-agent/backend/__init__.py
+- admin/api/__init__.py
+- admin/api/v1/__init__.py
+- admin/modules/__init__.py
+- tenants/__init__.py
+- db/__init__.py
+- ai_providers/__init__.py
+- email/__init__.py
+- storage/__init__.py
+- supabase/__init__.py
+- user/api/__init__.py
+- user/api/v1/__init__.py
+- user/modules/__init__.py
+- web/api/__init__.py
+- web/api/v1/__init__.py
+- web/modules/__init__.py
+- app/api/__init__.py
+- app/api/v1/__init__.py
+- Audit Checklist
+- providers/__init__.py
+- Design System Principles
+- app/modules/__init__.py
 - delegtlabs-server
-- admin/src/app/admin/page.tsx
-- AddAgentForm.tsx
-- plans/page.tsx
-- clients/page.tsx
-- admin/src/agents/lawyer-agent/lib/export-service.ts
-- web/src/agents/lawyer-agent/AdminDashboard.tsx
-- web/src/agents/linkedin-agent/AdminDashboard.tsx
-- 1. Purpose and problem statement
-- admin/src/agents/lawyer-agent/components/cases/active-cases-empty-state.tsx
-- user/src/agents/lawyer-agent/components/cases/active-cases-empty-state.tsx
+- Conversion Reference
+- Audit Checklist
+- Design System Principles
+- Kubernetes Deploying
+- Prompt Engineering
+- Saving Workspace Context
+- What to Check
+- Writing Copy
+- Kubernetes Deploying
+- Prompt Engineering
+- Saving Workspace Context
+- What to Check
+- Writing Copy
+- Workflow
+- Parallel CI Triage
+- Recording workflow
+- The Process
+- Format
+- Workflow
+- Parallel CI Triage
+- Recording workflow
+- The Process
+- Format
+- Building Skills From Patterns
+- clsx
+- embla-carousel-react
+- framer-motion
+- @hookform/resolvers
+- input-otp
+- lucide-react
+- next
+- next-themes
+- @radix-ui/react-accordion
+- @radix-ui/react-alert-dialog
+- @radix-ui/react-aspect-ratio
+- @radix-ui/react-avatar
+- @radix-ui/react-checkbox
+- @radix-ui/react-collapsible
+- @radix-ui/react-context-menu
+- Workflow
+- @radix-ui/react-hover-card
+- @radix-ui/react-label
+- @radix-ui/react-menubar
+- @radix-ui/react-navigation-menu
+- @radix-ui/react-popover
+- @radix-ui/react-progress
+- @radix-ui/react-radio-group
+- @radix-ui/react-select
+- @radix-ui/react-separator
+- @radix-ui/react-slider
+- Add Authentication (Auth.js)
+- @radix-ui/react-switch
+- @radix-ui/react-tabs
+- @radix-ui/react-toggle-group
+- @radix-ui/react-tooltip
+- Workflow
+- react-dom
+- react-hook-form
+- react-resizable-panels
+- Setup CI (GitHub Actions)
+- sonner
+- tailwind-merge
+- Setup Terraform
+- @tanstack/react-table
+- tw-animate-css
+- vaul
+- auth.schema.ts
+- Methods
+- Workflow
+- run_job
+- Incident Workflow
+- Audit checklist
+- Python TDD with uv
+- Building Skills From Patterns
+- Workflow
+- Workflow
+- Methods
+- Workflow
+- run_job
+- Incident Workflow
+- Audit checklist
+- Python TDD with uv
+- Workflow
+- Workflow
+- Workflow
+- Detecting Port Conflicts
+- Workflow
+- grok.py
+- run_agent_task
+- strip-html.ts
+- TS-11-answers.md
+- FACTS-TS-11.md
+- specs/TS-11.md
+- BOARD.md
+- date-fns
+- next
+- date-fns
+- axios
+- @radix-ui/react-label
+- @radix-ui/react-select
+- @radix-ui/react-slot
+- @radix-ui/react-tabs
+- zustand
+- tailwind-merge
+- @tiptap/extension-link
+- health/route.ts
+- core/__init__.py
+- app/__init__.py
+- integrations/__init__.py
+- strings.py
+- @tiptap/pm
+- @tiptap/react
+- express
+- test_gateway.py
+- TopicResponse
+- clsx
+- test_phase4_web.py
+- class-variance-authority
+- test_ts14_first_post.py
+- axios
+- esbuild
+- folderStructure.md
+- eslint
+- user/src/lib/db/index.ts
+- decisions/TS-11.md
+- TS-14.md
+- clsx
+- framer-motion
+- class-variance-authority
+- Writing Tests
+- axios
+- test_ts8_oos.py
+- A. Happy path
+- TS-15 — Requirements (A3)
+- D. Negative
+- C. Edge
+- admin/src/components/ui/navigation-menu.tsx
+- C-persona-topics — schema map (TS-15)
+- Add Analytics (PostHog)
+- test_ac_cat_07_tenant_user_catalog_get_is_2xx
+- B. Empty
+- Add Docker
+- Add Error Tracking (Sentry)
+- Add Stripe Payments
+- Performance Audit
+- Routing constraints (must-test; do not break)
+- admin/src/components/ui/input-otp.tsx
+- Setup CI (GitHub Actions)
+- test_phase3_user.py
+- test_ac_em_03_incomplete_persona_redirects_topics_to_onboarding
+- Unknown ledger
+- H. File-size (cap 500)
+- TS-15-answers.md
+- specs/TS-15.md
+- date-fns
+- class-variance-authority
+- wc_l
+- backend/app/main.py
+- grok.py
+- gemini_persona_topics.py
+- @radix-ui/react-collapsible
+- @radix-ui/react-progress
+- @radix-ui/react-separator
+- @radix-ui/react-slot
+- @tanstack/react-query
+- zod
+- @radix-ui/react-checkbox
+- jose
+- @radix-ui/react-dropdown-menu
+- @radix-ui/react-hover-card
+- @radix-ui/react-toggle
+- react-dom
+- sonner
+- web/src/lib/api.ts
+- @radix-ui/react-slider
+- dev-admin.sh
+- scripts
+- map-row.ts
+- ContactSection.tsx
+- audit.py
+- feedback.py
+- frontend/admin/package.json
+- frontend/user/package.json
+- Settings
+- shared/components/onboarding/OnboardingStepCard.tsx
+- shared/components/ui/sheet.tsx
+- seed-auth.ts
+- admin/src/middleware.ts
+- user/src/middleware.ts
+- Portfolio Images
+- changelog/page.tsx
+- admin/vercel.json
+- web/vercel.json
+- OnboardingAnswers
+- SettingsUpdateRequest
+- LinkedIn Content Agent — Docker Setup
+- generate-agent-placeholders.mjs
+- jose
+- @radix-ui/react-dialog
+- @radix-ui/react-dropdown-menu
+- react-day-picker
+- zustand
+- @prisma/client
+- @radix-ui/react-avatar
+- @radix-ui/react-slot
+- @radix-ui/react-switch
+- start.sh
+- @radix-ui/react-collapsible
+- @radix-ui/react-dialog
+- @radix-ui/react-dropdown-menu
+- @radix-ui/react-separator
+- @radix-ui/react-switch
+- @radix-ui/react-tooltip
+- react
+- react-dom
+- react-router-dom
+- recharts
+- @tailwindcss/typography
+- @tanstack/react-query
+- zustand
+- shared/components/ui/checkbox.tsx
+- shared/components/ui/tooltip.tsx
+- @radix-ui/react-dialog
+- @radix-ui/react-dropdown-menu
+- @radix-ui/react-separator
+- @radix-ui/react-switch
+- @radix-ui/react-tooltip
+- react
+- react-router-dom
+- recharts
+- @tailwindcss/typography
+- zustand
 
 ## God Nodes (most connected - your core abstractions)
-1. `Language` - 57 edges
-2. `getTranslation()` - 53 edges
-3. `Language` - 41 edges
-4. `Language` - 41 edges
-5. `Language` - 41 edges
-6. `getSelectedLanguage()` - 27 edges
-7. `load_memory()` - 25 edges
-8. `getTranslation()` - 24 edges
-9. `getTranslation()` - 24 edges
-10. `getTranslation()` - 24 edges
+1. `cn()` - 85 edges
+2. `execute_one_raw()` - 84 edges
+3. `execute_raw()` - 80 edges
+4. `cn()` - 77 edges
+5. `AuthContext` - 65 edges
+6. `read_text()` - 57 edges
+7. `ContentDNA` - 47 edges
+8. `Language` - 41 edges
+9. `TenantContext` - 30 edges
+10. `post_improve()` - 25 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `BaseAIProvider` --uses--> `DraftGenerationRequest`  [INFERRED]
-  lawyer-agent/delegatlabs-lawyer-agent/apps/api/app/modules/ai/providers/base.py → delegtlabs/packages/agents/lawyer-agent/backend/schemas.py
-- `ClaudeProvider` --uses--> `DraftGenerationRequest`  [INFERRED]
-  lawyer-agent/delegatlabs-lawyer-agent/apps/api/app/modules/ai/providers/claude_provider.py → delegtlabs/packages/agents/lawyer-agent/backend/schemas.py
-- `GeminiProvider` --uses--> `DraftGenerationRequest`  [INFERRED]
-  lawyer-agent/delegatlabs-lawyer-agent/apps/api/app/modules/ai/providers/gemini_provider.py → delegtlabs/packages/agents/lawyer-agent/backend/schemas.py
-- `MockAIProvider` --uses--> `DraftGenerationRequest`  [INFERRED]
-  lawyer-agent/delegatlabs-lawyer-agent/apps/api/app/modules/ai/providers/mock_provider.py → delegtlabs/packages/agents/lawyer-agent/backend/schemas.py
-- `OpenAIProvider` --uses--> `DraftGenerationRequest`  [INFERRED]
-  lawyer-agent/delegatlabs-lawyer-agent/apps/api/app/modules/ai/providers/openai_provider.py → delegtlabs/packages/agents/lawyer-agent/backend/schemas.py
+- `issue_admin_cookie()` --calls--> `create_admin_jwt()`  [INFERRED]
+  delegtlabs/packages/agents/linkedin_agent/backend/app/api/deps.py → delegtlabs/packages/agents/linkedin_agent/backend/app/core/security.py
+- `issue_session_cookie()` --calls--> `create_session_jwt()`  [INFERRED]
+  delegtlabs/packages/agents/linkedin_agent/backend/app/api/deps.py → delegtlabs/packages/agents/linkedin_agent/backend/app/core/security.py
+- `get_performance_summary()` --calls--> `execute_raw()`  [INFERRED]
+  delegtlabs/packages/agents/linkedin_agent/backend/app/api/endpoints/performance.py → delegtlabs/packages/agents/linkedin_agent/backend/app/core/database.py
+- `_publish_to_destination()` --calls--> `download_image_buffer()`  [INFERRED]
+  delegtlabs/packages/agents/linkedin_agent/backend/app/services/publish.py → delegtlabs/packages/agents/linkedin_agent/backend/app/services/linkedin.py
+- `DropdownMenuShortcut()` --calls--> `cn()`  [EXTRACTED]
+  delegtlabs/client/admin/src/components/ui/dropdown-menu.tsx → delegtlabs/client/admin/src/lib/utils.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (203 total, 70 thin omitted)
+## Communities (466 total, 184 thin omitted)
 
 ### Community 0 - "clients.py"
-Cohesion: 0.07
-Nodes (88): Agent, async_sessionmaker, Client, ClientDetail, DeclarativeBase, LawyerDraftSession, LawyerGeneratedDraft, LinkedInLead (+80 more)
+Cohesion: 0.25
+Nodes (6): get_current_settings(), get_settings(), BaseSettings, Application settings from environment / .env., Settings, Settings
 
 ### Community 1 - "load_memory"
-Cohesion: 0.05
-Nodes (83): BackgroundTasks, _call_anthropic(), _call_gemini(), _call_groq(), generate_linkedin_post(), generate_post_image(), generate_reply(), Calls Google Gemini API via REST. (+75 more)
+Cohesion: 0.07
+Nodes (35): AppShell(), BARE_PATHS, AppSidebar(), management, platform, system, Sidebar, SidebarContent (+27 more)
 
 ### Community 2 - "detail/[id]/page.tsx"
-Cohesion: 0.20
-Nodes (10): ClientDetail, tabs, PageHeader(), PageHeaderProps, SubNavTabs(), Card(), CardBody(), CardHeader() (+2 more)
+Cohesion: 0.08
+Nodes (37): DashboardContent(), DashboardHeader(), metadata, AvatarImage, Button, Card, CardContent, CardDescription (+29 more)
 
 ### Community 3 - "index.ts"
-Cohesion: 0.07
-Nodes (40): RunRow, AdminConsolePage(), MyAgentsPage(), inter, metadata, BADGES, MarketplacePage(), OverviewPage() (+32 more)
+Cohesion: 0.11
+Nodes (16): inter, metadata, RootLayout(), viewport, AdvancedCursor(), buildWhatsAppUrl(), FloatingWhatsApp(), JsonLd() (+8 more)
 
 ### Community 4 - "get_registered_agents"
 Cohesion: 0.07
-Nodes (36): AgentRegistry, _find_agents_dir(), get_agent_manifest(), get_registered_agents(), get_worker_entrypoints(), Any, AgentConfig, AgentCredential (+28 more)
+Nodes (33): Base, DeclarativeBase, LinkedInAccount, Base, Job, JobStatus, JobType, Base (+25 more)
 
 ### Community 5 - "Language"
-Cohesion: 0.13
-Nodes (19): CompletenessSummaryCard(), CompletenessSummaryCardProps, getRuleFriendlyName(), ValidationResults(), ValidationResultsProps, WarningsList(), WarningsListProps, IntakeProgress() (+11 more)
+Cohesion: 0.03
+Nodes (68): AccordionContent, AccordionItem, AccordionTrigger, Alert, AlertDescription, AlertTitle, alertVariants, Breadcrumb (+60 more)
 
 ### Community 6 - "devDependencies"
-Cohesion: 0.05
-Nodes (40): dependencies, framer-motion, geist, lucide-react, next, react, react-dom, recharts (+32 more)
+Cohesion: 0.04
+Nodes (47): dependencies, framer-motion, gsap, next, @prisma/client, react, react-dom, server-only (+39 more)
 
 ### Community 7 - "devDependencies"
-Cohesion: 0.05
-Nodes (36): autoprefixer, clsx, dependencies, clsx, lucide-react, next, react, react-dom (+28 more)
+Cohesion: 0.11
+Nodes (21): SelectContent, SelectItem, SelectLabel, SelectScrollDownButton, SelectScrollUpButton, SelectSeparator, SelectTrigger, SheetContent (+13 more)
 
 ### Community 8 - "devDependencies"
-Cohesion: 0.05
-Nodes (36): dependencies, lucide-react, next, react, react-dom, recharts, devDependencies, eslint (+28 more)
+Cohesion: 0.08
+Nodes (25): devDependencies, eslint, eslint-config-next, @eslint/eslintrc, prisma, tailwindcss, @tailwindcss/postcss, tsx (+17 more)
 
 ### Community 9 - "devDependencies"
-Cohesion: 0.05
-Nodes (36): dependencies, lucide-react, next, react, react-dom, recharts, devDependencies, eslint (+28 more)
+Cohesion: 0.67
+Nodes (3): LawyerDraftSession, LawyerGeneratedDraft, Base
 
 ### Community 10 - "user/src/agents/lawyer-agent/components/intake/intake-wizard.tsx"
-Cohesion: 0.16
-Nodes (18): IntakeWizard(), buildCaseDraftPrefill(), normalizeRole(), clearActiveCaseDraftContext(), getActiveCase(), getActiveCaseDraftContext(), updateCaseDraftLink(), clearDraftIntake() (+10 more)
+Cohesion: 0.09
+Nodes (42): UsersPage(), Avatar, AvatarFallback, SelectContent, SelectItem, SelectLabel, SelectScrollDownButton, SelectScrollUpButton (+34 more)
 
 ### Community 11 - "Language"
-Cohesion: 0.13
-Nodes (22): EventModal(), BlueprintSectionCardProps, CategoryFilter(), CategoryFilterProps, CompletenessSummaryCard(), CompletenessSummaryCardProps, getRuleFriendlyName(), ValidationResults() (+14 more)
+Cohesion: 0.09
+Nodes (23): metadata, Providers(), CommandPalette(), Command, CommandDialog(), CommandEmpty, CommandGroup, CommandInput (+15 more)
 
 ### Community 12 - "test_lead_agent.py"
-Cohesion: 0.12
-Nodes (29): leads_job(), Daily RPO lead search job., start_scheduler(), add_leads(), init_memory(), load_leads(), Adds new leads if they are not duplicates.     Returns the list of leads that we, Initializes the local leads JSON and CSV files if they don't exist. (+21 more)
+Cohesion: 0.09
+Nodes (23): devDependencies, eslint, eslint-config-next, @eslint/eslintrc, prisma, tailwindcss, @tailwindcss/postcss, @types/node (+15 more)
 
 ### Community 13 - "admin/src/agents/lawyer-agent/lib/draft-blueprints.ts"
-Cohesion: 0.11
-Nodes (14): BlueprintSectionCardProps, ClauseListProps, IntakeFieldProps, IntakeSectionNav(), IntakeSectionNavProps, RequiredFieldListProps, CompletenessResult, DRAFT_BLUEPRINTS (+6 more)
+Cohesion: 0.07
+Nodes (26): compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules, jsx, lib, module (+18 more)
 
 ### Community 14 - "Language"
 Cohesion: 0.13
 Nodes (19): CompletenessSummaryCard(), CompletenessSummaryCardProps, getRuleFriendlyName(), ValidationResults(), ValidationResultsProps, WarningsList(), WarningsListProps, IntakeProgress() (+11 more)
 
 ### Community 15 - "Language"
-Cohesion: 0.13
-Nodes (19): CompletenessSummaryCard(), CompletenessSummaryCardProps, getRuleFriendlyName(), ValidationResults(), ValidationResultsProps, WarningsList(), WarningsListProps, IntakeProgress() (+11 more)
+Cohesion: 0.08
+Nodes (33): Avatar, AvatarFallback, AvatarImage, Badge(), BadgeProps, badgeVariants, Checkbox, DropdownMenuCheckboxItem (+25 more)
 
 ### Community 16 - "compilerOptions"
-Cohesion: 0.06
-Nodes (30): compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules, jsx, lib, module (+22 more)
+Cohesion: 0.07
+Nodes (26): compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules, jsx, lib, module (+18 more)
 
 ### Community 17 - "compilerOptions"
-Cohesion: 0.06
-Nodes (30): compilerOptions, allowJs, baseUrl, esModuleInterop, incremental, isolatedModules, jsx, lib (+22 more)
+Cohesion: 0.07
+Nodes (27): compilerOptions, allowJs, baseUrl, esModuleInterop, incremental, isolatedModules, jsx, lib (+19 more)
 
 ### Community 18 - "compilerOptions"
-Cohesion: 0.07
-Nodes (29): compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules, jsx, lib, module (+21 more)
+Cohesion: 0.05
+Nodes (77): get_current_tenant(), Resolve the authenticated principal and tenant_id from the JWT.      When DISABL, login(), me(), AsyncSession, Create a tenant + owner; JWT includes tenant_id., Authenticate and issue a JWT with tenant_id claim., register() (+69 more)
 
 ### Community 19 - "linkedin-agent/backend/router_user.py"
-Cohesion: 0.09
-Nodes (18): get_linkedin_admin_stats(), get_stats(), _next_run_from_cron(), Manual worker trigger — runs LinkedIn PR + lead pipeline once., Next boundary for cron `0 */6 * * *` (every 6 hours on the hour)., trigger_pipeline(), update_config(), AgentRunSchema (+10 more)
+Cohesion: 0.23
+Nodes (9): get_performance_summary(), record_manual_performance(), ManualEngagementRequest, BaseModel, compute_score(), ingest_engagement(), record_engagement(), run_nightly_feedback() (+1 more)
 
 ### Community 20 - "admin/src/agents/lawyer-agent/UserDashboard.tsx"
-Cohesion: 0.17
-Nodes (11): defaultConfig, LawyerConfig, DraftGenerationPayload, DraftGenerationResponse, generateDraft(), compileLocalPreview(), INTAKE_FIELDS, IntakeState (+3 more)
+Cohesion: 0.11
+Nodes (18): aliases, components, hooks, lib, ui, utils, iconLibrary, registries (+10 more)
 
 ### Community 21 - "web/lib/case-storage.ts"
-Cohesion: 0.19
-Nodes (25): EditCasePage(), CaseDetailPage(), EventModalProps, CaseDraftSuggestion, getCaseDraftSuggestions(), runSuggestionsTests(), addCaseTimelineEvent(), archiveActiveCase() (+17 more)
+Cohesion: 0.08
+Nodes (70): AgentManagePage(), AgentsPage(), usePageTitle(), createAgent(), deleteAgent(), getAgent(), listAgents(), updateAgent() (+62 more)
 
 ### Community 22 - "getSelectedLanguage"
-Cohesion: 0.12
-Nodes (17): AddCasePage(), CasesListPage(), Dashboard(), DraftingIntake(), NewDraft(), AppHeader(), AppHeaderProps, ActiveCasesEmptyState() (+9 more)
+Cohesion: 0.07
+Nodes (34): AppSidebar(), bottomItems, mainItems, workspaceItems, Separator, Sidebar, SidebarContent, SidebarContext (+26 more)
 
 ### Community 23 - "compilerOptions"
-Cohesion: 0.07
-Nodes (27): compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules, jsx, lib, module (+19 more)
+Cohesion: 0.22
+Nodes (7): dbSchema, domainsRoot, files, fs, outDir, path, root
 
 ### Community 24 - "frontend/lib/draft-blueprints.ts"
 Cohesion: 0.11
 Nodes (14): BlueprintSectionCardProps, ClauseListProps, IntakeFieldProps, IntakeSectionNav(), IntakeSectionNavProps, RequiredFieldListProps, CompletenessResult, DRAFT_BLUEPRINTS (+6 more)
 
 ### Community 25 - "user/src/agents/lawyer-agent/lib/case-storage.ts"
-Cohesion: 0.14
-Nodes (19): CaseCardProps, addCaseTimelineEvent(), archiveActiveCase(), CASE_ROLE_SUGGESTIONS, CaseDraftContext, CaseDraftLink, CaseParty, CaseRecord (+11 more)
+Cohesion: 0.12
+Nodes (11): Menubar, MenubarCheckboxItem, MenubarContent, MenubarItem, MenubarLabel, MenubarRadioItem, MenubarSeparator, MenubarShortcut() (+3 more)
 
 ### Community 26 - "frontend/lib/case-storage.ts"
 Cohesion: 0.14
 Nodes (19): CaseCardProps, addCaseTimelineEvent(), archiveActiveCase(), CASE_ROLE_SUGGESTIONS, CaseDraftContext, CaseDraftLink, CaseParty, CaseRecord (+11 more)
 
 ### Community 27 - "web/lib/draft-blueprints.ts"
-Cohesion: 0.13
-Nodes (16): DraftingPlan(), BlueprintSectionCard(), ClauseList(), ClauseListProps, IntakeFieldProps, RequiredFieldList(), RequiredFieldListProps, buildCaseDraftPrefill() (+8 more)
+Cohesion: 0.09
+Nodes (21): 10. PII, 11. Forward plan (Wave 3, after G10), 12. Rollback plan (Wave 3 file, G10), 13. Wave 3 query contract (not A6 code), 14. Out of scope, 1. Current state (VERIFIED), 2. `execute_raw` and RLS (VERIFIED), 3. API → columns (Q-3, Q-8, Q-9, Q-11, Q-14) (+13 more)
 
 ### Community 28 - "Skill: Autonomous LinkedIn PR and Lead Agent"
-Cohesion: 0.08
-Nodes (24): 1. LinkedIn Post Copy Generation, 1. View Service Status (Check if Active/Running), 2. Unsplash Image Keyword Extraction, 2. View Real-Time Logs (Equivalent to tail -f), 3. LinkedIn Reply Generation, 3. Restart / Stop / Start Services, ☁️ Cloud Deployment Guide (Linux Systemd), 🔍 Commands to Check Agent Status on Cloud (+16 more)
+Cohesion: 0.10
+Nodes (26): labelFromPath(), TopNav(), AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter(), AlertDialogHeader() (+18 more)
 
 ### Community 29 - "admin/src/agents/lawyer-agent/lib/case-storage.ts"
 Cohesion: 0.14
-Nodes (19): CaseCardProps, addCaseTimelineEvent(), archiveActiveCase(), CASE_ROLE_SUGGESTIONS, CaseDraftContext, CaseDraftLink, CaseParty, CaseRecord (+11 more)
+Nodes (27): create_agent(), update_agent(), AdminAgent, Base, Admin console agent catalog (listing + runtime config)., AgentRepository, _apply_row(), _now() (+19 more)
 
 ### Community 30 - "frontend/components/intake/intake-wizard.tsx"
 Cohesion: 0.16
 Nodes (18): IntakeWizard(), buildCaseDraftPrefill(), normalizeRole(), clearActiveCaseDraftContext(), getActiveCase(), getActiveCaseDraftContext(), updateCaseDraftLink(), clearDraftIntake() (+10 more)
 
 ### Community 31 - "prompt-preview/page.tsx"
-Cohesion: 0.11
-Nodes (13): ClauseSummaryCard(), ClauseSummaryCardProps, DeveloperPromptPreviewProps, FactsSummaryCard(), FactsSummaryCardProps, GuardrailsCardProps, OutputRequirementsCardProps, DraftGenerationPayload (+5 more)
+Cohesion: 0.06
+Nodes (47): _gen_blob(), TS-11 USER Post Generation source ACs (no Jest/Vitest; same pattern as TS-10)., AC-HP-05 / AC-ERR-02: preview must not use dangerouslySetInnerHTML / innerHTML., AC-HP-08: Improve disabled iff both title.trim and description-plain trim are em, AC-EM-01: both empty → Improve disabled (source encodes trim-empty conjunction)., AC-EM-02: whitespace-only title/description use trim (same empty rule as AC-EM-0, AC-EM-04: Generate Post stays disabled when title or plain description is empty., AC-ED-01 / AC-PS-02: composePreview / preview length uses stripHtmlToPlain. (+39 more)
 
 ### Community 32 - "user/main.py"
-Cohesion: 0.31
-Nodes (11): app_error_handler(), AppError, http_exception_handler(), Request, setup_logging(), create_app(), FastAPI, create_app() (+3 more)
+Cohesion: 0.14
+Nodes (43): BaseException, action_cost(), _allowlisted(), _as_write_body(), _catalog_write_http(), consume_for_action(), create_action_cost(), create_pack() (+35 more)
 
 ### Community 33 - "user/src/agents/lawyer-agent/lib/draft-blueprints.ts"
-Cohesion: 0.11
-Nodes (14): BlueprintSectionCardProps, ClauseListProps, IntakeFieldProps, IntakeSectionNav(), IntakeSectionNavProps, RequiredFieldListProps, CompletenessResult, DRAFT_BLUEPRINTS (+6 more)
+Cohesion: 0.06
+Nodes (49): TS-11 HTTP tests for POST /posts/improve (C-posts-improve + AC-HP/EM/ED/NEG/ERR), AC-HP-09: description present, title empty → not 400 for empty title (unlike man, AC-HP-10: Improve is 200 preview only — not POST /posts/manual or /posts/generat, AC-EM-03: both empty after trim → 400 locked detail; no Gemini call., AC-EM-02/03 API: whitespace-only title+description trim to empty → 400, no Gemin, AC-ED-04: composed length === 3000 is not rejected (`>` only)., AC-ED-05: empty description + title + tags still passes tags into the helper., AC-NEG-01: unauthenticated POST /posts/improve → 401 locked require_auth detail. (+41 more)
 
 ### Community 34 - "web/lib/storage.ts"
-Cohesion: 0.22
-Nodes (18): DraftingCustomize(), DraftingPreview(), DraftingPromptPreview(), IntakeWizard(), clearActiveCaseDraftContext(), getActiveCaseDraftContext(), updateCaseDraftLink(), clearDraftIntake() (+10 more)
+Cohesion: 0.15
+Nodes (20): create_customer(), update_customer(), AdminCustomer, Base, _apply_row(), CustomerRepository, _now(), _orm_to_row() (+12 more)
 
 ### Community 35 - "Skill: Autonomous LinkedIn PR and Lead Agent"
-Cohesion: 0.10
-Nodes (20): 1. View Service Status (Check if Active/Running), 2. View Real-Time Logs (Equivalent to tail -f), 3. Restart / Stop / Start Services, ☁️ Cloud Deployment Guide (Linux Systemd), 🔍 Commands to Check Agent Status on Cloud, 🛠️ Common Errors and Fixes, Error 1: `LINKEDIN_ACCESS_TOKEN is missing or placeholder`, Error 2: SMTP Connection Refused / SMTPAuthenticationError (+12 more)
+Cohesion: 0.14
+Nodes (12): Carousel, CarouselApi, CarouselContent, CarouselContext, CarouselContextProps, CarouselItem, CarouselNext, CarouselOptions (+4 more)
 
 ### Community 36 - "DraftBlueprint"
 Cohesion: 0.13
 Nodes (12): MissingFieldsList(), MissingFieldsListProps, IntakeSummary(), IntakeSummaryProps, IntakeWizardProps, OutputCheckListProps, DraftBlueprint, OutputValidationResult (+4 more)
 
 ### Community 37 - "pr_pipeline.py"
-Cohesion: 0.19
-Nodes (19): generate_linkedin_post(), generate_post_image_meta(), is_duplicate_post(), _mock_mode(), pick_topic(), publish_or_draft_post(), Any, PR posting + lead generation pipeline adapted from linkedin_pr_agent reference. (+11 more)
+Cohesion: 0.22
+Nodes (12): POST(), logoutOwnerAction(), provisionOwnerAuthAction(), provisionUserAuthAction(), refreshOwnerAction(), resetOwnerPasswordWithOtpAction(), seedRbac(), verifyOwnerOtpAction() (+4 more)
 
 ### Community 38 - "ai/service.py"
-Cohesion: 0.29
-Nodes (10): BaseSettings, Settings, Config, DraftGenerationRequest, DraftGenerationResponse, ModelProviderStatus, PromptGuardrail, PromptMessage (+2 more)
+Cohesion: 0.12
+Nodes (26): async_sessionmaker, create_user(), update_user(), get_db(), get_session_factory(), AsyncSession, FastAPI dependency — yields an AsyncSession., session_scope() (+18 more)
 
 ### Community 39 - "DelegatLabs Lawyer Agent — Project Requirements"
-Cohesion: 0.11
-Nodes (18): 10.1 Happy path — Rent Agreement (V1 must-pass), 10.2 Blocked generation, 10.3 Case record, 10. User journeys (acceptance scenarios), 11. Implementation roadmap mapping, 12. Current implementation snapshot (for requirements tracking), 13. Priority legend, 14. Open decisions / follow-ups (+10 more)
+Cohesion: 0.08
+Nodes (40): KEY_LABELS, healthColor, adminApi, adminAuthApi, tenantApi, InlineLoader(), LinkedInSessionHint(), PageHeader() (+32 more)
 
 ### Community 40 - "lawyer-agent/backend/router_user.py"
-Cohesion: 0.17
-Nodes (9): get_lawyer_admin_stats(), generate_draft(), get_stats(), DraftGenerationRequest, update_config(), LawyerAgentService, _mock_generate_draft(), Any (+1 more)
+Cohesion: 0.13
+Nodes (15): get_lawyer_admin_stats(), generate_draft(), get_stats(), update_config(), AgentRunSchema, DailyMetricSchema, DraftGenerationRequest, DraftGenerationResponse (+7 more)
 
 ### Community 41 - "lawyer-agent/frontend/UserDashboard.tsx"
-Cohesion: 0.17
-Nodes (11): defaultConfig, LawyerConfig, DraftGenerationPayload, DraftGenerationResponse, generateDraft(), compileLocalPreview(), INTAKE_FIELDS, IntakeState (+3 more)
+Cohesion: 0.15
+Nodes (12): defaultConfig, LawyerConfig, DraftGenerationPayload, DraftGenerationResponse, generateDraft(), compileLocalPreview(), INTAKE_FIELDS, IntakeState (+4 more)
 
 ### Community 42 - "linkedin-agent/manifest.json"
-Cohesion: 0.12
-Nodes (15): admin_route, base_price_inr, base_price_usd, capabilities, category, description, name, slug (+7 more)
+Cohesion: 0.11
+Nodes (43): AuthContext, adjust_credits(), admin_catalog(), admin_create_action_cost(), admin_create_pack(), admin_create_plan(), admin_update_action_cost(), admin_update_pack() (+35 more)
 
 ### Community 43 - "enums/__init__.py"
-Cohesion: 0.26
-Nodes (9): api_health(), AppSurface, Environment, APIModel, HealthResponse, BaseModel, api_health(), api_health() (+1 more)
+Cohesion: 0.29
+Nodes (7): api_health(), AppSurface, Environment, APIModel, HealthResponse, BaseModel, StrEnum
 
 ### Community 44 - "shared/core/config.py"
-Cohesion: 0.17
-Nodes (8): get_settings(), BaseSettings, Base prefix for versioned HTTP APIs, e.g. /api/v1., Application and API versioning live here so every surface shares one source of t, Settings, Security helpers (JWT, password hashing) — shared across surfaces., get_current_settings(), Settings
+Cohesion: 0.10
+Nodes (20): Attack surfaces searched — no defect found, AuthZ: viewer generate / PATCH; GET other-tenant catalog, Catalog mock / helper returning 7 topics → not 2xx persist, `consume_for_action`, File > 500 lines, Findings, Gate auto-complete still present, Global seed DELETE (+12 more)
 
 ### Community 45 - "preview/page.tsx"
-Cohesion: 0.19
-Nodes (9): OutputCheckList(), OutputCheckListProps, PreviewActionBar(), PreviewActionBarProps, ExportServiceResponse, printDraft(), OutputValidationResult, validateGeneratedDraft() (+1 more)
+Cohesion: 0.07
+Nodes (41): _first(), Path, TS-8 frontend ACs that are testable without a UI runner (source assertions).  us, AC-NAV-06: nav membership is static — no subscribedAgents HTTP derivation., AC-NAV-07: Content → Topics nav still exists., AC-CAT-01/02/03: Subscription/Credits tabs do not import mock-billing symbols., AC-CAT-04: USER tabs do not show locked-out mock USD labels., AC-CAT-08 + Wave-3 copy: mock banners absent; no-op toast locked. (+33 more)
 
 ### Community 46 - "5. Functional requirements"
-Cohesion: 0.12
-Nodes (16): 5.10 Rough case notes extraction, 5.11 Case-aware drafting, 5.12 Outbound WhatsApp assistant (future), 5.13 Calendar and voice (future), 5.14 Authentication and accounts (planned), 5.15 Backend API surface (baseline), 5.1 Language and onboarding, 5.2 Dashboard and navigation (+8 more)
+Cohesion: 0.09
+Nodes (35): auth_status(), linkedin_disconnect(), sync_linkedin_connections(), disconnect_linkedin(), enabled_publishable_count(), fetch_organization_acls(), _iso(), linkedin_section_payload() (+27 more)
 
 ### Community 47 - "Autonomous LinkedIn PR and Lead Agent Suite"
-Cohesion: 0.12
-Nodes (15): 1. Create PR Agent Service, 2. Create Lead Agent Service, 3. Start and Enable Daemons, 4. Monitor Daemon Status and Read Logs, Autonomous LinkedIn PR and Lead Agent Suite, ☁️ Cloud VM Deployment (Systemd Services), 🛠️ Installation & Setup, 📁 Project Directory Manifest (+7 more)
-
-### Community 48 - "DraftBlueprint"
-Cohesion: 0.13
-Nodes (12): MissingFieldsList(), MissingFieldsListProps, IntakeSummary(), IntakeSummaryProps, IntakeWizardProps, OutputCheckListProps, DraftBlueprint, OutputValidationResult (+4 more)
+Cohesion: 0.04
+Nodes (53): AccordionContent, AccordionItem, AccordionTrigger, Alert, AlertDescription, AlertTitle, alertVariants, AlertDialogAction (+45 more)
 
 ### Community 49 - "completeness/page.tsx"
-Cohesion: 0.22
-Nodes (11): DraftingCompleteness(), MissingFieldsList(), MissingFieldsListProps, IntakeSummary(), IntakeSummaryProps, IntakeWizardProps, CompletenessResult, runCompletenessCheck() (+3 more)
+Cohesion: 0.08
+Nodes (36): TS-8-style empty/error and out-of-scope ACs for TS-10 (C-posts-manual + AC-EMPTY, AC-EMPTY-01: empty title still 400; image presence does not change that., AC-EMPTY-01: empty description still 400., AC-EMPTY-01: image presence does not waive empty title → 400., AC-EMPTY-02: POST /posts/manual without a session → 401 locked detail., AC-EMPTY-03: existing composed-text > 3000 → 400 is unchanged., AC-EMPTY-04 / AC-HP-04: no image is valid — not a type/size/missing-image reject, AC-HP-05: omitting tags still works (not a 400 for missing tags). (+28 more)
 
 ### Community 50 - "lawyer-agent/manifest.json"
 Cohesion: 0.14
 Nodes (13): admin_route, base_price_inr, base_price_usd, capabilities, category, description, name, slug (+5 more)
 
 ### Community 51 - "Delegtlabs Multi-Agent Platform Build Prompt"
-Cohesion: 0.14
-Nodes (13): 7a LinkedIn PR upgrade, 7b Lawyer agent, Active agents (only these two), Architecture (fixed), Build order, Delegtlabs Multi-Agent Platform Build Prompt, Phase 1 -- Core shared DB schema, Phase 2 -- Admin per-agent sub-dashboard (+5 more)
+Cohesion: 0.16
+Nodes (21): create_linkedin_post(), download_image_buffer(), exchange_code(), get_auth_url(), get_auth_url_sync(), get_decrypted_token(), get_linkedin_headers(), get_post_engagement() (+13 more)
 
 ### Community 52 - "admin/src/agents/lawyer-agent/lib/draft-catalog.ts"
-Cohesion: 0.19
-Nodes (9): CategoryFilter(), CategoryFilterProps, DraftCard(), DraftCardProps, Category, Difficulty, DRAFT_CATALOG, DraftCatalogItem (+1 more)
+Cohesion: 0.14
+Nodes (22): DialogContent, DialogDescription, DialogFooter(), DialogHeader(), DialogOverlay, DialogTitle, Table, TableBody (+14 more)
 
 ### Community 53 - "user/src/agents/lawyer-agent/lib/draft-catalog.ts"
-Cohesion: 0.19
-Nodes (9): CategoryFilter(), CategoryFilterProps, DraftCard(), DraftCardProps, Category, Difficulty, DRAFT_CATALOG, DraftCatalogItem (+1 more)
+Cohesion: 0.08
+Nodes (42): execute_one_raw(), hash_password(), Length-check a candidate password, returning it unchanged when acceptable., Argon2id verifier for a validated password. Never log or return the result., Check a password, returning (ok, rehashed_or_None).      The second element is a, validate_password(), verify_password(), attach_identity() (+34 more)
 
 ### Community 54 - "frontend/lib/draft-catalog.ts"
-Cohesion: 0.19
-Nodes (9): CategoryFilter(), CategoryFilterProps, DraftCard(), DraftCardProps, Category, Difficulty, DRAFT_CATALOG, DraftCatalogItem (+1 more)
+Cohesion: 0.21
+Nodes (10): CategoryFilter(), CategoryFilterProps, DraftCard(), DraftCardProps, Category, Difficulty, DRAFT_CATALOG, DraftCatalogItem (+2 more)
 
 ### Community 55 - "linkedin-agent/frontend/UserDashboard.tsx"
-Cohesion: 0.21
-Nodes (9): defaultConfig, LinkedInConfig, Credential, formatCountdown(), Lead, LinkedInUserDashboard(), Post, scoreBadge() (+1 more)
-
-### Community 56 - "MockAIProvider"
-Cohesion: 0.17
-Nodes (6): MockAIProvider, DraftGenerationRequest, DraftGenerationResponse, AIModelRouterService, DraftGenerationRequest, DraftGenerationResponse
+Cohesion: 0.07
+Nodes (28): AdaptiveQuestion, AdaptiveQuestionOption, AdaptiveState, AuthStatus, CatalogEnvelope, ConnectionHealth, DestinationKind, DisconnectResponse (+20 more)
 
 ### Community 57 - "[caseId]/drafts/new/page.tsx"
-Cohesion: 0.23
-Nodes (9): NewCaseDraftSelectionPage(), DraftCard(), DraftCardProps, saveActiveCaseDraftContext(), saveCaseDraftLink(), Category, Difficulty, DraftCatalogItem (+1 more)
+Cohesion: 0.11
+Nodes (18): aliases, components, hooks, lib, ui, utils, iconLibrary, registries (+10 more)
 
 ### Community 58 - "Product Modules (Expanded V1.5 Scope)"
-Cohesion: 0.25
-Nodes (8): 1. Active Case Saving Module, 2. Party Side Selection, 3. Rough Case Notes Extraction, 4. Day-to-Day Drafting Catalog Update, 5. Case-Aware Drafting Integration, 6. Outbound WhatsApp Assistant, 7. Calendar and Voice Reminders (Future Phases), Product Modules (Expanded V1.5 Scope)
+Cohesion: 0.40
+Nodes (4): compat, __dirname, eslintConfig, __filename
 
-### Community 59 - "1. Core Drafting Persistence Tables"
-Cohesion: 0.17
-Nodes (12): 1. Core Drafting Persistence Tables, 3. Outbound Reminders Tables, `draft_blueprints`, `draft_sessions`, ER Diagram (Core Entities), `generated_drafts`, `integration_accounts`, `notification_logs` (+4 more)
+### Community 59 - "member-use-cases.ts"
+Cohesion: 0.20
+Nodes (21): createMemberAction(), deleteMemberAction(), listMembersAction(), updateMemberAction(), createMember(), deleteMember(), listMembers(), tenantId() (+13 more)
 
 ### Community 60 - "delegatlabs-lawyer-agent/package.json"
-Cohesion: 0.15
-Nodes (12): description, name, private, scripts, build:api, build:web, dev:api, dev:web (+4 more)
+Cohesion: 0.33
+Nodes (5): Architecture, Auth flow, DelegtLabs — User App (Next.js), Setup, Tenant model
 
-### Community 61 - "BaseAIProvider"
-Cohesion: 0.17
-Nodes (8): ABC, BaseAIProvider, DraftGenerationRequest, DraftGenerationResponse, Specific model identifier used (e.g. gpt-4o, gemini-1.5-pro), Checks if the provider is fully configured and ready to receive requests, Submits the request to the model provider to compile the document draft, Name of the AI provider (e.g. mock, openai, gemini, claude)
+### Community 61 - "HTTPException"
+Cohesion: 0.10
+Nodes (25): get_linkedin_admin_stats(), approve_post(), generate_post(), get_onboarding(), get_performance(), get_settings(), get_stats(), linkedin_connect() (+17 more)
 
 ### Community 62 - "admin/src/agents/lawyer-agent/components/intake/intake-wizard.tsx"
-Cohesion: 0.16
-Nodes (18): IntakeWizard(), buildCaseDraftPrefill(), normalizeRole(), clearActiveCaseDraftContext(), getActiveCase(), getActiveCaseDraftContext(), updateCaseDraftLink(), clearDraftIntake() (+10 more)
+Cohesion: 0.14
+Nodes (17): AgentRegistry, _find_agents_dir(), get_agent_manifest(), get_registered_agents(), get_worker_entrypoints(), Any, Path, test_agent_registry_empty_or_valid() (+9 more)
 
 ### Community 63 - "Downstream Milestones"
-Cohesion: 0.20
-Nodes (9): Active Phase, Completed Phases, Downstream Milestones, Implementation Roadmap: DelegatLabs Lawyer Agent, Level 13: Supabase Schema with Drafting + Case-Aware Legal Briefing Foundation, Level 14: Supabase Client Integration & Auth Persistence, Level 15: Case Management Module & Linking Core, Level 16: Intelligent Intake Parsing (Hearing Notes OCR/AI) (+1 more)
+Cohesion: 0.10
+Nodes (20): 10. `generate_post` path (Q-10 A), 11. Timeouts and retries, 12. Credits (Q-7 A), 13. Frontend client (A8), 14. UI + routing (A8) — not all HTTP, still locked, 15. A6 persistence constraints (API-facing), 16. Out of contract, 17. Error table (copy/paste) (+12 more)
 
 ### Community 64 - "app/main.py"
-Cohesion: 0.27
-Nodes (3): setup_cors(), create_app(), FastAPI
+Cohesion: 0.09
+Nodes (21): ActionCostEditor(), AGENT_KINDS, apiErrorMessage(), BillingPage(), CreateActionCostForm(), CreatePackForm(), CreatePlanForm(), featuresToText() (+13 more)
 
 ### Community 65 - "gateway/main.py"
-Cohesion: 0.24
-Nodes (9): BaseHTTPMiddleware, create_app(), lifespan(), FastAPI, DelegtLabs monolith entrypoint.  Runs all surfaces (admin / user / web) in one p, Request, Attaches request id and exposes app/api version headers on every response., RequestContextMiddleware (+1 more)
+Cohesion: 0.22
+Nodes (7): dbSchema, domainsRoot, files, fs, outDir, path, root
 
 ### Community 66 - "admin/src/agents/linkedin-agent/UserDashboard.tsx"
-Cohesion: 0.21
-Nodes (9): defaultConfig, LinkedInConfig, Credential, formatCountdown(), Lead, LinkedInUserDashboard(), Post, scoreBadge() (+1 more)
+Cohesion: 0.10
+Nodes (27): api, postsApi, summarizePublishResults(), improvePost(), ImprovePostRequest, ImprovePostResponse, DialogContent, DialogDescription (+19 more)
 
 ### Community 68 - "user/src/agents/linkedin-agent/UserDashboard.tsx"
-Cohesion: 0.21
-Nodes (9): defaultConfig, LinkedInConfig, Credential, formatCountdown(), Lead, LinkedInUserDashboard(), Post, scoreBadge() (+1 more)
-
-### Community 69 - "DraftGenerationRequest"
-Cohesion: 0.43
-Nodes (7): AgentRunSchema, DailyMetricSchema, DraftGenerationRequest, DraftGenerationResponse, LawyerAdminStatsResponse, LawyerAgentConfigSchema, BaseModel
+Cohesion: 0.07
+Nodes (29): _first(), Path, TS-11 credits, file-size, and backend static ACs (C-posts-improve §6/9 + AC-CR/F, AC-FS-01: PostGenerationTab.tsx wc -l ≤ 500., AC-FS-02: Improve client lives in posts-improve.ts with timeout 120000; not post, AC-FS-03: new TS-11 files and posts.py / gemini.py stay ≤ 500 lines., AC-PS-03: no new posts.description HTML column in recent migrations., C-posts-improve §2–3: ImprovePostRequest / ImprovePostResponse with html + plain (+21 more)
 
 ### Community 70 - "DelegtLabs"
-Cohesion: 0.25
-Nodes (7): Admin client, Backend, DelegtLabs, Design goals, Extraction path, One-command Docker run, Quick start
+Cohesion: 0.29
+Nodes (6): Backend, Clients, DelegtLabs, Design goals, One-command Docker run, Quick start
 
 ### Community 71 - "DelegtLabs Server"
-Cohesion: 0.25
-Nodes (7): DelegtLabs Server, Folder map, Quick start, Routes (monolith), Run a single surface, Versioning, Why this layout
+Cohesion: 0.22
+Nodes (7): DelegtLabs Server, Layout (summary), Routes, Run, Storage, Run, Server layout
 
 ### Community 72 - "DraftBlueprint"
-Cohesion: 0.13
-Nodes (12): MissingFieldsList(), MissingFieldsListProps, IntakeSummary(), IntakeSummaryProps, IntakeWizardProps, OutputCheckListProps, DraftBlueprint, OutputValidationResult (+4 more)
-
-### Community 73 - "ClaudeProvider"
-Cohesion: 0.29
-Nodes (3): ClaudeProvider, DraftGenerationRequest, DraftGenerationResponse
+Cohesion: 0.06
+Nodes (31): dependencies, class-variance-authority, cmdk, date-fns, nodemailer, @radix-ui/react-accordion, @radix-ui/react-alert-dialog, @radix-ui/react-aspect-ratio (+23 more)
 
 ### Community 74 - "GeminiProvider"
-Cohesion: 0.29
-Nodes (3): GeminiProvider, DraftGenerationRequest, DraftGenerationResponse
+Cohesion: 0.12
+Nodes (15): Attack surfaces searched — no defect found, Auth / role gate, Both-empty 400 vs UI disable, `consume_for_action`, `dangerouslySetInnerHTML` / `.innerHTML`, Discard → `setContent` race (`improveDiscardedRef`), Findings, `generate_post` from Improve (+7 more)
 
 ### Community 75 - "OpenAIProvider"
-Cohesion: 0.29
-Nodes (3): OpenAIProvider, DraftGenerationRequest, DraftGenerationResponse
+Cohesion: 0.08
+Nodes (27): _AllowlistParser, _href_ok(), html_to_plain(), _PlainParser, Allowlist sanitizer for Improve HTML (C-posts-improve §7). Stdlib only., sanitize_improve_html(), _load(), TS-11 sanitizer ACs from C-posts-improve §7 (not from html_allowlist.py source). (+19 more)
 
-### Community 76 - "2. Case Management Tables"
-Cohesion: 0.29
-Nodes (7): 2. Case Management Tables, `case_dates`, `case_draft_links`, `case_notes`, `case_parties`, `case_tasks`, `cases`
-
-### Community 79 - "web/api/v1/router.py"
-Cohesion: 0.40
-Nodes (3): BaseModel, site_meta(), SiteMeta
+### Community 78 - "test_gateway.py"
+Cohesion: 0.07
+Nodes (15): BaseHTTPMiddleware, setup_logging(), Request, Response, RequestContextMiddleware, create_app(), lifespan(), FastAPI (+7 more)
 
 ### Community 80 - "web/src/agents/lawyer-agent/UserDashboard.tsx"
-Cohesion: 0.17
-Nodes (11): defaultConfig, LawyerConfig, DraftGenerationPayload, DraftGenerationResponse, generateDraft(), compileLocalPreview(), INTAKE_FIELDS, IntakeState (+3 more)
+Cohesion: 0.06
+Nodes (31): dependencies, class-variance-authority, embla-carousel-react, nodemailer, @radix-ui/react-accordion, @radix-ui/react-label, @radix-ui/react-popover, @radix-ui/react-scroll-area (+23 more)
 
-### Community 82 - "user/src/agents/lawyer-agent/UserDashboard.tsx"
-Cohesion: 0.17
-Nodes (11): defaultConfig, LawyerConfig, DraftGenerationPayload, DraftGenerationResponse, generateDraft(), compileLocalPreview(), INTAKE_FIELDS, IntakeState (+3 more)
+### Community 81 - "admin/src/app/admin/agents/[slug]/dashboard/page.tsx"
+Cohesion: 0.09
+Nodes (26): AC-OOS-01/02: posts router does not grow catalog persist or wallet consume route, test_ac_oos_01_02_no_wallet_or_catalog_write_on_posts_router(), AC-ADM-08 / Q-BA-11: no DELETE catalog routes., test_ac_adm_08_no_delete_catalog_routes(), _endpoints_text(), Path, TS-8 out-of-scope non-changes. AC-OOS-* + AC-NOP persist surfaces., AC-OOS-02: no gateway routes; no new payment env names on Settings / .env.exampl (+18 more)
+
+### Community 83 - "user/src/app/dashboard/agents/[slug]/page.tsx"
+Cohesion: 0.10
+Nodes (14): app, App(), generateClientFitSummary(), useLoadingProgress(), MATCH_EXAMPLES, GEMINI_CONFIG, app, auth (+6 more)
+
+### Community 84 - "web/src/app/admin/agents/[slug]/dashboard/page.tsx"
+Cohesion: 0.15
+Nodes (20): StatusBadge(), PaginationBar(), PaginationBarProps, Table, TableBody, TableCaption, TableCell, TableFooter (+12 more)
+
+### Community 85 - "web/src/app/dashboard/agents/[slug]/page.tsx"
+Cohesion: 0.16
+Nodes (17): SettingsPage(), CommandPalette(), applyTheme(), Theme, ThemeContext, ThemeContextValue, ThemeProvider(), useTheme() (+9 more)
 
 ### Community 86 - "run_agent_task"
+Cohesion: 0.15
+Nodes (15): catalog_store(), CatalogStore, cost_row(), _DefaultConflict, _install_store(), _now(), pack_row(), plan_row() (+7 more)
+
+### Community 88 - "admin/agents/page.tsx"
+Cohesion: 0.11
+Nodes (31): complete_profile(), email_verify(), me(), password_login(), password_reset(), password_status(), Request, Response (+23 more)
+
+### Community 89 - "REQUIREMENTS.md"
+Cohesion: 0.14
+Nodes (25): _accept_values(), _first(), _glob_text(), Path, TS-10 USER Post Generation source ACs (no Jest/Vitest runner; same pattern as TS, AC-HP-03 / AC-ENC-01: Generate Post uses postsApi.manualPublish → POST /posts/ma, AC-ENC-01: upload stays multipart field `image`, not a base64 JSON field., AC-ENC-03: manualPublish stays POST /posts/manual + FormData; no maxContentLengt (+17 more)
+
+### Community 90 - "6. Data and schema requirements"
+Cohesion: 0.08
+Nodes (25): TS-8 ADMIN catalog HTTP. C-BILLING-CATALOG §4 + requirements F/G., AC-AUTH-06 / AC-ADM-04: finance write allowed (2xx, row changed)., AC-INA-01 / AC-INA-03: staff can persist is_active=false; USER omits; ADMIN read, AC-ZERO-01: plan and pack with price_inr_minor=0 and price_usd_minor=0 → 2xx., C-BILLING-CATALOG §4.3: price_* >= 0 CHECK failures → 400., C-BILLING-CATALOG §4.2: unknown UUID → 404 with locked detail strings., C-BILLING-CATALOG §4.3: unique code conflict → 400., C-BILLING-CATALOG §4.3: is_default true violating uq_sub_plans_default → 400. (+17 more)
+
+### Community 91 - "Master Product Blueprint: DelegatLabs Lawyer Agent V1.5"
+Cohesion: 0.15
+Nodes (17): metadata, Button, Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle (+9 more)
+
+### Community 92 - "DelegtLabs Admin Client"
+Cohesion: 0.25
+Nodes (7): Delegate Labs — Admin Panel, Docker, Environment variables, Getting started, Routes, Scripts, Stack
+
+### Community 93 - "admin/src/app/layout.tsx"
+Cohesion: 0.10
+Nodes (20): 10. Contract must meet (A4 lock; A6 schema), 11. Conditions (Wave 3 + contract + A6), 12. Residual risk (D5), 1. Surfaces in scope, 2. Authentication, 3.1 Floor = adaptive complete (owner | admin | editor), 3.2 Weaker patterns — do not copy, 3. Authorization (+12 more)
+
+### Community 95 - "linkedin-agent/frontend/AdminDashboard.tsx"
+Cohesion: 0.08
+Nodes (22): Authentication & multi-tenancy (user side), Known gaps, LinkedIn as the identity provider, Local development, Migration, OTP security, Sessions, Sign-in flow (+14 more)
+
+### Community 96 - "test_phase3_user.py"
+Cohesion: 0.21
+Nodes (20): adaptive_answer(), adaptive_back(), adaptive_complete(), adaptive_reset(), _client_payload(), load_onboarding_payload(), _log(), _persist_legacy_blob() (+12 more)
+
+### Community 97 - "test_phase4_web.py"
+Cohesion: 0.07
+Nodes (36): TS-15 credits, file-size, migration, slug-insert, and helper source ACs., RT-15-3: persist_persona_catalog takes pg_advisory_xact_lock(hashtext(tenant_id), AC-NEG-02 / Q-5 A: adaptive complete path has no preferred_topics INSERT into to, AC-NEG-03 / Q-5 A: legacy POST /onboarding complete has no topicsOfInterest INSE, AC-NEG-08: 10×5 uses existing GEMINI_API_KEY / GEMINI_MODEL / GEMINI_FALLBACK_MO, AC-NEG-07: Improve / Matchifyx / LinkedIn publish not used as TS-15 vehicles., Schema: 016 has tenant_id + tenant_topic_replacements; does not DELETE react-new, AC-RT-01 HTTP mapping: last-answer payload sets adaptive.status from session.sta (+28 more)
+
+### Community 98 - "Workspace Agent Rules for DelegatLabs Lawyer Agent"
+Cohesion: 0.11
+Nodes (13): metadata, metadata, posts, metadata, metadata, metadata, metadata, metadata (+5 more)
+
+### Community 99 - "admin/src/lib/api.ts"
+Cohesion: 0.10
+Nodes (23): AC-AUTH-04: staff support on catalog read → 2xx, including inactive., AC-ADM-04/05/06 / AC-AUTH-06: tech create+update dual prices; USER sees active v, test_ac_adm_04_06_tech_creates_and_updates_plan_pack_and_cost(), test_ac_auth_04_support_can_read(), TS-8 USER catalog GET. Paths and shapes from C-BILLING-CATALOG §2–3., AC-ERR-01 / AC-AUTH-07 sibling: USER catalog GET with no session → 401., AC-CAT-07 / AC-AUTH-07: tenant session, no staff role, returns 2xx envelope., AC-EMP-03: zero catalog rows → 2xx with empty lists, not 5xx. (+15 more)
+
+### Community 101 - "theme-provider.tsx"
+Cohesion: 0.16
+Nodes (20): AC-ED-02: after polish, composed plain > 3000 → 400 same over-limit detail shape, C-posts-improve §4: over-limit on input compose is 400 before improve_post_text., test_ac_ed_02_composed_in_over_3000_skips_gemini(), test_ac_ed_02_composed_out_over_3000_is_400(), _bind_improve_patches(), _client(), compose_manual_body(), improve_anon_client() (+12 more)
+
+### Community 102 - "admin/src/agents/lawyer-agent/components/empty-state.tsx"
+Cohesion: 0.08
+Nodes (25): authApi, onboardingApi, sessionApi, isOnboardingComplete(), Avatar, AvatarFallback, AvatarImage, DropdownMenuCheckboxItem (+17 more)
+
+### Community 104 - "admin/src/agents/lawyer-agent/components/prompt/guardrails-card.tsx"
+Cohesion: 0.11
+Nodes (18): compilerOptions, allowImportingTsExtensions, allowJs, experimentalDecorators, isolatedModules, jsx, lib, module (+10 more)
+
+### Community 107 - "user/src/agents/lawyer-agent/AdminDashboard.tsx"
+Cohesion: 0.29
+Nodes (6): Admin (`/api/admin`), Admin + Web APIs (PostgreSQL), Endpoints, PostgreSQL, Run (monolith gateway), Web (`/web/api/v1`)
+
+### Community 108 - "user/src/agents/lawyer-agent/components/empty-state.tsx"
+Cohesion: 0.18
+Nodes (13): ABC, ConsoleMailer, get_mailer(), Mailer, Outbound email.  Two backends behind one interface so the OTP flow never changes, No-op delivery for local development., Blocking smtplib call pushed to a worker thread to keep the event loop free., Backend chosen per call so a config change does not need a restart in dev. (+5 more)
+
+### Community 110 - "user/src/agents/lawyer-agent/components/prompt/guardrails-card.tsx"
+Cohesion: 0.11
+Nodes (17): 10. Frontend client (A8), 11. Shared HTML → plain (A8), 12. UI (A8) — not HTTP, still locked, 13. Out of contract, 14. Error table (copy/paste), 1. Endpoint, 2. Request JSON, 3. Success JSON (HTTP 200) (+9 more)
+
+### Community 112 - "user/src/agents/linkedin-agent/AdminDashboard.tsx"
+Cohesion: 0.18
+Nodes (19): generate_post_endpoint(), GeneratePostRequest, compliance_prompt_block(), _dedupe(), get_effective_agent_config(), load_compliance_for_industry(), merge_compliance_into_config(), Any (+11 more)
+
+### Community 113 - "src/app/dashboard/page.tsx"
+Cohesion: 0.15
+Nodes (23): CustomersPage(), createCustomer(), deleteCustomer(), listCustomers(), updateCustomer(), CustomerDrawer(), CustomersTable(), fetchCustomers() (+15 more)
+
+### Community 114 - "user/src/app/layout.tsx"
+Cohesion: 0.24
+Nodes (15): AuthLoginResult, bumpAttempts(), clearOtp(), loginOwner(), requestOwnerPasswordOtp(), resetOwnerPassword(), resetOwnerPasswordWithOtp(), verifyOwnerOtp() (+7 more)
+
+### Community 116 - "checkout/page.tsx"
+Cohesion: 0.15
+Nodes (27): globalForPrisma, buildSession(), bumpAttempts(), clearOtp(), ensureTenantMembership(), postLogin(), postRegister(), refreshUserTokens() (+19 more)
+
+### Community 117 - "pricing/page.tsx"
+Cohesion: 0.11
+Nodes (17): 10. LinkedIn — HTML never published (Q-2 A), 11. Conditions (Wave 3 + Improve contract), 12. Residual risk (D5), 13. OWASP pass (scoped), 1. Surfaces in scope, 2. Authentication, 3. Authorization, 4. Tenancy — stateless polish (no cross-tenant read) (+9 more)
+
+### Community 126 - "web/src/agents/linkedin-agent/UserDashboard.tsx"
+Cohesion: 0.07
+Nodes (50): approve_post(), _compliance_http(), _compose_manual_body(), delete_post(), _fetch_post(), get_post_by_id(), get_posts(), improve_post_endpoint() (+42 more)
+
+### Community 130 - "Delegtlabs — Project Structure"
+Cohesion: 0.22
+Nodes (10): create_admin_jwt(), create_session_jwt(), decrypt(), encrypt(), get_encryption_key(), Encrypts a plaintext string using AES-256-GCM.     Returns a base64-encoded stri, Decrypts a base64-encoded string produced by encrypt()., Decode a user-session JWT. Raises on expiry, bad signature, or wrong token type. (+2 more)
+
+### Community 131 - "admin/AGENTS.md"
+Cohesion: 0.11
+Nodes (19): generate_otp(), hash_otp(), Peppered, email-bound SHA-256. Binding to the email stops a code minted for one, Constant-time comparison so a wrong code leaks no timing signal., Cryptographically random numeric code, zero-padded to a fixed width., verify_otp(), issue_otp(), Generate, store, and email a fresh code. Supersedes any outstanding one. (+11 more)
+
+### Community 132 - "eslint.config.mjs"
+Cohesion: 0.40
+Nodes (4): compat, __dirname, eslintConfig, __filename
+
+### Community 135 - "admin/src/app/page.tsx"
+Cohesion: 0.12
+Nodes (17): TS-10 nginx / size-policy file-content tests (AC-NGX-*, AC-SIZE-*, AC-ENC-02)., AC-NGX-01 / SQ-1: USER nginx active directive is exactly client_max_body_size 10, AC-NGX-02 / Q-4 A: ADMIN nginx must not gain client_max_body_size., AC-NGX-04: uvicorn start.sh / FastAPI app construction are not the size-policy r, AC-SIZE-02 / Q-3 A: POST /posts/manual must not add an application-layer image b, AC-ENC-02: 10m cap is USER nginx only — no new named env var for the limit., AC-SIZE-03: oversize >10m may remain nginx/axios 413. This is not a toast assert, AC-SIZE-04: in-policy is body accepted at 10m, not file_bytes <= 10485760 ⇒ 2xx. (+9 more)
+
+### Community 136 - "temp.js"
+Cohesion: 0.26
+Nodes (9): _as_list(), dna_to_legacy(), legacy_to_dna(), Any, Map legacy static onboarding answers into Content DNA., load_limits(), OnboardingLimits, Dimension weights and stopping-rule config. (+1 more)
+
+### Community 137 - "user/next.config.ts"
+Cohesion: 0.12
+Nodes (24): calculate_coverage(), Weighted Content DNA coverage., should_end_onboarding(), AdaptiveOnboardingEngine, _candidate_to_question(), _preset_values(), AdaptiveQuestion, Any (+16 more)
+
+### Community 138 - "user/postcss.config.mjs"
+Cohesion: 0.18
+Nodes (16): answer_method_for(), apply_direct_fields(), apply_identity_answer(), Any, FieldSource, Map answers onto Content DNA without dropping raw values., remember_raw(), answer_strings() (+8 more)
+
+### Community 139 - "user/README.md"
+Cohesion: 0.09
+Nodes (27): CatalogPack, OnboardingAnswers, settingsApi, generatePersonaTopics(), GeneratePersonaTopicsResponse, listPersonaTopics(), patchPersonaTopic(), TopicOption (+19 more)
+
+### Community 140 - "user/src/app/page.tsx"
+Cohesion: 0.18
+Nodes (14): Client, build_system_prompt(), derive_image_prompt(), generate_post(), get_client(), improve_post_text(), _strip_html_fences(), _user_contents() (+6 more)
+
+### Community 142 - "web/README.md"
+Cohesion: 0.14
+Nodes (22): AgentDetailPage(), PageProps, AgentMarketplace(), AgentMarketplaceProps, PlanMode, AgentPlans(), PlanCard(), PlanMode (+14 more)
+
+### Community 143 - "web/src/app/page.tsx"
+Cohesion: 0.23
+Nodes (15): clear_session_cookies(), client_ip(), _cookie_secure(), get_session_claims(), issue_admin_cookie(), issue_session_cookie(), Request, Response (+7 more)
+
+### Community 144 - "settings/page.tsx"
+Cohesion: 0.31
+Nodes (15): _answer(), _engine(), Adaptive onboarding engine tests (TS-12). Independent of UI., _start(), test_every_answer_uses_planner_mc_options(), test_scenario_10_completes_before_max_when_coverage_met(), test_scenario_1_web_development_then_fullstack_then_non_generic(), test_scenario_2_doctor_cardiology_then_shifts_off_medicine() (+7 more)
+
+### Community 145 - "admin/__init__.py"
+Cohesion: 0.12
+Nodes (15): admin_route, base_price_inr, base_price_usd, capabilities, category, description, name, slug (+7 more)
+
+### Community 146 - "gateway/__init__.py"
+Cohesion: 0.13
+Nodes (14): 10. Out of scope (D6), 11. Residual (D5), 1. Boundaries, 2. Chosen path, 3. Data flow, 4. JSON naming, 5. Gemini helper vs `generate_post`, 6. HTML allowlist (C-XSS-SERVER) (+6 more)
+
+### Community 147 - "shared/__init__.py"
+Cohesion: 0.15
+Nodes (13): adminRequest(), redirectToLogin(), tryRefresh(), loginOwnerAction(), resetOwnerPasswordAction(), AdminAuthGate(), PUBLIC_PATHS, AdminLoginForm() (+5 more)
+
+### Community 148 - "integrations/__init__.py"
+Cohesion: 0.18
+Nodes (7): ChartConfig, ChartContainer, ChartContext, ChartContextProps, ChartLegendContent, ChartTooltipContent, THEMES
+
+### Community 149 - "admin/main.py"
+Cohesion: 0.23
+Nodes (14): _client(), _ensure_posts_import_stubs(), _install_stub(), _make_posts_app(), posts_anon_client(), posts_app(), posts_client(), _publish_patches() (+6 more)
+
+### Community 150 - "user/__init__.py"
+Cohesion: 0.49
+Nodes (9): SessionState, _fatigue(), filter_duplicates(), AdaptiveQuestion, rank_candidates(), Score and rank candidate questions., _relevance(), score_question() (+1 more)
+
+### Community 151 - "agents/__init__.py"
+Cohesion: 0.15
+Nodes (6): is_valid_email(), Deliberately permissive: reject the obviously malformed, let SMTP judge the rest, AC: identity resolution and tenant-per-signup (TS-3).  The linking rule under te, The security-critical case: no verified assertion, no linking., test_email_validation_rejects_the_obviously_malformed(), test_unverified_email_does_not_take_over_an_existing_account()
+
+### Community 152 - "auth/__init__.py"
+Cohesion: 0.19
+Nodes (12): TS-8 seed integers. C-BILLING-CATALOG §5 + AC-SEED-*. Filename is not asserted., AC-SEED-05: 200/50=4, 200/1=200, 200/10=20 (locked table, not a new price)., AC-SEED-01: taster_100 / Taster / 200 credits / ₹100=10000 paise / $1=100 cents., AC-SEED-02: manual_post=50, text_post=1, image_post=10 (not 011's 0/5)., AC-SEED-03 + Wave-3: Starter/Growth/Scale names; free default 60 credits., AC-SEED-04 / Wave-3: 011 extras are not required; if present they are deactivate, test_ac_seed_01_pack_minor_units_and_credits_in_sql(), test_ac_seed_02_action_costs_in_sql() (+4 more)
+
+### Community 153 - "documents/__init__.py"
+Cohesion: 0.15
+Nodes (12): Acceptance (binary), Architecture, Backend (new contracts), Decisions locked, Frontend API client, Frontend page rewrite, Out of scope, Panel execution (after you approve this plan) (+4 more)
+
+### Community 154 - "profile/__init__.py"
+Cohesion: 0.14
+Nodes (13): TS-11 ACs that require a live browser / fake timer. Not unit-assertable here.  S, AC-HP-01 (browser): Description on TabsContent generation is a TipTap editor, AC-HP-05 (browser): success opens Dialog; Accept loads response html into TipTap, AC-EM-01 (browser): both fields empty → Improve disabled; click sends no HTTP., AC-ERR-01 (browser): while Improve is pending, a second click does not start, AC-ERR-03 (browser): Discard after a successful preview does not keep preview HT, AC-ERR-04 (browser / fake timer): request exceeding 120000 ms is a failure     (, test_ac_em_01_wave4_disabled_improve_click_is_noop() (+5 more)
+
+### Community 155 - "projects/__init__.py"
+Cohesion: 0.26
+Nodes (9): globalForPrisma, ProvisionedCredentials, provisionOwnerAuth(), provisionUserAuth(), ADMIN_PERMS, ensureRbacSeed(), USER_PERMS, generateOneTimePassword() (+1 more)
+
+### Community 156 - "tasks/__init__.py"
+Cohesion: 0.17
+Nodes (11): TS-10 ACs that require a live USER nginx hop or browser. Not unit-assertable her, AC-HP-01: POST ~1.5 MiB (1572864 file bytes) JPEG/PNG to localhost:3005/posts/ma, AC-HP-02: authenticated Generate Post with in-policy JPEG/PNG must not toast, AC-HP-06 / TS-10-U3: authenticated in-policy JPEG/PNG POST /posts/manual     thr, AC-TYPE-01 (browser): GIF Generate Post toasts the type rule, not axios 413., AC-GATE-02: verification-gate attaches the four live evidence items     (1.5 MiB, test_ac_gate_02_wave4_generate_post_evidence_bundle(), test_ac_hp_01_wave4_15mib_jpeg_png_through_user_3005_is_not_nginx_413() (+3 more)
+
+### Community 157 - "web/__init__.py"
+Cohesion: 0.18
+Nodes (11): A. Happy path, AC-HP-01 — TipTap Description on Post Generation only, AC-HP-02 — Improve control label, AC-HP-03 — Improve request context (Q-5 C, U-TS11-5 C), AC-HP-04 — Success returns HTML, AC-HP-05 — Preview then Accept / Discard (Q-4 B), AC-HP-06 — Polish helper, not topic `generate_post`, AC-HP-07 — Light polish prompt (Q-8 A) (+3 more)
+
+### Community 158 - "contact/__init__.py"
+Cohesion: 0.36
+Nodes (11): PostStatus, str, Config, GeneratePostRequest, ImprovePostRequest, ImprovePostResponse, PostListResponse, PostResponse (+3 more)
+
+### Community 159 - "content/__init__.py"
+Cohesion: 0.12
+Nodes (5): _AsyncSessionLocal(), _FakeAsyncSession, Pytest bootstrap for linkedin_agent backend unit tests.  Run from the backend pa, Fresh AsyncMocks per test so side_effect / call history do not leak., _reset_db_stub()
+
+### Community 160 - "public/__init__.py"
+Cohesion: 0.18
+Nodes (11): _glob_text(), AC-CAT-05/06 (source): tabs consume catalog GET, not MOCK_* collections., AC-ADM-07: ADMIN billing UI has price_inr_minor and price_usd_minor fields., AC-ADM-08: no DELETE catalog client helper., AC-OOS-07 + C-OVERVIEW-REMOVAL: tenantApi.credits stays; tenantApi.overview remo, AC-OOS-05: this task must not add Matchifyx product code under the agent fronten, test_ac_adm_07_admin_ui_exposes_both_price_columns(), test_ac_adm_08_admin_ui_has_no_delete_sku_control() (+3 more)
+
+### Community 161 - "generate_draft"
+Cohesion: 0.39
+Nodes (10): all_bank_questions(), coerce_selectable_current(), _deps_ready(), eligible_bank_questions(), fallback_question(), first_question(), AdaptiveQuestion, _q() (+2 more)
+
+### Community 162 - "apps/web/postcss.config.mjs"
+Cohesion: 0.25
+Nodes (7): AC-CR-01 — Improve handler does not debit, AC-CR-02 — No new billable `action_key`, AC-CR-03 — Manual publish still does not debit, AC → test map (A11), F. Credits, Locked decisions (encode as ACs; do not reopen), TS-11 — Requirements (A3)
+
+### Community 163 - "tailwind.config.ts"
+Cohesion: 0.25
+Nodes (8): AC-ED-01 — Composed length uses stripped plain text, AC-ED-02 — Composed `> 3000` rejects Improve (server), AC-ED-03 — Composed `> 3000` rejects Improve (client), AC-ED-04 — Composed exactly 3000 is allowed, AC-ED-05 — Tags still sent when generating from title, AC-ED-06 — Timeout 120000 ms (U-TS11-1 B), AC-ED-07 — No extra HTTP retries (U-TS11-2 A), C. Edge
+
+### Community 164 - ".agents/AGENTS.md"
+Cohesion: 0.18
+Nodes (7): ChartConfig, ChartContainer, ChartContext, ChartContextProps, ChartLegendContent, ChartTooltipContent, THEMES
+
+### Community 165 - "linkedin_pr_agent/config.py"
+Cohesion: 0.29
+Nodes (3): Regression: the OAuth callback must never take its redirect target from Referer., Guards against the referer trust being reintroduced in either OAuth handler., test_callback_source_contains_no_referer_lookup()
+
+### Community 166 - "CLAUDE.md"
+Cohesion: 0.29
+Nodes (7): AC-NGX-03: documented rollback is remove client_max_body_size 10m from USER ngin, test_ac_ngx_03_rollback_documented_as_remove_user_directive(), AC-DOC-01: changelog/docs state JPEG+PNG only, USER nginx 10m, oversize may be 4, test_ac_doc_01_docs_state_jpeg_png_and_10m_and_413(), AC-DOC-01: agent-package docs/changelog record overview removal and catalog-back, test_ac_doc_01_changelog_records_overview_and_catalog(), collect_docs_text()
+
+### Community 168 - "linkedin-agent/backend/__init__.py"
+Cohesion: 0.15
+Nodes (16): Switch, AgentDrawerBasicsFields(), AgentDrawerLinksFields(), AgentDrawerListingFields(), FormValues, AgentDrawerPublishStep(), FormValues, fieldControlClass() (+8 more)
+
+### Community 169 - "admin/api/__init__.py"
+Cohesion: 0.60
+Nodes (4): customerCreateSchema, customerPlanSchema, customerStatusSchema, customerUpdateSchema
+
+### Community 170 - "admin/api/v1/__init__.py"
+Cohesion: 0.60
+Nodes (4): userCreateSchema, userRoleSchema, userStatusSchema, userUpdateSchema
+
+### Community 172 - "tenants/__init__.py"
+Cohesion: 0.19
+Nodes (20): admin_login(), admin_me(), _complete_linkedin_signin(), dev_connect(), _frontend_base(), linkedin_callback(), linkedin_login(), logout() (+12 more)
+
+### Community 175 - "email/__init__.py"
+Cohesion: 0.60
+Nodes (4): memberCreateSchema, memberRoleSchema, memberStatusSchema, memberUpdateSchema
+
+### Community 176 - "storage/__init__.py"
+Cohesion: 0.08
+Nodes (26): compilerOptions, allowImportingTsExtensions, baseUrl, ignoreDeprecations, isolatedModules, jsx, lib, module (+18 more)
+
+### Community 177 - "supabase/__init__.py"
+Cohesion: 0.08
+Nodes (26): compilerOptions, allowImportingTsExtensions, baseUrl, ignoreDeprecations, isolatedModules, jsx, lib, module (+18 more)
+
+### Community 188 - "Audit Checklist"
+Cohesion: 0.43
+Nodes (6): Path, TS-8 Post Gen Posts pagination — source ACs (no Jest/Vitest).  Acceptance from ., test_other_post_gen_tabs_do_not_use_pagination_bar(), test_posts_tab_server_paging_and_url(), test_shared_pagination_bar_exists_with_controls(), _text()
+
+### Community 189 - "providers/__init__.py"
+Cohesion: 0.09
+Nodes (16): metadata, metadata, DashboardContent(), metadata, metadata, metadata, metadata, metadata (+8 more)
+
+### Community 190 - "Design System Principles"
+Cohesion: 0.06
+Nodes (50): AC-CR-03: posts.py still has no consume_for_action after Improve is added., test_ac_cr_03_posts_py_still_has_no_consume_for_action(), AC-HP-10: Generate Post still postsApi.manualPublish → POST /posts/manual., test_ac_hp_10_generate_post_still_manual_publish(), TS-15 USER routing/copy source ACs (no Jest). Contract C-persona-topics §13–14 s, AC-ED-05: Topics Persona tab FlashcardFlow mode=edit never auto-POSTs complete., AC-HP-07 / AC-ED-04 / AC-EM-01: Generate My First Posts disabled at 0 Active per, AC-ED-06 / §14: Topic Weights copy does not claim only one topic can be Active. (+42 more)
+
+### Community 191 - "app/modules/__init__.py"
+Cohesion: 0.22
+Nodes (12): Topbar(), useCrumbs(), Breadcrumb, BreadcrumbEllipsis(), BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage (+4 more)
+
+### Community 195 - "Conversion Reference"
+Cohesion: 0.53
+Nodes (5): build_content_context(), format_context_guidelines(), _pick(), Any, Task-scoped Content DNA context for generation prompts.
+
+### Community 196 - "Audit Checklist"
+Cohesion: 0.33
+Nodes (3): AC: LinkedIn acts as an identity provider, not just a connect button (TS-3).  Ex, Signed out -> 'login' (provision on return). Signed in -> 'connect'., test_signed_out_login_uses_login_intent()
+
+### Community 197 - "Design System Principles"
+Cohesion: 0.33
+Nodes (6): scripts, build, clean, dev, lint, start
+
+### Community 198 - "Kubernetes Deploying"
+Cohesion: 0.40
+Nodes (5): AC-EM-01 — Both empty disables Improve, AC-EM-02 — Whitespace-only counts as empty, AC-EM-03 — API both-empty reject (direct call), AC-EM-04 — Generate Post empty rules unchanged, B. Empty
+
+### Community 199 - "Prompt Engineering"
+Cohesion: 0.40
+Nodes (5): AC-ERR-01 — In-flight Improve, AC-ERR-02 — HTTP / model failure does not write editor, AC-ERR-03 — Discard after preview, AC-ERR-04 — Timeout surfaces as failure, E. Error / loading
+
+### Community 200 - "Saving Workspace Context"
+Cohesion: 0.40
+Nodes (5): AC-NEG-01 — Unauthenticated Improve, AC-NEG-02 — Improve is not `POST /posts/generate`, AC-NEG-03 — Toolbar set is not larger than lock, AC-NEG-04 — Other surfaces unchanged, D. Negative
+
+### Community 201 - "What to Check"
+Cohesion: 0.40
+Nodes (5): AC-PS-01 — FormData description is plain text, AC-PS-02 — Preview length uses stripped text, AC-PS-03 — Stored `generated_text` stays composed plain body, AC-PS-04 — Strip is shared and used on Improve request, G. Publish-strip (Q-2 A)
+
+### Community 202 - "Writing Copy"
+Cohesion: 0.06
+Nodes (40): TS-15 HTTP tests for GET/PATCH /topics (C-persona-topics §5–7 + AC-HP/ED/NEG/TN), AC-ED-01: all 10 saved Active → GET 10× is_active true; 0 Draft., AC-ED-02: A and B Active; set A Draft; B stays Active., AC-ED-03 / Q-9 A: selecting L3 replaces L1; stored selected count remains 1., AC-EM-04: whitespace-only selected_option_value is not stored as the selected op, AC-NEG-05: array of selected values is rejected (exactly one option per topic)., C-persona-topics §7/§17: selected_option_value not in options[].value → 400 lock, C-persona-topics §7: is_active true + non-empty options + null/empty selected → (+32 more)
+
+### Community 203 - "Kubernetes Deploying"
+Cohesion: 0.20
+Nodes (17): get_onboarding(), Request, Persist a single onboarding answer immediately (no batching)., save_answer(), save_onboarding(), slugify(), generate_persona_topics(), get_topics() (+9 more)
+
+### Community 204 - "Prompt Engineering"
+Cohesion: 0.40
+Nodes (4): name, private, type, version
+
+### Community 205 - "Saving Workspace Context"
+Cohesion: 0.50
+Nodes (4): AC-FS-01 — PostGenerationTab ≤ 500, AC-FS-02 — `shared/api/index.ts` does not grow, AC-FS-03 — Other touched files ≤ 500, H. File-size (cap 500)
+
+### Community 206 - "What to Check"
+Cohesion: 0.50
+Nodes (3): content, fs, tags
+
+### Community 210 - "Recording workflow"
+Cohesion: 0.67
+Nodes (3): vite, vite, vite
+
+### Community 212 - "Format"
+Cohesion: 0.26
+Nodes (3): Any, In-memory topics + tenant_topic_replacements., TopicStore
+
+### Community 213 - "Workflow"
+Cohesion: 0.21
+Nodes (11): consume_oauth_state(), Validate and delete state — returns (valid, tenant_id, intent).      Single-use, AC: OAuth state validated; invalid/expired → 400 (C-linkedin-destinations §3.2,, A sign-in flow has no workspace yet -- one is provisioned after LinkedIn respond, Rows written before 007 have no intent column value; treat them as connect., C-linkedin-destinations: invalid OAuth state must not proceed to token exchange., test_consume_oauth_state_invalid_returns_false(), test_consume_oauth_state_login_intent_has_no_tenant() (+3 more)
+
+### Community 214 - "Parallel CI Triage"
+Cohesion: 0.13
+Nodes (14): 10. `consume_for_action` not used on onboarding/topics paths, 11. Frontend `Topic` / `topicsApi` / `api/index.ts` size, 12. Env names only, 13. Highest migration number, 1. `topics` table + migrations + seed, 2. Topic model, TopicUpdateRequest, GET/PATCH /topics, one-active, 3. `select_topic` / `run_generation_pipeline` / `generate_post` TOPIC_PROMPTS, 4. Adaptive complete slug-insert; `_generation_topic_id`; `session.status == completed` (+6 more)
+
+### Community 215 - "Recording workflow"
+Cohesion: 0.26
+Nodes (12): POST(), VerifyOtpForm(), loginAction(), logoutAction(), refreshUserAction(), registerAction(), requestUserOtpAction(), resetUserPasswordWithOtpAction() (+4 more)
+
+### Community 219 - "clsx"
+Cohesion: 0.08
+Nodes (23): TS-15 HTTP tests for POST /topics/generate-persona (C-persona-topics §1–4 + AC-H, AC-HP-10: one HTTP try per user-triggered generation (no extra HTTP retry wrappe, C-persona-topics §2: no JSON body required; extra body (force) is ignored, still, AC-NEG-06: helper result not 10×5 → not 2xx replaced catalog with some other cou, AC-ERR-02: RuntimeError from helper → 500; tenant still has pre-call seed list., AC-ERR-02 / §17: ValueError GEMINI_API_KEY → 500 locked detail., C-persona-topics §3: success JSON must not add post / postError / promptUsed / t, AC-HP-01: POST /topics/generate-persona is registered (C-persona-topics §1). (+15 more)
+
+### Community 220 - "embla-carousel-react"
+Cohesion: 0.22
+Nodes (10): ResetPasswordPage(), ApiError, redirectToLogin(), RequestOptions, tryRefresh(), userRequest(), AuthGate(), PUBLIC_PATHS (+2 more)
+
+### Community 222 - "@hookform/resolvers"
+Cohesion: 0.17
+Nodes (9): FormControl, FormDescription, FormFieldContext, FormFieldContextValue, FormItem, FormItemContext, FormItemContextValue, FormLabel (+1 more)
+
+### Community 227 - "@radix-ui/react-accordion"
+Cohesion: 0.12
+Nodes (18): AchievementsSection, ClientsSection, ContactSection, HomePage(), PortfolioSection, TestimonialsSection, Hero(), AboutSection() (+10 more)
+
+### Community 230 - "@radix-ui/react-avatar"
+Cohesion: 0.08
+Nodes (25): queryClient, AppSidebar(), AppSidebarProvider(), NavItem(), opsNav, platformNav, SidebarContext, SidebarCtx (+17 more)
+
+### Community 236 - "@radix-ui/react-label"
+Cohesion: 0.18
+Nodes (18): email_start(), password_forgot(), password_set(), Send a sign-in code. Works for both new and returning addresses., Set or change the signed-in user's password.      This is the last step of signu, Send a reset code -- but answer identically whether or not the address exists., AuthStatusResponse, EmailStartRequest (+10 more)
+
+### Community 237 - "@radix-ui/react-menubar"
+Cohesion: 0.12
+Nodes (11): Menubar, MenubarCheckboxItem, MenubarContent, MenubarItem, MenubarLabel, MenubarRadioItem, MenubarSeparator, MenubarShortcut() (+3 more)
+
+### Community 240 - "@radix-ui/react-progress"
+Cohesion: 0.09
+Nodes (20): AGENT_LABELS, AgentRow, REJECT_TEMPLATES, STATUS_META, STATUS_OPTIONS, adminPostsApi, Post, PostStatus (+12 more)
+
+### Community 247 - "@radix-ui/react-tabs"
+Cohesion: 0.14
+Nodes (15): AgentsPage(), metadata, parsePage(), AgentsHero(), AgentsHeroProps, AgentsList(), AgentsListProps, AgentsPagination() (+7 more)
+
+### Community 248 - "@radix-ui/react-toggle-group"
+Cohesion: 0.16
+Nodes (14): metadata, PortfolioSection(), PortfolioSectionProps, CARD_ACCENTS, STAR_GRADIENTS, TestimonialsSection(), TestimonialsSectionProps, useSwiperStyles() (+6 more)
+
+### Community 251 - "react-dom"
+Cohesion: 0.10
+Nodes (21): dependencies, axios, class-variance-authority, @radix-ui/react-avatar, @radix-ui/react-checkbox, @radix-ui/react-label, @radix-ui/react-select, @radix-ui/react-slot (+13 more)
+
+### Community 252 - "react-hook-form"
+Cohesion: 0.10
+Nodes (21): devDependencies, autoprefixer, postcss, tailwindcss, tailwindcss-animate, @types/node, @types/react, @types/react-dom (+13 more)
+
+### Community 253 - "react-resizable-panels"
+Cohesion: 0.10
+Nodes (21): dependencies, axios, date-fns, @radix-ui/react-avatar, @radix-ui/react-checkbox, @radix-ui/react-collapsible, @radix-ui/react-slider, react-dom (+13 more)
+
+### Community 257 - "Setup Terraform"
+Cohesion: 0.10
+Nodes (21): devDependencies, autoprefixer, postcss, tailwindcss, tailwindcss-animate, @types/node, @types/react, @types/react-dom (+13 more)
+
+### Community 258 - "@tanstack/react-table"
+Cohesion: 0.15
+Nodes (14): generateMetadata(), generateStaticParams(), GET(), parseNumber(), GET(), paths, sitemap(), globalForPrisma (+6 more)
+
+### Community 272 - "Workflow"
+Cohesion: 0.40
+Nodes (3): auth, dashboard, member
+
+### Community 273 - "Methods"
+Cohesion: 0.14
+Nodes (12): Carousel, CarouselApi, CarouselContent, CarouselContext, CarouselContextProps, CarouselItem, CarouselNext, CarouselOptions (+4 more)
+
+### Community 296 - "grok.py"
 Cohesion: 0.60
 Nodes (4): Any, Daily metrics rollup — drafting itself is request-driven via generate-draft., run_agent_task(), run_lawyer_agent_task()
 
-### Community 88 - "admin/agents/page.tsx"
-Cohesion: 0.22
-Nodes (9): AgentCard(), AgentCardProps, AgentCardSkeleton(), CategoryTheme, categoryThemes, formatLabel(), formatPrice(), statusClasses (+1 more)
-
-### Community 89 - "REQUIREMENTS.md"
+### Community 297 - "run_agent_task"
 Cohesion: 0.20
-Nodes (6): Backend Export Architecture Plan, Future Backend Export Model, Key Principles:, V1 Export Model: Browser Printing, Print Testing Protocol, Testing Protocol
+Nodes (9): ContextMenuCheckboxItem, ContextMenuContent, ContextMenuItem, ContextMenuLabel, ContextMenuRadioItem, ContextMenuSeparator, ContextMenuShortcut(), ContextMenuSubContent (+1 more)
 
-### Community 90 - "6. Data and schema requirements"
-Cohesion: 0.40
-Nodes (5): 6.1 Core drafting tables, 6.2 Case management tables, 6.3 Reminders and integrations, 6.4 Interim persistence, 6. Data and schema requirements
+### Community 305 - "date-fns"
+Cohesion: 0.14
+Nodes (13): 10. Residual (D5), 1. Boundaries, 2. Chosen path, 3. Data flow, 4. JSON naming, 5. A6 seam (no invented DB names), 6. File split (cap 500; `index.ts` must not grow), 7. `generate_post` (Q-10 A) (+5 more)
 
-### Community 91 - "Master Product Blueprint: DelegatLabs Lawyer Agent V1.5"
+### Community 314 - "health/route.ts"
+Cohesion: 0.18
+Nodes (21): resetPasswordAction(), login(), loginUseCase, logout(), register(), registerUseCase, resetPassword(), resetPasswordUseCase (+13 more)
+
+### Community 321 - "express"
 Cohesion: 0.17
-Nodes (10): Core Product Principles, Executive Summary, Master Product Blueprint: DelegatLabs Lawyer Agent V1.5, Product Safety Notes, Technical Stack, DelegatLabs Lawyer Agent, Documentation, Key Core Product Principles (+2 more)
+Nodes (9): FormControl, FormDescription, FormFieldContext, FormFieldContextValue, FormItem, FormItemContext, FormItemContextValue, FormLabel (+1 more)
 
-### Community 92 - "DelegtLabs Admin Client"
-Cohesion: 0.50
-Nodes (3): DelegtLabs Admin Client, Layout, Run
-
-### Community 98 - "Workspace Agent Rules for DelegatLabs Lawyer Agent"
-Cohesion: 0.50
-Nodes (3): Special Rules, Tech Stack, Workspace Agent Rules for DelegatLabs Lawyer Agent
-
-### Community 99 - "admin/src/lib/api.ts"
-Cohesion: 0.15
-Nodes (7): dummyAgents, dummyClients, dummyPlans, dummyPriceHistory, Subscription, Tenant, VersionInfo
-
-### Community 100 - "Autonomous LinkedIn PR Agent: Skills and Rules"
-Cohesion: 0.50
-Nodes (3): Autonomous LinkedIn PR Agent: Skills and Rules, 📜 RULES, 🧠 SKILLS
-
-### Community 126 - "web/src/agents/linkedin-agent/UserDashboard.tsx"
+### Community 322 - "test_gateway.py"
 Cohesion: 0.21
-Nodes (9): defaultConfig, LinkedInConfig, Credential, formatCountdown(), Lead, LinkedInUserDashboard(), Post, scoreBadge() (+1 more)
+Nodes (16): _authed(), _bind_persona_patches(), _client(), _install_store(), persona_mock(), FastAPI, TestClient, TS-15 helpers from C-persona-topics (+ schema). Gemini AsyncMock; no real Postgr (+8 more)
 
-### Community 149 - "admin/main.py"
-Cohesion: 0.25
-Nodes (5): create_app(), FastAPI, _get_jwks(), Any, verify_admin_token()
+### Community 326 - "TopicResponse"
+Cohesion: 0.23
+Nodes (18): anon_client(), api_app(), client_as(), close_client(), finance_client(), frontend_glob(), _join_route_prefix(), _make_app() (+10 more)
 
-### Community 193 - "admin/src/app/admin/page.tsx"
-Cohesion: 0.24
-Nodes (10): chartData, DashboardPage(), formatLabel(), miniArea, miniBar, stacked, DualLineChart(), MiniAreaChart() (+2 more)
-
-### Community 194 - "AddAgentForm.tsx"
-Cohesion: 0.22
-Nodes (10): AddAgentForm(), AddAgentFormProps, AddAgentFormValues, agentToFormValues(), BILLING_UNITS, CATEGORIES, EMPTY_FORM, slugify() (+2 more)
-
-### Community 195 - "plans/page.tsx"
+### Community 328 - "test_phase4_web.py"
 Cohesion: 0.31
-Nodes (8): AgentTheme, agentThemes, defaultTheme, formatPrice(), planBlurb(), PlansPage(), primaryAgentId(), Plan
+Nodes (9): issueOwnerTokens(), refreshOwnerTokens(), createAccessToken(), createOwnerAccessToken(), createOwnerRefreshToken(), decodeAccessToken(), JWT_SECRET(), OwnerTokenClaims (+1 more)
 
-### Community 196 - "clients/page.tsx"
+### Community 330 - "test_ts14_first_post.py"
+Cohesion: 0.33
+Nodes (3): TS-14: Generate My First Posts must not pass an inactive topic id into generatio, TS-15 Q-4/Q-12: complete samples Active topics; it must not force-activate a Dra, test_adaptive_complete_does_not_auto_activate_draft_topic()
+
+### Community 331 - "axios"
+Cohesion: 0.32
+Nodes (4): metadata, Providers(), Toaster(), ToasterProps
+
+### Community 339 - "folderStructure.md"
+Cohesion: 0.11
+Nodes (19): devDependencies, autoprefixer, esbuild, @firebase/eslint-plugin-security-rules, tailwindcss, tsx, @types/express, @types/marked (+11 more)
+
+### Community 341 - "user/src/lib/db/index.ts"
+Cohesion: 0.25
+Nodes (7): NavigationMenu, NavigationMenuContent, NavigationMenuIndicator, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle, NavigationMenuViewport
+
+### Community 346 - "class-variance-authority"
+Cohesion: 0.23
+Nodes (10): AdaptiveQuestionRenderer(), defaultAdaptiveValue(), isAdaptiveAnswerValid(), toCardOptions(), FlashcardFlow(), FlashcardFlowProps, SingleSelectCard(), SingleSelectCardProps (+2 more)
+
+### Community 347 - "Writing Tests"
+Cohesion: 0.11
+Nodes (17): aliases, components, hooks, lib, ui, utils, iconLibrary, rsc (+9 more)
+
+### Community 348 - "axios"
+Cohesion: 0.22
+Nodes (8): CheckboxCard(), CheckboxCardProps, CheckboxOption, defaultAnswers, defaultFallbackTopics, industryOptions, industryTopicsMap, questionsConfig
+
+### Community 349 - "test_ts8_oos.py"
+Cohesion: 0.43
+Nodes (6): execute_raw_on_session(), get_db(), Any, AsyncSession, Run SQL on an open session without committing. Caller commits once., _rows_from_result()
+
+### Community 350 - "A. Happy path"
+Cohesion: 0.18
+Nodes (11): A. Happy path, AC-HP-01 — Persona-ready Gemini before complete (Q-2 B, Q-3 C, Q-8 C), AC-HP-02 — Land on Topic Weights (Q-6 B, Q-12 C), AC-HP-03 — Stop gate auto-complete (Q-12 C), AC-HP-04 — All 10 appear on Topic Weights as Draft until selected (Q-11 A), AC-HP-05 — Five options, exactly one selected per topic (Q-1 B, Q-8 C, Q-9 A), AC-HP-06 — Multi-active: every selected topic is Active (Q-4 B), AC-HP-07 — Generate enabled only at ≥1 Active (Q-12 C) (+3 more)
+
+### Community 351 - "TS-15 — Requirements (A3)"
+Cohesion: 0.20
+Nodes (9): AC-CR-01 — No `consume_for_action` on TS-15 paths, AC-CR-02 — No new billable `action_key`, AC → test map (A11), AC-TN-01 — Tenant B unaffected by tenant A replace, AC-TN-02 — GET `/topics` is tenant-scoped after this task, F. Credits (Q-7 A), G. Tenancy (Q-14 A), Locked decisions (encode as ACs; do not reopen) (+1 more)
+
+### Community 352 - "D. Negative"
+Cohesion: 0.22
+Nodes (9): AC-NEG-01 — PATCH must not deactivate siblings, AC-NEG-02 — No DNA slug-insert on adaptive complete (Q-5 A), AC-NEG-03 — No DNA slug-insert on legacy `POST /onboarding` (Q-5 A), AC-NEG-04 — Unauthenticated topics / generation, AC-NEG-05 — Cannot persist two selected options, AC-NEG-06 — Success catalog is not 10×5 → not success, AC-NEG-07 — Out-of-scope surfaces unchanged, AC-NEG-08 — No new env var names (+1 more)
+
+### Community 353 - "C. Edge"
+Cohesion: 0.25
+Nodes (8): AC-ED-01 — Activate all 10, AC-ED-02 — Deactivate one of several, AC-ED-03 — Change the one selected option, AC-ED-04 — One Active is enough for Generate, AC-ED-05 — `edit` mode does not auto-complete, AC-ED-06 — Copy no longer says one-active, AC-ED-07 — Weight slider still 0.05–1 on Active rows, C. Edge
+
+### Community 355 - "C-persona-topics — schema map (TS-15)"
+Cohesion: 0.29
+Nodes (6): C-persona-topics — schema map (TS-15), CHECKs, Columns on `topics`, Isolation (C-RLS-APP), Table `tenant_topic_replacements`, Uniqueness (C-UNIQUE)
+
+### Community 356 - "Add Analytics (PostHog)"
+Cohesion: 0.11
+Nodes (17): aliases, components, hooks, lib, ui, utils, iconLibrary, rsc (+9 more)
+
+### Community 357 - "test_ac_cat_07_tenant_user_catalog_get_is_2xx"
+Cohesion: 0.20
+Nodes (10): C-persona-topics §3: exactly 10 persona_generated rows → return them, no second, AC-HP-01 / Q-3 C / Q-8 C: HTTP 200 {ok:true, topics: 10 × 5 options} before adap, AC-HP-04 / Q-11 A: after 10×5 persist, all 10 are Draft (is_active false, select, test_ac_hp_01_generate_persona_200_ok_ten_by_five(), test_ac_hp_04_generated_topics_are_draft(), test_contract_generate_persona_idempotent_skips_second_gemini(), AC-TN-02 / §5–6: GET /topics returns §5 keys including persona_generated, select, test_ac_tn_02_get_topics_json_keys_after_generate() (+2 more)
+
+### Community 358 - "B. Empty"
+Cohesion: 0.40
+Nodes (5): AC-EM-01 — Zero Active keeps Generate disabled, AC-EM-02 — Topic Weights with 10 Drafts is not an error, AC-EM-03 — Incomplete persona: `/topics` blocked; seed not this AC, AC-EM-04 — Whitespace-only option selection does not count as a selected option, B. Empty
+
+### Community 361 - "Add Stripe Payments"
+Cohesion: 0.11
+Nodes (19): dependencies, dotenv, express, lucide-react, marked, motion, react, react-dom (+11 more)
+
+### Community 362 - "Performance Audit"
+Cohesion: 0.40
+Nodes (5): AC-ERR-01 — Visible loading during 10×5 Gemini, AC-ERR-02 — Gemini failure does not replace the tenant catalog, AC-ERR-03 — Timeout surfaces as failure (Q-13 A), AC-ERR-04 — `select_topic` with 0 Active still 404, E. Error / loading
+
+### Community 363 - "Routing constraints (must-test; do not break)"
+Cohesion: 0.40
+Nodes (5): AC-RT-01 — `isOnboardingComplete` is true before `/adaptive/complete`, AC-RT-02 — `/onboarding` redirects completed users to `/dashboard`, AC-RT-03 — `/topics` is behind `RequireOnboarding`, AC-RT-04 — After last question, user CAN reach `/topics`, Routing constraints (must-test; do not break)
+
+### Community 364 - "admin/src/components/ui/input-otp.tsx"
+Cohesion: 0.29
+Nodes (9): looks_non_english(), missing_disclaimers(), Publish-time compliance gate.      Post text        |        v     forbidden_phr, Run the gate over post text.      Returns a result dict; never raises for a poli, Heuristic script check. Counts letters only — emoji and punctuation are     comm, Case-insensitive substring match. Deliberately literal — this is the free     fa, run_compliance_check(), scan_forbidden_phrases() (+1 more)
+
+### Community 367 - "test_ac_em_03_incomplete_persona_redirects_topics_to_onboarding"
+Cohesion: 0.21
+Nodes (12): AC: multi-destination publish — zero dest 400, partial failure, idempotency, aut, Re-publish: clone already published+URN → skip LinkedIn (contract §5)., Each destination → Posts API author = that destination's author_urn., Q-4 C / contract §2: reject before LinkedIn or clone insert., Unit: create_linkedin_post posts JSON with author = provided URN (no real Linked, Partial success: one SUCCESS + one FAIL; no rollback of success (contract §3)., _source_post(), test_create_linkedin_post_called_with_author_urn_per_destination() (+4 more)
+
+### Community 369 - "H. File-size (cap 500)"
+Cohesion: 0.67
+Nodes (3): AC-FS-01 — `shared/api/index.ts` does not grow, AC-FS-02 — Touched/new files ≤ 500, H. File-size (cap 500)
+
+### Community 378 - "backend/app/main.py"
+Cohesion: 0.11
+Nodes (15): ensure_database_exists(), run_migrations(), run_feedback_job(), get_setting_value(), start_scheduler(), stop_scheduler(), lifespan(), FastAPI (+7 more)
+
+### Community 379 - "grok.py"
 Cohesion: 0.36
-Nodes (6): ClientsPage(), formatSpend(), FilterField(), StatusBadge(), TrendBadge(), Client
+Nodes (6): AsyncOpenAI, download_and_store_image(), generate_and_store_image(), generate_grok_image(), get_xai_client(), test_grok()
 
-### Community 200 - "1. Purpose and problem statement"
+### Community 380 - "gemini_persona_topics.py"
+Cohesion: 0.57
+Nodes (6): _accept_catalog(), generate_persona_topic_catalog(), _normalize_option(), _persona_user_contents(), Any, _strip_json_fences()
+
+### Community 396 - "web/src/lib/api.ts"
+Cohesion: 0.12
+Nodes (15): name, prisma, schema, private, scripts, build, db:collect, db:generate (+7 more)
+
+### Community 399 - "scripts"
+Cohesion: 0.13
+Nodes (14): name, prisma, schema, private, scripts, build, db:collect, db:generate (+6 more)
+
+### Community 400 - "map-row.ts"
+Cohesion: 0.29
+Nodes (12): BillingInterval, accentFor(), ACCENTS, AgentRow, asInterval(), asStringArray(), iconFor(), imageForSlug() (+4 more)
+
+### Community 402 - "ContactSection.tsx"
+Cohesion: 0.29
+Nodes (8): SectionHeading(), SectionHeadingProps, ContactSectionProps, Toast(), ToastProps, contactForm, contactIntro, offices
+
+### Community 405 - "audit.py"
+Cohesion: 0.20
+Nodes (9): get_auth_context(), Request, Response, Role-gated auth helpers for admin vs tenant routes.  Tenancy rule (migration 007, get_staff(), get_tenant_membership(), Shared helpers: audit logging and RLS session context., Open a DB session with app.* GUC vars set for RLS policies. (+1 more)
+
+### Community 406 - "feedback.py"
+Cohesion: 0.14
+Nodes (16): Config, BaseModel, TopicResponse, TopicUpdateRequest, AdaptiveQuestion, FieldMeta, HistoryEntry, PlannerCandidate (+8 more)
+
+### Community 409 - "frontend/admin/package.json"
+Cohesion: 0.20
+Nodes (9): name, private, scripts, build, dev, preview, typecheck, type (+1 more)
+
+### Community 410 - "frontend/user/package.json"
+Cohesion: 0.20
+Nodes (9): name, private, scripts, build, dev, preview, typecheck, type (+1 more)
+
+### Community 412 - "Settings"
+Cohesion: 0.14
+Nodes (6): BaseSettings, Converts postgresql:// or postgres:// to postgresql+asyncpg:// for SQLAlchemy as, Converts postgresql+asyncpg:// back to postgresql:// for sync operations/migrati, Dedicated user-session secret, falling back to the admin secret., Pepper mixed into OTP hashes, falling back to the admin secret., Settings
+
+### Community 413 - "shared/components/onboarding/OnboardingStepCard.tsx"
+Cohesion: 0.25
+Nodes (5): defaultOnboardingLabels, OnboardingLabels, OnboardingQuestion, OnboardingStepCardProps, wizardQuestions
+
+### Community 414 - "shared/components/ui/sheet.tsx"
+Cohesion: 0.22
+Nodes (6): SheetContent, SheetContentProps, SheetDescription, SheetOverlay, SheetTitle, sheetVariants
+
+### Community 420 - "seed-auth.ts"
+Cohesion: 0.38
+Nodes (6): ADMIN_PERMS, hashPassword(), main(), prisma, slugify(), USER_PERMS
+
+### Community 424 - "admin/src/middleware.ts"
+Cohesion: 0.47
+Nodes (5): config, isValidAccess(), middleware(), PUBLIC, secret()
+
+### Community 425 - "user/src/middleware.ts"
+Cohesion: 0.47
+Nodes (5): config, isValidAccess(), middleware(), PUBLIC, secret()
+
+### Community 426 - "Portfolio Images"
+Cohesion: 0.33
+Nodes (5): Adding New Projects, Image Format, Portfolio Images, Required Images, Usage
+
+### Community 427 - "changelog/page.tsx"
+Cohesion: 0.33
+Nodes (3): changelogEntries, ChangelogItem, metadata
+
+### Community 428 - "admin/vercel.json"
+Cohesion: 0.40
+Nodes (4): buildCommand, framework, installCommand, $schema
+
+### Community 429 - "web/vercel.json"
+Cohesion: 0.40
+Nodes (4): buildCommand, framework, installCommand, $schema
+
+### Community 430 - "OnboardingAnswers"
 Cohesion: 0.50
-Nodes (4): 1.1 Purpose, 1.2 Problem, 1.3 Success criteria (product-level), 1. Purpose and problem statement
+Nodes (4): Config, OnboardingAnswers, OnboardingResponse, BaseModel
+
+### Community 431 - "SettingsUpdateRequest"
+Cohesion: 0.50
+Nodes (4): Config, BaseModel, SettingItem, SettingsUpdateRequest
+
+### Community 433 - "LinkedIn Content Agent — Docker Setup"
+Cohesion: 0.40
+Nodes (4): LinkedIn Content Agent — Docker Setup, Ports, Quick start (from monorepo root), Standalone (from this package)
 
 ## Knowledge Gaps
-- **555 isolated node(s):** `eslintConfig`, `nextConfig`, `name`, `version`, `private` (+550 more)
+- **1420 isolated node(s):** `$schema`, `style`, `rsc`, `tsx`, `css` (+1415 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **70 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **184 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `generate_draft()` connect `generate_draft` to `clients.py`, `ai/service.py`?**
-  _High betweenness centrality (0.020) - this node is a cross-community bridge._
-- **Why does `http_exception_handler()` connect `user/main.py` to `clients.py`, `gateway/main.py`, `admin/main.py`?**
-  _High betweenness centrality (0.008) - this node is a cross-community bridge._
-- **What connects `eslintConfig`, `nextConfig`, `name` to the rest of the system?**
-  _555 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `clients.py` be split into smaller, more focused modules?**
-  _Cohesion score 0.06572068707991038 - nodes in this community are weakly interconnected._
-- **Should `load_memory` be split into smaller, more focused modules?**
-  _Cohesion score 0.054199328107502796 - nodes in this community are weakly interconnected._
-- **Should `index.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.07355769230769231 - nodes in this community are weakly interconnected._
-- **Should `get_registered_agents` be split into smaller, more focused modules?**
-  _Cohesion score 0.07184325108853411 - nodes in this community are weakly interconnected._
+- **Why does `AuthContext` connect `linkedin-agent/manifest.json` to `test_phase3_user.py`, `test_gateway.py`, `theme-provider.tsx`, `TopicResponse`, `Kubernetes Deploying`, `5. Functional requirements`, `user/src/agents/linkedin-agent/AdminDashboard.tsx`, `audit.py`, `run_agent_task`, `web/src/agents/linkedin-agent/UserDashboard.tsx`?**
+  _High betweenness centrality (0.014) - this node is a cross-community bridge._
+- **Why does `execute_raw()` connect `web/src/agents/linkedin-agent/UserDashboard.tsx` to `test_phase3_user.py`, `user/main.py`, `admin/AGENTS.md`, `linkedin-agent/manifest.json`, `Kubernetes Deploying`, `tenants/__init__.py`, `5. Functional requirements`, `test_ac_em_03_incomplete_persona_redirects_topics_to_onboarding`, `user/src/agents/linkedin-agent/AdminDashboard.tsx`, `linkedin-agent/backend/router_user.py`, `user/src/agents/lawyer-agent/lib/draft-catalog.ts`, `admin/agents/page.tsx`, `test_ts8_oos.py`?**
+  _High betweenness centrality (0.010) - this node is a cross-community bridge._
+- **Why does `execute_one_raw()` connect `user/src/agents/lawyer-agent/lib/draft-catalog.ts` to `test_phase3_user.py`, `user/main.py`, `linkedin-agent/manifest.json`, `Kubernetes Deploying`, `5. Functional requirements`, `test_ac_em_03_incomplete_persona_redirects_topics_to_onboarding`, `user/src/agents/linkedin-agent/AdminDashboard.tsx`, `linkedin-agent/backend/router_user.py`, `Delegtlabs Multi-Agent Platform Build Prompt`, `audit.py`, `Workflow`, `admin/agents/page.tsx`, `backend/app/main.py`, `test_ts8_oos.py`, `web/src/agents/linkedin-agent/UserDashboard.tsx`?**
+  _High betweenness centrality (0.010) - this node is a cross-community bridge._
+- **Are the 81 inferred relationships involving `execute_one_raw()` (e.g. with `adjust_credits()` and `decide_approval()`) actually correct?**
+  _`execute_one_raw()` has 81 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 75 inferred relationships involving `execute_raw()` (e.g. with `adjust_credits()` and `audit_log()`) actually correct?**
+  _`execute_raw()` has 75 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 3 inferred relationships involving `AuthContext` (e.g. with `CatalogStore` and `_DefaultConflict`) actually correct?**
+  _`AuthContext` has 3 INFERRED edges - model-reasoned connections that need verification._
+- **What connects `$schema`, `style`, `rsc` to the rest of the system?**
+  _1420 weakly-connected nodes found - possible documentation gaps or missing edges._

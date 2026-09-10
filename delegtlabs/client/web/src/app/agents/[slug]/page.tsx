@@ -11,8 +11,13 @@ import { getAgentBySlug, listAgentSlugs } from "@/server/agents/repository";
 type PageProps = { params: Promise<{ slug: string }> };
 
 export async function generateStaticParams() {
-  const slugs = await listAgentSlugs();
-  return slugs.map((slug) => ({ slug }));
+  try {
+    const slugs = await listAgentSlugs();
+    return slugs.map((slug) => ({ slug }));
+  } catch {
+    // Image builds have no DB; pages render on demand via root `force-dynamic`.
+    return [];
+  }
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {

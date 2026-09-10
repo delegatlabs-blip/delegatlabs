@@ -1,0 +1,14 @@
+{
+  "slug": "linkedin-agent",
+  "name": "LinkedIn Growth Agent",
+  "version": "2.0.0",
+  "category": "growth",
+  "admin_route": "/admin/agents/linkedin-agent/dashboard",
+  "user_route": "/dashboard/agents/linkedin-agent",
+  "worker_schedule": "0 */6 * * *",
+  "capabilities": ["post_generation", "content_scheduling", "performance_tracking"],
+  "description": "AI-powered LinkedIn content generation with Gemini, image creation with Grok, and a self-improving engagement feedback loop.",
+  "base_price_usd": 249.0,
+  "base_price_inr": 19999.0,
+  "status": "active"
+}

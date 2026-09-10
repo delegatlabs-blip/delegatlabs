@@ -1,7 +1,13 @@
 /* Agent grid + detail modal — koshatech slate surfaces */
 
 .grid-wrap {
-  padding: 48px 0 100px;
+  padding: 96px 0 100px;
+}
+
+@media (min-width: 768px) {
+  .grid-wrap {
+    padding-top: 128px;
+  }
 }
 
 .section-head {

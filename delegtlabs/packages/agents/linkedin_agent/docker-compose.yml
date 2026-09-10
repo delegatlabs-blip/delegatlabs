@@ -1,0 +1,80 @@
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: linkedin-agent-db
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-linkedin_agent}
+    ports:
+      - "5434:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-linkedin_agent}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  linkedin-backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: linkedin-agent-backend
+    restart: always
+    env_file:
+      - ./.env
+      - ./backend/.env
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@db:5432/${POSTGRES_DB:-linkedin_agent}
+      PORT: "8005"
+      # development: auto-issues local session cookies so onboarding/UI work without LinkedIn OAuth
+      NODE_ENV: ${NODE_ENV:-development}
+      FRONTEND_URL: http://localhost:3005
+      BACKEND_URL: http://localhost:8005
+      LINKEDIN_REDIRECT_URI: http://localhost:8005/auth/linkedin/callback
+    ports:
+      - "8005:8005"
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - uploads_data:/app/uploads
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8005/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+
+  linkedin-user:
+    build:
+      context: ./frontend
+      dockerfile: user/Dockerfile
+      args:
+        VITE_API_URL: ""
+    container_name: linkedin-agent-user
+    restart: always
+    ports:
+      - "3005:3005"
+    depends_on:
+      linkedin-backend:
+        condition: service_healthy
+
+  linkedin-admin:
+    build:
+      context: ./frontend
+      dockerfile: admin/Dockerfile
+      args:
+        VITE_API_URL: ""
+    container_name: linkedin-agent-admin
+    restart: always
+    ports:
+      - "3006:3006"
+    depends_on:
+      linkedin-backend:
+        condition: service_healthy
+
+volumes:
+  postgres_data:
+  uploads_data:

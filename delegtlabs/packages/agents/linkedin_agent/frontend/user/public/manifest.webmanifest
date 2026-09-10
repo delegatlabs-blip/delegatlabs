@@ -1,0 +1,16 @@
+{
+  "name": "AntGrav",
+  "short_name": "AntGrav",
+  "description": "Your LinkedIn agents",
+  "display": "standalone",
+  "start_url": "/dashboard",
+  "background_color": "#F4F6F8",
+  "theme_color": "#F4F6F8",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

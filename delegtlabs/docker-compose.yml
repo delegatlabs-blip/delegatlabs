@@ -50,7 +50,7 @@ services:
       DEBUG: "true"
       HOST: 0.0.0.0
       PORT: 8000
-      CORS_ORIGINS: http://localhost:3000,http://localhost:3001,http://localhost:3002
+      CORS_ORIGINS: http://localhost:3000,http://localhost:3001,http://localhost:3002,http://localhost:3005,http://localhost:3006
       # Compose Postgres service (admin agents/users/customers CRUD)
       DATABASE_URL: postgresql+asyncpg://postgres:postgres@db:5432/delegtlabs
       REDIS_URL: redis://redis:6379/0
@@ -149,5 +149,65 @@ services:
     ports:
       - "3002:3002"
 
+  linkedin-backend:
+    build:
+      context: ./packages/agents/linkedin_agent/backend
+      dockerfile: Dockerfile
+    container_name: delegtlabs-linkedin-backend
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    # Secrets (LINKEDIN_*, GEMINI_*, GROK_*, TOKEN_ENC_KEY, etc.) come from these files.
+    # Do not re-declare them under environment with empty ${VAR:-} defaults — that overrides env_file.
+    env_file:
+      - ./packages/agents/linkedin_agent/.env
+      - ./packages/agents/linkedin_agent/backend/.env
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/linkedin_agent
+      PORT: "8005"
+      NODE_ENV: development
+      FRONTEND_URL: http://localhost:3005
+      BACKEND_URL: http://localhost:8005
+      LINKEDIN_REDIRECT_URI: http://localhost:8005/auth/linkedin/callback
+    ports:
+      - "8005:8005"
+    volumes:
+      - linkedin_uploads:/app/uploads
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8005/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+
+  linkedin-user:
+    build:
+      context: ./packages/agents/linkedin_agent/frontend
+      dockerfile: user/Dockerfile
+      args:
+        VITE_API_URL: ""
+    container_name: delegtlabs-linkedin-user
+    restart: unless-stopped
+    depends_on:
+      linkedin-backend:
+        condition: service_healthy
+    ports:
+      - "3005:3005"
+
+  linkedin-admin:
+    build:
+      context: ./packages/agents/linkedin_agent/frontend
+      dockerfile: admin/Dockerfile
+      args:
+        VITE_API_URL: ""
+    container_name: delegtlabs-linkedin-admin
+    restart: unless-stopped
+    depends_on:
+      linkedin-backend:
+        condition: service_healthy
+    ports:
+      - "3006:3006"
+
 volumes:
   postgres_data:
+  linkedin_uploads:
