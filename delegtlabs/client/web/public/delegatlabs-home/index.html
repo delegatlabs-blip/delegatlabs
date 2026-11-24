@@ -60,7 +60,7 @@
     <section class="wrap work section" id="work" aria-labelledby="work-title">
       <div class="section-head"><h2 id="work-title">Selected work<span class="terminal">.</span></h2><p>Inside four workflows, from the first input to the person who makes the call.</p></div>
       <div class="gallery">
-        <article class="project-card">
+        <article class="project-card featured-work">
           <studio-player class="artboard" data-duration="6">
             <video muted playsinline controls preload="none" poster="/delegatlabs-home/assets/follow-up-agent-poster.webp" aria-label="Follow-up Agent film">
               <source src="/delegatlabs-home/assets/follow-up-agent.mp4" type="video/mp4">
@@ -73,6 +73,22 @@
             <h3>Follow-up Agent</h3><p>Recruitment follow-up workspace</p>
             <span class="study-link">Read study <span aria-hidden="true">↗</span></span>
           </a>
+          <div class="walkthrough">
+            <span class="artboard relay" aria-hidden="true">
+            <span class="art-type">Recruitment</span>
+            <span class="relay-orbit"></span>
+            <span class="relay-app"><span class="app-bar"><span class="app-mark">f.</span> Follow-up <span class="app-dots">•••</span></span>
+              <span class="app-body"><span class="ui-label">Submission workspace</span><b>Follow-ups</b><span class="ui-line"></span><span class="queue-row"><i>AK</i><span><strong>Client feedback</strong><small>Candidate submission</small></span><span class="queue-status">In review</span></span><span class="queue-row"><i>MS</i><span><strong>Next steps</strong><small>Hiring team</small></span></span></span>
+            </span><span class="draft-note"><span class="note-icon">↗</span><span><small>Draft prepared</small><b>Ready for review</b></span></span>
+
+          </span>
+            <fieldset class="workflow-stages"><legend>Explore a sample follow-up</legend>
+              <button type="button" aria-pressed="true">Submission</button>
+              <button type="button" aria-pressed="false">Draft</button>
+              <button type="button" aria-pressed="false">Review</button>
+            </fieldset>
+            <p id="stage-copy" aria-live="polite">Two profiles went to the client on Monday. By Thursday, the recruiter is still waiting for feedback.</p>
+          </div>
         </article>
         <article class="project-card">
           <studio-player class="artboard" data-duration="6">
@@ -129,7 +145,7 @@
             <span class="relay-app"><span class="app-bar"><span class="app-mark">f.</span> Follow-up <span class="app-dots">•••</span></span>
               <span class="app-body"><span class="ui-label">Submission workspace</span><b>Follow-ups</b><span class="ui-line"></span><span class="queue-row"><i>AK</i><span><strong>Client feedback</strong><small>Candidate submission</small></span><span class="queue-status">In review</span></span><span class="queue-row"><i>MS</i><span><strong>Next steps</strong><small>Hiring team</small></span></span></span>
             </span><span class="draft-note"><span class="note-icon">↗</span><span><small>Draft prepared</small><b>Ready for review</b></span></span>
-            
+
           </span><dl><div><dt>Sample input</dt><dd>A recruiter submitted two candidate profiles on Monday and has heard nothing by Thursday.</dd></div><div><dt>Sample output</dt><dd>“Hi, have you had a chance to review the two profiles we sent on Monday? Let me know if you’d like more information or an interview slot.”</dd></div><div><dt>What a person checks</dt><dd>The recruiter checks whether the client already replied in another thread and decides whether to send.</dd></div></dl></details>
         <a class="record-return quiet-link" href="#work">Back to selected work ↑</a>
       </article>

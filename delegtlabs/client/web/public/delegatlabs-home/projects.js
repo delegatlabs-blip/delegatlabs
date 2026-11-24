@@ -110,8 +110,27 @@
     dissolve.onfinish = () => previous.remove();
   }
 
+  const stages = [...document.querySelectorAll(".workflow-stages button")];
+  const stageCopy = [
+    document.getElementById("stage-copy").textContent,
+    "The agent prepares a draft asking for feedback on the two profiles and whether the client wants to arrange interviews.",
+    "A manager checks the wording. The recruiter checks for a recent reply and decides whether to send."
+  ];
+  stages.forEach((button, index) => button.addEventListener("click", () => {
+    stages.forEach(item => item.setAttribute("aria-pressed", String(item === button)));
+    document.getElementById("stage-copy").textContent = stageCopy[index];
+    document.querySelector(".walkthrough .draft-note b").textContent = ["Awaiting feedback", "Draft prepared", "Ready for review"][index];
+  }));
+  document.querySelector(".walkthrough .draft-note b").textContent = "Awaiting feedback";
+
+  function rememberPosition() {
+    const film = reader.querySelector("#reader-art > :first-child video");
+    const galleryFilm = currentCard?.closest(".project-card").querySelector("video");
+    if (film?.readyState && galleryFilm) galleryFilm.currentTime = film.currentTime;
+  }
   function showStudy(card, direction) {
     const record = document.getElementById(card.hash.slice(1));
+    rememberPosition();
     const original = card.closest(".project-card").querySelector(".artboard");
     const video = original.querySelector("video");
     let art;
@@ -120,6 +139,8 @@
       art.className = "artboard";
       art.dataset.duration = original.dataset.duration;
       const copy = video.cloneNode(true);
+      const position = video.currentTime;
+      if (position) copy.currentTime = position;
       copy.controls = true;
       art.append(copy);
     } else {
@@ -136,6 +157,8 @@
     document.getElementById("example-type").textContent = card.querySelector(".case-kind").textContent;
     if (planner.open) planner.close();
     document.getElementById("study-position").textContent = (cards.indexOf(card) + 1) + " / " + cards.length;
+    const actions = {recruitment:"Plan a follow-up workflow", legal:"Plan a drafting workflow", intake:"Plan an enquiry workflow", linkedin:"Plan a LinkedIn workflow"};
+    document.getElementById("study-brief").firstChild.textContent = actions[card.dataset.example] + " ";
     currentCard = card;
     if (!reader.open) {
       entryCard = card;
@@ -158,6 +181,7 @@
     const trigger = entryCard;
     const record = pendingBrief;
     reader.querySelector("video")?.pause();
+    rememberPosition();
     reader.close();
     currentCard = entryCard = pendingBrief = null;
     if (record) openPlanner(trigger,record);
@@ -179,8 +203,25 @@
   cards.forEach(card => card.addEventListener("click", event => {
     if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
-    history.pushState({...history.state,delegatlabsStudy:true},"",card.hash);
-    syncStudy();
+    const open = () => {
+      history.pushState({...history.state,delegatlabsStudy:true},"",card.hash);
+      syncStudy();
+    };
+    if (!document.startViewTransition || !matchMedia("(min-width: 681px) and (prefers-reduced-motion: no-preference)").matches) {
+      open();
+      return;
+    }
+    const source = card.closest(".project-card").querySelector(".artboard");
+    source.style.viewTransitionName = "study-frame";
+    const transition = document.startViewTransition(() => {
+      source.style.viewTransitionName = "";
+      open();
+      document.querySelector("#reader-art > :first-child").style.viewTransitionName = "study-frame";
+    });
+    transition.finished.finally(() => {
+      source.style.viewTransitionName = "";
+      document.querySelectorAll("#reader-art > *").forEach(item => item.style.viewTransitionName = "");
+    });
   }));
   document.getElementById("case-close").addEventListener("click", () => exitStudy(false));
   reader.addEventListener("cancel", event => { event.preventDefault(); exitStudy(false); });
