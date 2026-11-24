@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en" data-host="next">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Delegatlabs.AI builds custom AI, software and digital products for professional teams. Explore working prototypes and see where people stay in control.">
+  <title>Delegatlabs.AI — AI &amp; software studio</title>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Delegatlabs.AI">
+  <meta property="og:title" content="Delegatlabs.AI — Work worth delegating">
+  <meta property="og:description" content="Custom AI agents and software for the work between people.">
+  <meta property="og:image" content="/delegatlabs-home/assets/social-preview.png">
+  <meta property="og:image:alt" content="Delegatlabs.AI — Work worth delegating, alongside a blue metallic iris">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="/delegatlabs-home/assets/studio-mark.svg" type="image/svg+xml">
+  <script>
+    (() => {
+      const root = document.documentElement;
+      try {
+        const saved = localStorage.getItem("delegatlabs.appearance");
+        if (saved === "light" || saved === "dark") root.dataset.preference = saved;
+      } catch { /* The theme also works for this visit with storage disabled. */ }
+      root.dataset.theme = root.dataset.preference || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    })();
+  </script>
+  <link rel="stylesheet" href="/delegatlabs-home/styles.css">
+  <script defer src="/delegatlabs-home/films.js"></script>
+  <script defer src="/delegatlabs-home/site.js"></script>
+  <script defer src="/delegatlabs-home/projects.js"></script>
+
+</head>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="header">
+    <div class="wrap head-inner">
+      <a class="wordmark" href="#top" aria-label="Delegatlabs.AI home">Delegatlabs<span>.AI</span></a>
+      <button class="round-control menu-toggle" type="button" aria-label="Menu" aria-controls="primary-nav" aria-expanded="false" hidden><span class="menu-icon" aria-hidden="true"></span></button>
+      <nav id="primary-nav" aria-label="Primary"><a href="#work">Work</a><a href="#solutions">Services</a><a href="#approach">Approach</a></nav>
+      <div class="head-tools">
+        <button id="theme-toggle" class="round-control" type="button" aria-label="Dark theme" aria-pressed="false" hidden><span class="theme-icon" aria-hidden="true"></span></button>
+        <a href="#project" class="button primary small"><span class="long-label">Start a project</span><span class="short-label">Enquire</span><span class="arrow-icon" aria-hidden="true"><span>↗</span></span></a>
+      </div>
+    </div>
+  </header>
+  <main id="main" tabindex="-1">
+    <section class="film-hero" aria-labelledby="hero-title">
+      <video id="studio-film" muted playsinline loop preload="none" poster="/delegatlabs-home/assets/handoff-film-poster.webp" aria-hidden="true" tabindex="-1">
+        <source src="/delegatlabs-home/assets/handoff-film.mp4" type="video/mp4">
+        <source src="/delegatlabs-home/assets/handoff-film.webm" type="video/webm">
+      </video>
+      <div class="wrap film-layout"><div class="film-copy">
+        <p class="eyebrow">AI &amp; software studio</p>
+        <h1 id="hero-title"><span>Work worth</span><span>delegating.</span></h1>
+        <p class="film-intro">Custom AI agents and software for the work between people. Your team chooses what to hand off and what to review.</p>
+        <div class="hero-actions"><a class="button primary" href="#work">Explore the work <span class="arrow-icon" data-direction="down" aria-hidden="true"><span>↓</span></span></a><a class="quiet-link" href="#solutions">Our services <span aria-hidden="true">↘</span></a></div>
+      </div><div class="hero-transport"><button type="button" id="film-control" aria-controls="studio-film" hidden><span class="transport-icon" aria-hidden="true"></span><span class="film-action">Play film</span></button><a class="film-file" href="/delegatlabs-home/assets/handoff-film.mp4" hidden>Open MP4 ↗</a></div></div>
+    </section>
+    <section class="wrap work section" id="work" aria-labelledby="work-title">
+      <div class="section-head"><h2 id="work-title">Selected work<span class="terminal">.</span></h2><p>Inside four workflows, from the first input to the person who makes the call.</p></div>
+      <div class="gallery">
+        <article class="project-card">
+          <studio-player class="artboard" data-duration="6">
+            <video muted playsinline controls preload="none" poster="/delegatlabs-home/assets/follow-up-agent-poster.webp" aria-label="Follow-up Agent film">
+              <source src="/delegatlabs-home/assets/follow-up-agent.mp4" type="video/mp4">
+              <source src="/delegatlabs-home/assets/follow-up-agent.webm" type="video/webm">
+              <a href="/delegatlabs-home/assets/follow-up-agent.mp4">Open the Follow-up Agent film</a>
+            </video>
+          </studio-player>
+          <a class="case-card" href="#study-follow-up-agent" data-example="recruitment" aria-haspopup="dialog" aria-label="Read the Follow-up Agent study">
+            <span class="case-meta"><span>Recruitment</span><span class="case-kind">Local prototype</span></span>
+            <h3>Follow-up Agent</h3><p>Recruitment follow-up workspace</p>
+            <span class="study-link">Read study <span aria-hidden="true">↗</span></span>
+          </a>
+        </article>
+        <article class="project-card">
+          <studio-player class="artboard" data-duration="6">
+            <video muted playsinline controls preload="none" poster="/delegatlabs-home/assets/affidavit-drafting-poster.webp" aria-label="Affidavit drafting film">
+              <source src="/delegatlabs-home/assets/affidavit-drafting.mp4" type="video/mp4">
+              <source src="/delegatlabs-home/assets/affidavit-drafting.webm" type="video/webm">
+              <a href="/delegatlabs-home/assets/affidavit-drafting.mp4">Open the Affidavit drafting film</a>
+            </video>
+          </studio-player>
+          <a class="case-card" href="#study-affidavit-drafting" data-example="legal" aria-haspopup="dialog" aria-label="Read the Affidavit drafting study">
+            <span class="case-meta"><span>Legal practice</span><span class="case-kind">Local prototype</span></span>
+            <h3>Affidavit drafting</h3><p>Bilingual drafting for advocates</p>
+            <span class="study-link">Read study <span aria-hidden="true">↗</span></span>
+          </a>
+        </article>
+        <article class="project-card">
+          <div class="artboard haazir" aria-hidden="true">
+            <span class="haazir-title">Haazir<span>.</span><small>Case enquiries, in conversation.</small></span>
+            <span class="chat-art"><span class="chat-message client">Any update on my case?</span><span class="chat-message chamber"><small>Chamber · suggested reply</small>We have your case details.<br>Let me check the latest update.</span><span class="chat-review"><i></i> Awaiting advocate review</span></span>
+          </div>
+          <a class="case-card" href="#study-haazir-ai" data-example="intake" aria-haspopup="dialog" aria-label="Read the Haazir AI study">
+            <span class="case-meta"><span>Chamber operations</span><span class="case-kind">Product concept</span></span>
+            <h3>Haazir AI</h3><p>A WhatsApp enquiry workflow for law chambers</p>
+            <span class="study-link">Read study <span aria-hidden="true">↗</span></span>
+          </a>
+        </article>
+        <article class="project-card">
+          <studio-player class="artboard" data-duration="6">
+            <video muted playsinline controls preload="none" poster="/delegatlabs-home/assets/linkedin-growth-agent-poster.webp" aria-label="LinkedIn Growth Agent film">
+              <source src="/delegatlabs-home/assets/linkedin-growth-agent.mp4" type="video/mp4">
+              <source src="/delegatlabs-home/assets/linkedin-growth-agent.webm" type="video/webm">
+              <a href="/delegatlabs-home/assets/linkedin-growth-agent.mp4">Open the LinkedIn Growth Agent film</a>
+            </video>
+          </studio-player>
+          <a class="case-card" href="#study-linkedin-agent" data-example="linkedin" aria-haspopup="dialog" aria-label="Read the LinkedIn Growth Agent study">
+            <span class="case-meta"><span>Growth workflow</span><span class="case-kind">Product build</span></span>
+            <h3>LinkedIn Growth Agent</h3><p>Post ideas and lead research in one workflow</p>
+            <span class="study-link">Read study <span aria-hidden="true">↗</span></span>
+          </a>
+        </article>
+      </div>
+    </section>
+    <div class="study-records">
+      <article id="study-follow-up-agent" class="study-record wrap" data-interest="AI agents" data-task="Prepare follow-ups for candidate submissions that are waiting on client feedback." data-decision="A manager reviews the draft. The recruiter decides when to send it.">
+        <h2 class="record-name">Follow-up Agent</h2>
+        <p class="record-deck">From a waiting submission to a follow-up draft.</p>
+        <dl class="study-fields">
+          <div><dt>Input</dt><dd>A recruiter identifies a candidate submission that is still waiting on client feedback.</dd></div>
+          <div><dt>Agent prepares</dt><dd>A follow-up draft tied to the original submission, ready for a manager to review.</dd></div>
+          <div><dt>Human decision</dt><dd>The manager checks the wording. The recruiter decides whether and when to send.</dd></div>
+        </dl><details class="study-example"><summary>See an illustrative example</summary><dl><div><dt>Sample input</dt><dd>A recruiter submitted two candidate profiles on Monday and has heard nothing by Thursday.</dd></div><div><dt>Sample output</dt><dd>“Hi, have you had a chance to review the two profiles we sent on Monday? Let me know if you’d like more information or an interview slot.”</dd></div><div><dt>What a person checks</dt><dd>The recruiter checks whether the client already replied in another thread and decides whether to send.</dd></div></dl></details>
+        <a class="record-return quiet-link" href="#work">Back to selected work ↑</a>
+      </article>
+      <article id="study-affidavit-drafting" class="study-record wrap" data-interest="AI agents" data-task="Prepare a first affidavit draft from facts entered by an advocate, in English or Hindi." data-decision="An advocate checks names, dates and wording before using the draft.">
+        <h2 class="record-name">Affidavit drafting</h2>
+        <p class="record-deck">From case facts to a first affidavit draft.</p>
+        <dl class="study-fields">
+          <div><dt>Input</dt><dd>An advocate enters the facts for a name-correction affidavit and selects English or Hindi.</dd></div>
+          <div><dt>Agent prepares</dt><dd>A structured first draft in the selected language, using the facts supplied by the advocate.</dd></div>
+          <div><dt>Human decision</dt><dd>The advocate checks names, dates and wording, then revises the draft before use.</dd></div>
+        </dl><details class="study-example"><summary>See an illustrative example</summary><dl><div><dt>Sample input</dt><dd>The advocate records two spellings of a fictional client’s name and asks for a first draft in English.</dd></div><div><dt>Sample output</dt><dd>“The name appears as [recorded spelling] in [document] and as [correct spelling] in [supporting record].”</dd></div><div><dt>What a person checks</dt><dd>The advocate compares both spellings with the source documents and checks the declaration before using it.</dd></div></dl></details>
+        <a class="record-return quiet-link" href="#work">Back to selected work ↑</a>
+      </article>
+      <article id="study-haazir-ai" class="study-record wrap" data-interest="Automation &amp; integrations" data-task="Help a law chamber prepare replies to routine case enquiries on WhatsApp." data-decision="An advocate verifies the case details and approves the reply before it is released.">
+        <h2 class="record-name">Haazir AI</h2>
+        <p class="record-deck">From a client question to a proposed case update.</p>
+        <dl class="study-fields">
+          <div><dt>Input</dt><dd>A client messages the chamber on WhatsApp to ask whether their case has progressed.</dd></div>
+          <div><dt>Agent would prepare</dt><dd>Haazir would use available case details to suggest a status reply for the chamber.</dd></div>
+          <div><dt>Human decision</dt><dd>The advocate would check the details and approve the reply before release.</dd></div>
+        </dl><details class="study-example"><summary>See an illustrative example</summary><dl><div><dt>Sample input</dt><dd>“Has my next hearing been scheduled?” The chamber’s internal record has no confirmed date.</dd></div><div><dt>Sample output</dt><dd>“We’re checking the latest listing. We’ll update you as soon as the next date is confirmed.”</dd></div><div><dt>What a person checks</dt><dd>The advocate checks the current listing and decides whether to send the reply or replace it with a confirmed date.</dd></div></dl></details>
+        <a class="record-return quiet-link" href="#work">Back to selected work ↑</a>
+      </article>
+      <article id="study-linkedin-agent" class="study-record wrap" data-interest="AI agents" data-task="Prepare LinkedIn post ideas and relevant B2B lead research for review." data-decision="A person checks claims, relevance, and wording before publishing or outreach.">
+        <h2 class="record-name">LinkedIn Growth Agent</h2>
+        <p class="record-deck">From research and post ideas to a reviewable draft.</p>
+        <dl class="study-fields"><div><dt>Input</dt><dd>A team defines its audience, topic, and outreach criteria.</dd></div><div><dt>Agent prepares</dt><dd>The product organizes potential leads and prepares post or outreach drafts.</dd></div><div><dt>Human decision</dt><dd>A person checks relevance and wording, then chooses what to publish or send.</dd></div></dl>
+        <details class="study-example"><summary>See an illustrative example</summary><dl><div><dt>Sample input</dt><dd>A hiring consultancy wants a post for HR leads about why candidate submissions stall.</dd></div><div><dt>Sample output</dt><dd>“When a submission stalls, agree who owns the next step and when they’ll follow up.” The example review list groups potential leads by role.</dd></div><div><dt>What a person checks</dt><dd>The team checks the target roles and wording, then chooses whether to publish the post or reach out separately.</dd></div></dl></details>
+        <a class="record-return quiet-link" href="#work">Back to selected work ↑</a>
+      </article>
+    </div>
+    <section class="services section" id="solutions"><div class="wrap split">
+      <div class="section-copy"><p class="eyebrow">Services</p><h2>What we <br>build<span class="terminal">.</span></h2><p>From a single handoff to the software that runs a team.</p></div>
+      <div class="solution-grid">
+          <details class="solution"><summary><span><strong>AI agents</strong><small>Hand off repetitive tasks</small></span><i aria-hidden="true"></i></summary><div class="solution-detail"><p>Give a specialist agent a defined job, such as preparing a follow-up or assembling a first draft. Choose where a person reviews its work.</p><a href="#work">See workflow studies →</a> <a class="project-link" data-interest="AI agents" href="#project">Create an agent brief →</a></div></details>
+          <details class="solution"><summary><span><strong>Software &amp; SaaS</strong><small>Build a tool around your team</small></span><i aria-hidden="true"></i></summary><div class="solution-detail"><p>Turn a spreadsheet, inbox and collection of workarounds into one application with clear roles, records and next steps.</p><a class="project-link" data-interest="Software &amp; SaaS" href="#project">Discuss a software project →</a></div></details>
+          <details class="solution"><summary><span><strong>Websites &amp; commerce</strong><small>Help visitors explore and buy</small></span><i aria-hidden="true"></i></summary><div class="solution-detail"><p>Connect discovery, product information and checkout in a storefront, or guide a prospective customer from their first question to an enquiry.</p><a class="project-link" data-interest="Websites &amp; commerce" href="#project">Discuss a web project →</a></div></details>
+          <details class="solution"><summary><span><strong>Mobile apps</strong><small>Put the right tools in the field</small></span><i aria-hidden="true"></i></summary><div class="solution-detail"><p>Design iOS and Android experiences for the place the work happens, from an intake at reception to a visit recorded on the move.</p><a class="project-link" data-interest="Mobile apps" href="#project">Discuss a mobile project →</a></div></details>
+          <details class="solution"><summary><span><strong>Automation &amp; integrations</strong><small>Connect the tools you already use</small></span><i aria-hidden="true"></i></summary><div class="solution-detail"><p>Move information between systems, flag exceptions and give each handoff a clear owner so people can stop re-entering the same details.</p><a class="project-link" data-interest="Automation &amp; integrations" href="#project">Discuss an integration →</a></div></details>
+          <details class="solution"><summary><span><strong>AI ecosystems</strong><small>Coordinate several workflows</small></span><i aria-hidden="true"></i></summary><div class="solution-detail"><p>Bring agents, business applications and people into a shared workflow. Define who can see each input and who approves the next action.</p><a class="project-link" data-interest="AI ecosystems" href="#project">Discuss a connected system →</a></div></details>
+      </div>
+    </div></section>
+    <section class="approach section" id="approach"><div class="wrap">
+      <p class="eyebrow">Our approach</p><h2>Start with one handoff<span class="terminal">.</span></h2>
+      <ol class="steps"><li><span aria-hidden="true">01</span><h3>Map the work</h3><p>Walk us through a recent task. Together we trace the inputs, tools and decisions your people make.</p></li><li><span aria-hidden="true">02</span><h3>Build a working slice</h3><p>Your team tries the smallest useful version with a representative example and shapes the review steps.</p></li><li><span aria-hidden="true">03</span><h3>Put it to work</h3><p>Agree on access and ownership, then refine the workflow with the people who use it.</p></li></ol>
+    </div></section>
+    <section class="project" id="project"><div class="wrap project-inner">
+      <div><p class="eyebrow">Project brief</p><h2>What would<br>you <em>delegate?</em></h2></div>
+      <div class="project-action"><p>Start with one task your team would like to hand off.</p><div class="enquiry-actions"><a href="mailto:admin@delegatlabs.in" class="button primary" id="project-email">Email us <span class="arrow-icon" aria-hidden="true"><span>↗</span></span></a><button type="button" class="quiet-link" id="brief-open">Create a brief <span aria-hidden="true">→</span></button></div></div>
+    </div></section>
+  </main>
+  <footer><div class="wrap foot-inner"><a class="wordmark" href="#top">Delegatlabs<span>.AI</span></a><span>DelegatLabs LLP</span><a href="#top">Back to top ↑</a></div></footer>
+  <template id="film-tools">
+    <button class="film-hit" type="button"><span class="film-chip"><span class="transport-icon" aria-hidden="true"></span><span class="film-command">Play film</span></span></button>
+    <button class="film-expand" type="button" hidden><span aria-hidden="true"></span></button>
+    <span class="film-clock" aria-hidden="true"></span>
+    <label class="film-timeline" hidden><span class="film-track" aria-hidden="true"><i></i></span><input type="range" min="0" max="6" step="0.1" value="0"></label>
+    <a class="film-file" hidden>Open MP4 ↗</a>
+  </template>
+  <dialog id="case-study" class="reader" aria-labelledby="reader-title">
+    <div class="reader-bar"><span class="eyebrow">Workflow study <span id="study-position"></span></span><button type="button" class="round-control close-control" id="case-close" aria-label="Close workflow study" autofocus><span aria-hidden="true">×</span></button></div>
+    <div class="reader-scroll" tabindex="0" role="region" aria-label="Study details">
+      <div class="reader-layout">
+        <div id="reader-art"></div>
+        <div class="reader-copy"><p id="example-type" class="eyebrow"></p><div id="reader-content"></div></div>
+      </div>
+    </div>
+    <div class="reader-actions">
+        <button type="button" class="button primary" id="study-brief">Use in my brief <span class="arrow-icon" aria-hidden="true"><span>↗</span></span></button>
+        <div class="study-nav"><button type="button" class="round-control" id="prev-study" aria-label="Previous study"><span aria-hidden="true">←</span></button><button type="button" class="quiet-link" id="next-study">Next study <span aria-hidden="true">→</span></button></div>
+    </div>
+  </dialog>
+  <dialog id="brief" aria-labelledby="brief-title">
+    <div class="dialog-head"><span class="eyebrow">Project planner</span><button type="button" class="round-control close-control" id="brief-close" aria-label="Close project brief"><span aria-hidden="true">×</span></button></div>
+    <h2 id="brief-title" tabindex="-1">Your project <em>brief.</em></h2>
+    <form id="brief-form">
+      <label for="interest">Area of interest</label><select id="interest"><option>Help me choose</option><option>AI agents</option><option>Software &amp; SaaS</option><option>Websites &amp; commerce</option><option>Mobile apps</option><option>Automation &amp; integrations</option><option>AI ecosystems</option></select>
+      <label for="task">What would you like to improve?</label><textarea id="task" rows="4" required maxlength="3000" placeholder="For example, our recruiters spend Friday afternoons chasing client feedback."></textarea>
+      <label for="decision">What should a person review? <span>(optional)</span></label><input id="decision" maxlength="500" placeholder="For example, the wording before a message is sent.">
+      <p class="form-note">Your answers stay in this tab. Copy or download the brief, or open it in your email app.</p>
+      <div class="form-actions"><button class="button primary" type="submit">Download brief <span class="arrow-icon" data-direction="down" aria-hidden="true"><span>↓</span></span></button><button class="button secondary" type="button" id="copy-brief">Copy brief</button><button id="email-brief" type="button" class="button secondary">Email brief</button></div>
+      <p id="brief-status" role="status"></p>
+      <div id="manual-copy" hidden><label for="copy-text">Brief text</label><textarea id="copy-text" rows="5" readonly></textarea></div>
+    </form>
+  </dialog>
+</body>
+</html>

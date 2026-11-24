@@ -12,7 +12,7 @@ export const siteConfig = {
     process.env.NEXT_PUBLIC_WHATSAPP_PHONE ??
     process.env.NEXT_PUBLIC_PHONE_DISPLAY?.replace(/\D/g, "") ??
     "919307509511",
-  contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hello@delegtlabs.com",
+  contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "admin@delegatlabs.in",
   phoneDisplay: process.env.NEXT_PUBLIC_PHONE_DISPLAY ?? "+91 9307509511",
   locale: "en_US",
   twitterHandle: "@delegtlabs",
