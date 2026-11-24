@@ -460,3 +460,44 @@ studio-player .film-file { position:absolute; top:11px; right:11px; }
   .hero-transport { bottom:14px; }
   .study-nav .round-control { width:44px; height:44px; }
 }
+
+.study-example .artboard { margin-block:16px; aspect-ratio:1.29; }
+.artboard > .art-type { position: absolute; z-index: 2; top: 6.6%; left: 6%; font-size: clamp(9px, .78vw, 13px); }
+.relay { color: #232928; background: radial-gradient(ellipse at 20% 30%,#f2b394,transparent 68%), linear-gradient(125deg,#de967a,#e7a68b 55%,#d38569); }
+.relay-orbit { position: absolute; width: 84%; aspect-ratio: 1; border: 1px solid #fff5; border-radius: 50%; left: -12%; top: 14%; }
+.relay-orbit::before, .relay-orbit::after { content:""; position:absolute; inset: 9%; border: 1px solid #fff5; border-radius: 50%; }
+.relay-orbit::after { inset: -11%; }
+.relay-app { position: absolute; top: 21%; left: 15%; width: 68%; background: #f4f3ed; box-shadow: 1.6cqw 4cqw 6cqw #5e301e51; border-radius: 1.7cqw; transform: rotate(-7deg); overflow: hidden; transition: transform .19s ease-out; }
+.case-card:hover .relay-app { transform: translateY(-1cqw) rotate(-4deg); }
+.app-bar { display: flex; align-items: center; gap: 1.4cqw; padding: 2.6cqw 4cqw; background: #242622; color: #fff; font-size: 2.7cqw; font-weight: 580; letter-spacing: -.06em; }
+.app-mark { background: #f5a084; color: #242622; display: grid; place-items: center; width: 5cqw; aspect-ratio: 1; border-radius: 1.1cqw; font-weight: 750; }
+.app-dots { margin-left: auto; font-size: 1.7cqw; letter-spacing: .18em; }
+.app-body { display: block; padding: 3.2cqw 4cqw 6cqw; }
+.ui-label { display: block; font-size: 1.35cqw; color: #656a60; }
+.app-body > b { display: block; font-size: 6cqw; letter-spacing: -.065em; font-weight: 510; }
+.ui-line { display: block; height: 1px; background: #d5d7cd; margin: 1.4cqw 0 0; }
+.queue-row { display: flex; align-items: center; gap: 1.7cqw; padding: 1.9cqw 0; border-bottom: 1px solid #d5d7cd; }
+.queue-row i { width: 4.6cqw; aspect-ratio: 1; display: grid; place-items: center; border-radius: 50%; font-size: 1.65cqw; font-style: normal; background: #dce4da; }
+.queue-row strong, .queue-row small { display: block; font-size: 1.8cqw; }
+.queue-row small { font-size: 1.4cqw; color: #61665d; }
+.queue-status { margin-left: auto; border-radius: 20px; background: #e4e6dc; padding: .6cqw 1.2cqw; font-size: 1.4cqw; }
+.draft-note { display: flex; gap: 2cqw; align-items: center; position: absolute; right: 7%; bottom: 14%; background: #30382f; color: #fff; padding: 2.5cqw 4cqw 2.5cqw 2.5cqw; border-radius: 1.7cqw; transform: rotate(5deg); box-shadow: 0 2cqw 4cqw #40241435; transition: transform .19s ease-out; }
+.case-card:hover .draft-note { transform: translateY(1cqw) rotate(3deg); }
+.note-icon { display: grid; place-items: center; width: 6cqw; height: 6cqw; border-radius: 50%; background: #d2e9a9; color: #232922; font-size: 3.2cqw; }
+.draft-note b, .draft-note small { display: block; font-size: 2.5cqw; font-weight: 490; }
+.draft-note small { font-size: 1.6cqw; color: #ccd5ca; }
+.folio { background: linear-gradient(132deg,#c6c5dd 1%,#a4a6c4 68%,#989bbd); color: #28283c; }
+.paper-shadow { position: absolute; inset: 20% 18% -30%; background: #42425e45; filter: blur(3.4cqw); transform: skew(-13deg) rotate(16deg); }
+.paper { position: absolute; display: block; left: 24%; top: 18%; width: 53%; height: 92%; background: #f4efdf; box-shadow: .4cqw .6cqw 1.3cqw #3a344430; }
+.paper-back { transform: rotate(-11deg) translate(-4%,2%); background: #dfd8c8; }
+.paper-front { transform: rotate(9deg); padding: 5cqw 4.5cqw; color: #32342e; transition: transform .19s ease-out; }
+.case-card:hover .paper-front { transform: translateY(-1cqw) rotate(6deg); }
+.paper-meta { display: block; font-size: 1.35cqw; margin-bottom: 6.2cqw; }
+.paper-front > b, .paper-text, .paper-sub, .paper-seal { font-family: Georgia, serif; }
+.paper-front > b { font-size: 9.6cqw; font-weight: 400; line-height: 1; letter-spacing: -.078em; }
+.paper-front > b span { color: #9f4637; }
+.paper-sub { display: block; font-size: 1.9cqw; font-style: italic; margin-top: 1cqw; }
+.paper-rule { display: block; margin-block: 3cqw; height: 1px; background: #706c62; }
+.paper-text { display: block; font-size: 2cqw; line-height: 1.5; }
+.paper-lines { display: block; margin-top: 2cqw; width: 77%; height: 6cqw; background: repeating-linear-gradient(transparent 0 1.65cqw, #a5a092 1.7cqw 1.8cqw); }
+.paper-seal { display: grid; place-items: center; border: .55cqw double #ae6653; color: #924b3a; width: 8cqw; aspect-ratio: 1; font-size: 2.3cqw; border-radius: 50%; margin: 1.5cqw 0 0 auto; transform: rotate(-19deg); }

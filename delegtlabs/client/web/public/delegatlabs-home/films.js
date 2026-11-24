@@ -63,28 +63,34 @@
   showHeroState();
   reducedMotion.addEventListener("change", () => { wantsAmbient = preferAutoplay(); syncAmbient(); });
 
-  document.addEventListener("play", event => {
-    if (event.target instanceof HTMLVideoElement) pauseOtherFilms(event.target);
-  }, true);
-  document.addEventListener("visibilitychange", () => {
-    if (document.hidden) pauseOtherFilms(null);
-    else syncAmbient();
+  const visibleFilms = new Set();
+  const manuallyPaused = new WeakSet();
+  function syncProjects() {
+    const dialog = document.querySelector("dialog[open]");
+    for (const video of visibleFilms) {
+      if (document.hidden || (dialog && !dialog.contains(video)) || video.closest("[inert]")) video.pause();
+      else if (preferAutoplay() && !manuallyPaused.has(video) && video.paused && !video.error) video.play().catch(() => {});
+    }
+  }
+  function syncPlayback() { syncProjects(); syncAmbient(); }
+  reducedMotion.addEventListener("change", () => {
+    if (reducedMotion.matches) pauseOtherFilms(null);
+    syncPlayback();
   });
-  const dialogs = new MutationObserver(() => {
-    const open = document.querySelector("dialog[open]");
-    if (open) document.querySelectorAll("video").forEach(video => { if (!open.contains(video) && !video.paused) video.pause(); });
-    syncAmbient();
-  });
-  document.querySelectorAll("dialog").forEach(dialog => dialogs.observe(dialog, { attributes: true, attributeFilter: ["open"] }));
+  document.addEventListener("visibilitychange", syncPlayback);
+  const dialogs = new MutationObserver(syncPlayback);
+  document.querySelectorAll("dialog").forEach(dialog => dialogs.observe(dialog, {attributes:true, attributeFilter:["open"]}));
 
   const visibility = window.IntersectionObserver && new IntersectionObserver(entries => {
     for (const entry of entries) {
       if (entry.target === hero) {
         heroVisible = entry.isIntersecting;
         syncAmbient();
-      } else if (!entry.isIntersecting && !entry.target.paused) entry.target.pause();
+      } else if (entry.target.isConnected && entry.intersectionRatio >= .35) visibleFilms.add(entry.target);
+      else { visibleFilms.delete(entry.target); if (!entry.target.paused) entry.target.pause(); }
     }
-  });
+    syncProjects();
+  }, {threshold:[0,.35]});
   if (visibility) visibility.observe(hero);
   else { heroVisible = true; syncAmbient(); }
 
@@ -99,6 +105,7 @@
 
     disconnectedCallback() {
       visibility?.unobserve(this.video);
+      visibleFilms.delete(this.video);
       if (!this.video.paused) this.video.pause();
     }
 
@@ -159,7 +166,8 @@
       };
       button.addEventListener("click", () => {
         if (this.dataset.state === "error") video.load();
-        else if (!video.paused && !video.ended) { video.pause(); return; }
+        else if (!video.paused && !video.ended) { manuallyPaused.add(video); video.pause(); return; }
+        manuallyPaused.delete(video);
         if (video.ended) video.currentTime = 0;
         setState("loading");
         video.play().catch(error => { if (error.name !== "AbortError") setState("error"); });
@@ -176,6 +184,7 @@
       video.addEventListener("timeupdate", updateTime);
       video.addEventListener("loadedmetadata", updateTime);
       onMediaFailure(video, () => setState("error"));
+      video.loop = true;
       video.muted = true;
       video.controls = false;
       setState("idle");
