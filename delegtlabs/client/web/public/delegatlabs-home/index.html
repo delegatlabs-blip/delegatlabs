@@ -40,7 +40,7 @@
       <nav id="primary-nav" aria-label="Primary"><a href="#work">Work</a><a href="#solutions">Services</a><a href="#approach">Approach</a></nav>
       <div class="head-tools">
         <button id="theme-toggle" class="round-control" type="button" aria-label="Dark theme" aria-pressed="false" hidden><span class="theme-icon" aria-hidden="true"></span></button>
-        <a href="#project" class="button primary small"><span class="long-label">Start a project</span><span class="short-label">Enquire</span><span class="arrow-icon" aria-hidden="true"><span>↗</span></span></a>
+        <a href="#project" class="button primary small project-link"><span class="long-label">Start a project</span><span class="short-label">Enquire</span><span class="arrow-icon" aria-hidden="true"><span>↗</span></span></a>
       </div>
     </div>
   </header>
@@ -54,7 +54,7 @@
         <p class="eyebrow">AI &amp; software studio</p>
         <h1 id="hero-title"><span>Work worth</span><span>delegating.</span></h1>
         <p class="film-intro">Custom AI agents and software for the work between people. Your team chooses what to hand off and what to review.</p>
-        <div class="hero-actions"><a class="button primary" href="#work">Explore the work <span class="arrow-icon" data-direction="down" aria-hidden="true"><span>↓</span></span></a><a class="quiet-link" href="#solutions">Our services <span aria-hidden="true">↘</span></a></div>
+        <div class="hero-actions"><a class="button primary" href="#workflow">Try a workflow <span class="arrow-icon" data-direction="down" aria-hidden="true"><span>↓</span></span></a><a class="quiet-link" href="#solutions">Our services <span aria-hidden="true">↘</span></a></div>
       </div><div class="hero-transport"><button type="button" id="film-control" aria-controls="studio-film" hidden><span class="transport-icon" aria-hidden="true"></span><span class="film-action">Play film</span></button><a class="film-file" href="/delegatlabs-home/assets/handoff-film.mp4" hidden>Open MP4 ↗</a></div></div>
     </section>
     <section class="wrap work section" id="work" aria-labelledby="work-title">
@@ -73,7 +73,7 @@
             <h3>Follow-up Agent</h3><p>Recruitment follow-up workspace</p>
             <span class="study-link">Read study <span aria-hidden="true">↗</span></span>
           </a>
-          <div class="walkthrough">
+          <div class="walkthrough" id="workflow" tabindex="-1">
             <span class="artboard relay" aria-hidden="true">
             <span class="art-type">Recruitment</span>
             <span class="relay-orbit"></span>
@@ -82,12 +82,12 @@
             </span><span class="draft-note"><span class="note-icon">↗</span><span><small>Draft prepared</small><b>Ready for review</b></span></span>
 
           </span>
-            <fieldset class="workflow-stages"><legend>Explore a sample follow-up</legend>
-              <button type="button" aria-pressed="true">Submission</button>
-              <button type="button" aria-pressed="false">Draft</button>
-              <button type="button" aria-pressed="false">Review</button>
-            </fieldset>
-            <p id="stage-copy" aria-live="polite">Two profiles went to the client on Monday. By Thursday, the recruiter is still waiting for feedback.</p>
+            <div class="decision-demo">
+              <p class="eyebrow">Fictional recruitment example</p><h3>Should this follow-up go out?</h3>
+              <fieldset class="scenario-options"><legend>Client thread</legend><label><input type="radio" name="thread" value="waiting" checked> Still waiting</label><label><input type="radio" name="thread" value="replied"> Client replied</label></fieldset>
+              <fieldset class="workflow-stages"><legend>Inspect the workflow</legend><button type="button" aria-pressed="true">Submission</button><button type="button" aria-pressed="false">Draft</button><button type="button" aria-pressed="false">Review</button></fieldset>
+              <div class="sample-output" aria-live="polite"><strong id="stage-heading">Monday · Recruiter to client</strong><p id="stage-copy">“Here are the two profiles we discussed.” By Thursday, the thread is still awaiting feedback.</p></div>
+            </div>
           </div>
         </article>
         <article class="project-card">
@@ -135,6 +135,7 @@
       <article id="study-follow-up-agent" class="study-record wrap" data-interest="AI agents" data-task="Prepare follow-ups for candidate submissions that are waiting on client feedback." data-decision="A manager reviews the draft. The recruiter decides when to send it.">
         <h2 class="record-name">Follow-up Agent</h2>
         <p class="record-deck">From a waiting submission to a follow-up draft.</p>
+        <section class="project-evidence queue"><h3>Studio role</h3><p>Follow-up preparation and manager review</p><details open><summary>Illustrative work sample</summary><dl><dt>Submission record</dt><dd>Two profiles submitted Monday. Feedback pending Thursday.</dd><dt>Prepared draft</dt><dd>“Would you like to interview either candidate?”</dd></dl></details><figure class="prototype-film"><figcaption>Prototype footage · Reviewing a queue of fictional candidate submissions</figcaption><video controls muted playsinline preload="none" poster="/delegatlabs-home/assets/recruitment-prototype.png" aria-label="Reviewing a queue of fictional candidate submissions" src="/delegatlabs-home/assets/recruitment-prototype.mp4"></video></figure></section>
         <dl class="study-fields">
           <div><dt>Input</dt><dd>A recruiter identifies a candidate submission that is still waiting on client feedback.</dd></div>
           <div><dt>Agent prepares</dt><dd>A follow-up draft tied to the original submission, ready for a manager to review.</dd></div>
@@ -152,6 +153,7 @@
       <article id="study-affidavit-drafting" class="study-record wrap" data-interest="AI agents" data-task="Prepare a first affidavit draft from facts entered by an advocate, in English or Hindi." data-decision="An advocate checks names, dates and wording before using the draft.">
         <h2 class="record-name">Affidavit drafting</h2>
         <p class="record-deck">From case facts to a first affidavit draft.</p>
+        <section class="project-evidence document"><h3>Studio role</h3><p>Bilingual first-draft preparation for advocates</p><details open><summary>Illustrative work sample</summary><dl><dt>Supplied fact</dt><dd>The sample record reads <mark>Asha Rao</mark>. The supporting document dated <mark>12 June</mark> reads <mark>Asha R. Rao</mark>.</dd><dt>Draft excerpt</dt><dd>“My name appears as <mark>Asha Rao</mark> in the record and as <mark>Asha R. Rao</mark> in the supporting document dated <mark>12 June</mark>.”</dd></dl></details><figure class="prototype-film"><figcaption>Prototype footage · Filtering the bilingual draft catalog for name affidavits</figcaption><video controls muted playsinline preload="none" poster="/delegatlabs-home/assets/legal-prototype.png" aria-label="Filtering the bilingual draft catalog for name affidavits" src="/delegatlabs-home/assets/legal-prototype.mp4"></video></figure></section>
         <dl class="study-fields">
           <div><dt>Input</dt><dd>An advocate enters the facts for a name-correction affidavit and selects English or Hindi.</dd></div>
           <div><dt>Agent prepares</dt><dd>A structured first draft in the selected language, using the facts supplied by the advocate.</dd></div>
@@ -168,6 +170,7 @@
       <article id="study-haazir-ai" class="study-record wrap" data-interest="Automation &amp; integrations" data-task="Help a law chamber prepare replies to routine case enquiries on WhatsApp." data-decision="An advocate verifies the case details and approves the reply before it is released.">
         <h2 class="record-name">Haazir AI</h2>
         <p class="record-deck">From a client question to a proposed case update.</p>
+        <section class="project-evidence conversation"><h3>Studio role</h3><p>Concept design for chamber enquiry reviews</p><details open><summary>Illustrative work sample</summary><dl><dt>Client enquiry</dt><dd>“Has my next hearing been scheduled?”</dd><dt>Proposed chamber reply</dt><dd>“We’re checking the listing and will update you once the date is confirmed.”</dd></dl></details></section>
         <dl class="study-fields">
           <div><dt>Input</dt><dd>A client messages the chamber on WhatsApp to ask whether their case has progressed.</dd></div>
           <div><dt>Agent would prepare</dt><dd>Haazir would use available case details to suggest a status reply for the chamber.</dd></div>
@@ -178,6 +181,7 @@
       <article id="study-linkedin-agent" class="study-record wrap" data-interest="AI agents" data-task="Prepare LinkedIn post ideas and relevant B2B lead research for review." data-decision="A person checks claims, relevance, and wording before publishing or outreach.">
         <h2 class="record-name">LinkedIn Growth Agent</h2>
         <p class="record-deck">From research and post ideas to a reviewable draft.</p>
+        <section class="project-evidence editorial"><h3>Studio role</h3><p>Research organization and post drafting</p><details open><summary>Illustrative work sample</summary><dl><dt>Research note</dt><dd>Fictional team retrospective · Follow-ups stalled when nobody owned the next step.</dd><dt>Proposed post</dt><dd>“Before you close a handoff, name the next owner and agree when they’ll follow up.”</dd></dl></details></section>
         <dl class="study-fields"><div><dt>Input</dt><dd>A team defines its audience, topic, and outreach criteria.</dd></div><div><dt>Agent prepares</dt><dd>The product organizes potential leads and prepares post or outreach drafts.</dd></div><div><dt>Human decision</dt><dd>A person checks relevance and wording, then chooses what to publish or send.</dd></div></dl>
         <details class="study-example"><summary>See an illustrative example</summary><dl><div><dt>Sample input</dt><dd>A hiring consultancy wants a post for HR leads about why candidate submissions stall.</dd></div><div><dt>Sample output</dt><dd>“When a submission stalls, agree who owns the next step and when they’ll follow up.” The example review list groups potential leads by role.</dd></div><div><dt>What a person checks</dt><dd>The team checks the target roles and wording, then chooses whether to publish the post or reach out separately.</dd></div></dl></details>
         <a class="record-return quiet-link" href="#work">Back to selected work ↑</a>
@@ -228,11 +232,11 @@
     <div class="dialog-head"><span class="eyebrow">Project planner</span><button type="button" class="round-control close-control" id="brief-close" aria-label="Close project brief"><span aria-hidden="true">×</span></button></div>
     <h2 id="brief-title" tabindex="-1">Your project <em>brief.</em></h2>
     <form id="brief-form">
+      <label for="task">What task would you like to hand off?</label><textarea id="task" rows="4" required maxlength="3000" placeholder="For example, our recruiters spend Friday afternoons chasing client feedback."></textarea>
       <label for="interest">Area of interest</label><select id="interest"><option>Help me choose</option><option>AI agents</option><option>Software &amp; SaaS</option><option>Websites &amp; commerce</option><option>Mobile apps</option><option>Automation &amp; integrations</option><option>AI ecosystems</option></select>
-      <label for="task">What would you like to improve?</label><textarea id="task" rows="4" required maxlength="3000" placeholder="For example, our recruiters spend Friday afternoons chasing client feedback."></textarea>
       <label for="decision">What should a person review? <span>(optional)</span></label><input id="decision" maxlength="500" placeholder="For example, the wording before a message is sent.">
-      <p class="form-note">Your answers stay in this tab. Copy or download the brief, or open it in your email app.</p>
-      <div class="form-actions"><button class="button primary" type="submit">Download brief <span class="arrow-icon" data-direction="down" aria-hidden="true"><span>↓</span></span></button><button class="button secondary" type="button" id="copy-brief">Copy brief</button><button id="email-brief" type="button" class="button secondary">Email brief</button></div>
+      <p class="form-note"><a href="mailto:admin@delegatlabs.in">Email the studio directly</a></p><p class="form-note">Your answers stay in this tab. Copy or download the brief, or open it in your email app.</p>
+      <div class="form-actions"><button id="email-brief" type="button" class="button primary">Open email draft</button><button class="button secondary" type="submit">Download brief <span class="arrow-icon" data-direction="down" aria-hidden="true"><span>↓</span></span></button><button class="button secondary" type="button" id="copy-brief">Copy brief</button></div>
       <p id="brief-status" role="status"></p>
       <div id="manual-copy" hidden><label for="copy-text">Brief text</label><textarea id="copy-text" rows="5" readonly></textarea></div>
     </form>

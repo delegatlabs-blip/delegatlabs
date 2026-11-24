@@ -111,17 +111,40 @@
   }
 
   const stages = [...document.querySelectorAll(".workflow-stages button")];
-  const stageCopy = [
-    document.getElementById("stage-copy").textContent,
-    "The agent prepares a draft asking for feedback on the two profiles and whether the client wants to arrange interviews.",
-    "A manager checks the wording. The recruiter checks for a recent reply and decides whether to send."
-  ];
-  stages.forEach((button, index) => button.addEventListener("click", () => {
-    stages.forEach(item => item.setAttribute("aria-pressed", String(item === button)));
-    document.getElementById("stage-copy").textContent = stageCopy[index];
-    document.querySelector(".walkthrough .draft-note b").textContent = ["Awaiting feedback", "Draft prepared", "Ready for review"][index];
-  }));
-  document.querySelector(".walkthrough .draft-note b").textContent = "Awaiting feedback";
+  const walkthrough = document.getElementById("workflow");
+  const samples = {
+    waiting: [
+      ["Monday · Recruiter to client", "“Here are the two profiles we discussed.” By Thursday, the thread is still awaiting feedback.", "Awaiting feedback"],
+      ["Thursday · Prepared draft", "“Would you like to interview either candidate, or would a different profile be more useful?”", "Draft prepared"],
+      ["Manager and recruiter review", "The manager checks the wording. The recruiter checks other channels for a reply before deciding whether to send.", "Ready for review"]
+    ],
+    replied: [
+      ["Thursday · Client to recruiter", "“Both look promising. Can we meet them next week?”", "Reply received"],
+      ["Earlier follow-up draft", "“Have you had a chance to review the profiles?” This draft is now out of date.", "Hold draft"],
+      ["Recruiter’s decision", "Set the reminder aside. Check both candidates’ availability before proposing interview times.", "Arrange interviews"]
+    ]
+  };
+  let stage = 0;
+  function renderSample() {
+    const scenario = walkthrough.querySelector("input:checked").value;
+    const [heading, copy, status] = samples[scenario][stage];
+    stages.forEach((button, index) => button.setAttribute("aria-pressed", String(index === stage)));
+    document.getElementById("stage-heading").textContent = heading;
+    document.getElementById("stage-copy").textContent = copy;
+    walkthrough.querySelector(".draft-note small").textContent = stages[stage].textContent;
+    walkthrough.querySelector(".draft-note b").textContent = status;
+    walkthrough.querySelector(".queue-status").textContent = status;
+  }
+  stages.forEach((button, index) => button.addEventListener("click", () => { stage = index; renderSample(); }));
+  walkthrough.querySelector(".scenario-options").addEventListener("change", renderSample);
+  renderSample();
+
+  reader.addEventListener("play", event => {
+    if (!(event.target instanceof HTMLVideoElement)) return;
+    reader.querySelectorAll("video").forEach(video => {
+      if (video !== event.target && !video.paused) video.pause();
+    });
+  }, true);
 
   function rememberPosition() {
     const film = reader.querySelector("#reader-art > :first-child video");
@@ -131,6 +154,7 @@
   function showStudy(card, direction) {
     const record = document.getElementById(card.hash.slice(1));
     rememberPosition();
+    reader.querySelector(".prototype-film video")?.pause();
     const original = card.closest(".project-card").querySelector(".artboard");
     const video = original.querySelector("video");
     let art;
@@ -152,7 +176,7 @@
     document.title = title.textContent + " — Delegatlabs.AI";
     changeArtwork(art, direction);
     document.getElementById("reader-content").replaceChildren(
-      title, record.querySelector(".record-deck").cloneNode(true), record.querySelector(".study-fields").cloneNode(true), record.querySelector(".study-example").cloneNode(true)
+      title, record.querySelector(".record-deck").cloneNode(true), record.querySelector(".project-evidence").cloneNode(true), record.querySelector(".study-fields").cloneNode(true), record.querySelector(".study-example").cloneNode(true)
     );
     document.getElementById("example-type").textContent = card.querySelector(".case-kind").textContent;
     if (planner.open) planner.close();
@@ -180,7 +204,7 @@
     document.title = homeTitle;
     const trigger = entryCard;
     const record = pendingBrief;
-    reader.querySelector("video")?.pause();
+    reader.querySelectorAll("video").forEach(video => video.pause());
     rememberPosition();
     reader.close();
     currentCard = entryCard = pendingBrief = null;
