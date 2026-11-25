@@ -38,7 +38,7 @@
   document.querySelectorAll(".project-link, #brief-open").forEach(trigger => {
     trigger.addEventListener("click", event => {
       event.preventDefault();
-      openPlanner(trigger);
+      openPlanner(trigger, trigger.dataset.task ? trigger : null);
     });
   });
   document.getElementById("brief-close").addEventListener("click", () => planner.close());
@@ -146,6 +146,28 @@
     });
   }, true);
 
+  const services = document.querySelectorAll(".solution");
+  const preview = document.getElementById("service-preview");
+  function refreshPreview() {
+    const sample = document.querySelector(".solution[open] .service-sample");
+    preview.replaceChildren(...(sample ? [sample.cloneNode(true)] : []));
+  }
+  services.forEach(service => service.addEventListener("toggle", refreshPreview));
+  refreshPreview();
+
+  function iris(card, closing) {
+    if (!reader.animate || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const source = card.closest(".project-card")?.querySelector(".artboard") || document.querySelector(".screen-picture");
+    const art = source.getBoundingClientRect();
+    const box = reader.getBoundingClientRect();
+    const x = Math.max(0, Math.min(box.width, art.left + art.width / 2 - box.left));
+    const y = Math.max(0, Math.min(box.height, art.top + art.height / 2 - box.top));
+    const radius = Math.ceil(Math.hypot(box.width, box.height));
+    const frames = [0, radius].map(r => ({clipPath: `circle(${r}px at ${x}px ${y}px)`}));
+    return reader.animate(closing ? frames.reverse() : frames, {
+      duration: closing ? 190 : 310, easing: "cubic-bezier(.2,.75,.25,1)", fill: "none"
+    });
+  }
   function rememberPosition() {
     const film = reader.querySelector("#reader-art > :first-child video");
     const galleryFilm = currentCard?.closest(".project-card").querySelector("video");
@@ -187,6 +209,7 @@
     if (!reader.open) {
       entryCard = card;
       reader.showModal();
+      iris(entryCard, false);
     } else {
       title.focus({preventScroll:true});
     }
@@ -211,10 +234,14 @@
     if (record) openPlanner(trigger,record);
     else trigger.focus({preventScroll:true});
   }
-  function exitStudy(startBrief) {
+  async function exitStudy(startBrief) {
     if (returning || !currentCard) return;
     returning = true;
     if (startBrief) pendingBrief = document.getElementById(currentCard.hash.slice(1));
+    const origin = entryCard;
+    const animation = iris(origin, true);
+    if (animation) await animation.finished.catch(() => {});
+    if (!reader.open || entryCard !== origin) return;
     if (history.state?.delegatlabsStudy && history.length > 1) {
       history.back();
     } else {
@@ -224,29 +251,15 @@
       syncStudy();
     }
   }
-  cards.forEach(card => card.addEventListener("click", event => {
-    if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
-    event.preventDefault();
-    const open = () => {
-      history.pushState({...history.state,delegatlabsStudy:true},"",card.hash);
+  for (const link of cards) {
+    link.addEventListener("click", event => {
+      if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      if (!cards.some(card => card.hash === link.hash)) return;
+      event.preventDefault();
+      history.pushState({...history.state, delegatlabsStudy:true}, "", link.hash);
       syncStudy();
-    };
-    if (!document.startViewTransition || !matchMedia("(min-width: 681px) and (prefers-reduced-motion: no-preference)").matches) {
-      open();
-      return;
-    }
-    const source = card.closest(".project-card").querySelector(".artboard");
-    source.style.viewTransitionName = "study-frame";
-    const transition = document.startViewTransition(() => {
-      source.style.viewTransitionName = "";
-      open();
-      document.querySelector("#reader-art > :first-child").style.viewTransitionName = "study-frame";
     });
-    transition.finished.finally(() => {
-      source.style.viewTransitionName = "";
-      document.querySelectorAll("#reader-art > *").forEach(item => item.style.viewTransitionName = "");
-    });
-  }));
+  }
   document.getElementById("case-close").addEventListener("click", () => exitStudy(false));
   reader.addEventListener("cancel", event => { event.preventDefault(); exitStudy(false); });
   document.getElementById("study-brief").addEventListener("click", () => exitStudy(true));

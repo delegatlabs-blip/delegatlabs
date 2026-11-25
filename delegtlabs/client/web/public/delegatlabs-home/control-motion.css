@@ -1,0 +1,64 @@
+/* Directional fills use the existing text and backgrounds for each surface. */
+.button {
+  --action-base: var(--button);
+  --action-fill: var(--button-hover);
+  --action-ease: cubic-bezier(.2,.78,.22,1);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.button.primary, .button.primary:hover { background: var(--action-base); }
+.film-copy .hero-actions .button.primary { background:#c7ed95; color:#131c13; --action-base:#c7ed95; --action-fill:#e1ffba; }
+.project .button.primary { --action-base: #fff; --action-fill: #dce8ff; }
+.button.secondary { --action-fill: var(--inset); }
+.button.secondary:hover { background: transparent; }
+.button::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -1px;
+  background: var(--action-fill);
+  transform: translateX(-120%) skewX(-9deg);
+  transform-origin: bottom left;
+  pointer-events: none;
+}
+.button:focus-visible::before, .button:active::before { transform: none; }
+.button:focus-visible, .round-control:focus-visible, #primary-nav a:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+.film-copy .button:focus-visible { outline-color:white; }
+.project .button:focus-visible { outline-color:#fff; }
+#primary-nav a::after, .foot-inner a:last-child::after {
+  height: 2px;
+  border-radius: 2px;
+  transform-origin: right;
+}
+#primary-nav a[aria-current="location"] { color: var(--accent); }
+#primary-nav a:is(:hover,:focus-visible,[aria-current="location"])::after,
+.foot-inner a:last-child:is(:hover,:focus-visible)::after { transform-origin: left; }
+
+@media (hover:hover) and (pointer:fine) {
+  .button:hover::before { transform: none; }
+}
+@media (prefers-reduced-motion:no-preference) {
+  .button, .round-control { transition: transform 160ms ease-out; }
+  .button::before { transition: transform 260ms var(--action-ease); }
+  .button > span[aria-hidden="true"]:not(.arrow-icon) {
+    display: inline-block;
+    transition: transform 220ms var(--action-ease);
+  }
+  .button:active, .round-control:active { transform: translateY(1px) scale(.98); }
+  .button:active::before { transition-duration: 90ms; }
+  #primary-nav a::after, .foot-inner a:last-child::after { transition: transform 200ms cubic-bezier(.2,.72,.24,1); }
+  @media (hover:hover) and (pointer:fine) {
+    .button:hover > span[aria-hidden="true"]:not(.arrow-icon) { transform: translate(2px,-2px); }
+  }
+}
+@media (prefers-reduced-motion:reduce) {
+  .button:active, .round-control:active { transform: none; }
+}
+@media (forced-colors:active) {
+  #primary-nav a[aria-current="location"] { text-decoration: underline; }
+  .button { border-color: ButtonText; }
+}

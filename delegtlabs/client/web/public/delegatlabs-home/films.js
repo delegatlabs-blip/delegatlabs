@@ -29,7 +29,7 @@
     const action = failed ? "Retry" : hero.paused ? "Play" : "Pause";
     heroButton.dataset.state = state;
     heroAction.textContent = action + " film";
-    heroButton.setAttribute("aria-label", action + " studio film");
+    heroButton.setAttribute("aria-label", action + " " + (hero.dataset.chapter || "studio") + " film");
     heroFile.hidden = !failed;
   }
 
@@ -68,7 +68,7 @@
   function syncProjects() {
     const dialog = document.querySelector("dialog[open]");
     for (const video of visibleFilms) {
-      if (document.hidden || (dialog && !dialog.contains(video)) || video.closest("[inert]")) video.pause();
+      if (document.hidden || (dialog && !dialog.contains(video)) || video.closest("[inert], [hidden], dialog:not([open])")) video.pause();
       else if (preferAutoplay() && !manuallyPaused.has(video) && video.paused && !video.error) video.play().catch(() => {});
     }
   }
@@ -89,7 +89,7 @@
       } else if (entry.target.isConnected && entry.intersectionRatio >= .35) visibleFilms.add(entry.target);
       else { visibleFilms.delete(entry.target); if (!entry.target.paused) entry.target.pause(); }
     }
-    syncProjects();
+    syncPlayback();
   }, {threshold:[0,.35]});
   if (visibility) visibility.observe(hero);
   else { heroVisible = true; syncAmbient(); }

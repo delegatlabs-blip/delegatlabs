@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="Delegatlabs.AI builds custom AI, software and digital products for professional teams. Explore working prototypes and see where people stay in control.">
-  <title>Delegatlabs.AI — AI &amp; software studio</title>
+  <meta name="description" content="Delegatlabs helps teams automate everyday work with custom AI agents, connected software and human review. Explore messaging, recruitment and legal workflows.">
+  <title>Delegatlabs.AI — AI automation studio</title>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Delegatlabs.AI">
   <meta property="og:title" content="Delegatlabs.AI — Work worth delegating">
-  <meta property="og:description" content="Custom AI agents and software for the work between people.">
+  <meta property="og:description" content="Custom AI agents and connected workflows for everyday work.">
   <meta property="og:image" content="/delegatlabs-home/assets/social-preview.png">
   <meta property="og:image:alt" content="Delegatlabs.AI — Work worth delegating, alongside a blue metallic iris">
   <meta name="twitter:card" content="summary_large_image">
@@ -26,9 +26,12 @@
     })();
   </script>
   <link rel="stylesheet" href="/delegatlabs-home/styles.css">
+  <link rel="stylesheet" href="/delegatlabs-home/channel-demo.css">
+  <link rel="stylesheet" href="/delegatlabs-home/control-motion.css">
   <script defer src="/delegatlabs-home/films.js"></script>
   <script defer src="/delegatlabs-home/site.js"></script>
   <script defer src="/delegatlabs-home/projects.js"></script>
+  <script defer src="/delegatlabs-home/channel-demo.js"></script>
 
 </head>
 <body id="top">
@@ -37,7 +40,7 @@
     <div class="wrap head-inner">
       <a class="wordmark" href="#top" aria-label="Delegatlabs.AI home">Delegatlabs<span>.AI</span></a>
       <button class="round-control menu-toggle" type="button" aria-label="Menu" aria-controls="primary-nav" aria-expanded="false" hidden><span class="menu-icon" aria-hidden="true"></span></button>
-      <nav id="primary-nav" aria-label="Primary"><a href="#work">Work</a><a href="#solutions">Services</a><a href="#approach">Approach</a></nav>
+      <nav id="primary-nav" aria-label="Primary"><a href="#agents">Agents</a><a href="#work">Work</a><a href="#solutions">Services</a><a href="#approach">Approach</a></nav>
       <div class="head-tools">
         <button id="theme-toggle" class="round-control" type="button" aria-label="Dark theme" aria-pressed="false" hidden><span class="theme-icon" aria-hidden="true"></span></button>
         <a href="#project" class="button primary small project-link"><span class="long-label">Start a project</span><span class="short-label">Enquire</span><span class="arrow-icon" aria-hidden="true"><span>↗</span></span></a>
@@ -51,11 +54,57 @@
         <source src="/delegatlabs-home/assets/handoff-film.webm" type="video/webm">
       </video>
       <div class="wrap film-layout"><div class="film-copy">
-        <p class="eyebrow">AI &amp; software studio</p>
+        <p class="eyebrow">AI automation studio</p>
         <h1 id="hero-title"><span>Work worth</span><span>delegating.</span></h1>
-        <p class="film-intro">Custom AI agents and software for the work between people. Your team chooses what to hand off and what to review.</p>
-        <div class="hero-actions"><a class="button primary" href="#workflow">Try a workflow <span class="arrow-icon" data-direction="down" aria-hidden="true"><span>↓</span></span></a><a class="quiet-link" href="#solutions">Our services <span aria-hidden="true">↘</span></a></div>
+        <p class="film-intro">We help teams automate everyday work with AI agents. We connect the tools you use and design the steps your people review.</p>
+        <div class="hero-actions"><a class="button primary" href="#workflow">Try a workflow <span class="arrow-icon" data-direction="down" aria-hidden="true"><span>↓</span></span></a><a class="quiet-link" href="#agents">Explore the agents <span aria-hidden="true">↘</span></a></div>
       </div><div class="hero-transport"><button type="button" id="film-control" aria-controls="studio-film" hidden><span class="transport-icon" aria-hidden="true"></span><span class="film-action">Play film</span></button><a class="film-file" href="/delegatlabs-home/assets/handoff-film.mp4" hidden>Open MP4 ↗</a></div></div>
+    </section>
+    <section class="channel-agents section" id="agents" aria-labelledby="channel-title">
+      <div class="wrap">
+        <div class="section-head"><h2 id="channel-title">Conversation agents<span class="terminal">.</span></h2><p>Pick a channel. Choose how the agent handles a message, then take that workflow into your project brief.</p></div>
+        <div class="channel-tabs" role="tablist" aria-label="Messaging platform" hidden>
+          <button type="button" role="tab" id="tab-whatsapp" aria-controls="panel-whatsapp" aria-selected="false"><img src="/delegatlabs-home/assets/channel-mark-whatsapp.png" width="44" height="44" alt="">WhatsApp</button>
+          <button type="button" role="tab" id="tab-instagram" aria-controls="panel-instagram" aria-selected="false"><img src="/delegatlabs-home/assets/channel-mark-instagram.png" width="44" height="44" alt="">Instagram</button>
+          <button type="button" role="tab" id="tab-facebook" aria-controls="panel-facebook" aria-selected="false"><img src="/delegatlabs-home/assets/channel-mark-facebook.png" width="44" height="44" alt="">Facebook</button>
+        </div>
+        <article class="channel-panel" id="panel-whatsapp">
+          <studio-player class="artboard" data-duration="8.5">
+            <video muted playsinline loop controls preload="none" poster="/delegatlabs-home/assets/channel-whatsapp.webp" aria-label="WhatsApp workflow illustration">
+              <source src="/delegatlabs-home/assets/channel-whatsapp.mp4" type="video/mp4">
+              <a href="/delegatlabs-home/assets/channel-whatsapp.mp4">Open the WhatsApp film</a>
+            </video>
+          </studio-player>
+          <div class="channel-description"><p class="eyebrow">Illustrative workflow</p>
+            <h3>WhatsApp enquiry agent</h3><p>A customer asks to visit on Friday afternoon. The agent drafts a follow-up about the time, and your team checks availability before replying.</p>
+            <a class="button secondary project-link" href="#project" data-interest="AI agents" data-task="Prepare WhatsApp enquiries for our service team." data-decision="A team member checks the details and approves the reply.">Plan a WhatsApp workflow <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article class="channel-panel" id="panel-instagram">
+          <studio-player class="artboard" data-duration="8.5">
+            <video muted playsinline loop controls preload="none" poster="/delegatlabs-home/assets/channel-instagram.webp" aria-label="Instagram workflow illustration">
+              <source src="/delegatlabs-home/assets/channel-instagram.mp4" type="video/mp4">
+              <a href="/delegatlabs-home/assets/channel-instagram.mp4">Open the Instagram film</a>
+            </video>
+          </studio-player>
+          <div class="channel-description"><p class="eyebrow">Illustrative workflow</p>
+            <h3>Instagram DM agent</h3><p>A shopper asks about an olive linen shirt. The agent checks the catalogue and drafts a reply asking which size they need.</p>
+            <a class="button secondary project-link" href="#project" data-interest="AI agents" data-task="Help our shop prepare answers to product enquiries on Instagram." data-decision="Our shop team verifies product details before replying.">Plan an Instagram workflow <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article class="channel-panel" id="panel-facebook">
+          <studio-player class="artboard" data-duration="8.5">
+            <video muted playsinline loop controls preload="none" poster="/delegatlabs-home/assets/channel-facebook.webp" aria-label="Facebook workflow illustration">
+              <source src="/delegatlabs-home/assets/channel-facebook.mp4" type="video/mp4">
+              <a href="/delegatlabs-home/assets/channel-facebook.mp4">Open the Facebook film</a>
+            </video>
+          </studio-player>
+          <div class="channel-description"><p class="eyebrow">Illustrative workflow</p>
+            <h3>Facebook Page agent</h3><p>A visitor asks whether a workshop has step-free access. The agent routes the comment to the events team to confirm the details before a public reply.</p>
+            <a class="button secondary project-link" href="#project" data-interest="AI agents" data-task="Route incoming Facebook Page comments to the right teammate." data-decision="Our Page manager reviews public replies.">Plan a Facebook workflow <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+      </div>
     </section>
     <section class="wrap work section" id="work" aria-labelledby="work-title">
       <div class="section-head"><h2 id="work-title">Selected work<span class="terminal">.</span></h2><p>Inside four workflows, from the first input to the person who makes the call.</p></div>
@@ -188,14 +237,21 @@
       </article>
     </div>
     <section class="services section" id="solutions"><div class="wrap split">
-      <div class="section-copy"><p class="eyebrow">Services</p><h2>What we <br>build<span class="terminal">.</span></h2><p>From a single handoff to the software that runs a team.</p></div>
+      <div class="section-copy"><p class="eyebrow">Services</p><h2>What we <br>build<span class="terminal">.</span></h2><p>From a single handoff to the software that runs a team.</p><div id="service-preview"></div></div>
       <div class="solution-grid">
-          <details class="solution"><summary><span><strong>AI agents</strong><small>Hand off repetitive tasks</small></span><i aria-hidden="true"></i></summary><div class="solution-detail"><p>Give a specialist agent a defined job, such as preparing a follow-up or assembling a first draft. Choose where a person reviews its work.</p><a href="#work">See workflow studies →</a> <a class="project-link" data-interest="AI agents" href="#project">Create an agent brief →</a></div></details>
-          <details class="solution"><summary><span><strong>Software &amp; SaaS</strong><small>Build a tool around your team</small></span><i aria-hidden="true"></i></summary><div class="solution-detail"><p>Turn a spreadsheet, inbox and collection of workarounds into one application with clear roles, records and next steps.</p><a class="project-link" data-interest="Software &amp; SaaS" href="#project">Discuss a software project →</a></div></details>
-          <details class="solution"><summary><span><strong>Websites &amp; commerce</strong><small>Help visitors explore and buy</small></span><i aria-hidden="true"></i></summary><div class="solution-detail"><p>Connect discovery, product information and checkout in a storefront, or guide a prospective customer from their first question to an enquiry.</p><a class="project-link" data-interest="Websites &amp; commerce" href="#project">Discuss a web project →</a></div></details>
-          <details class="solution"><summary><span><strong>Mobile apps</strong><small>Put the right tools in the field</small></span><i aria-hidden="true"></i></summary><div class="solution-detail"><p>Design iOS and Android experiences for the place the work happens, from an intake at reception to a visit recorded on the move.</p><a class="project-link" data-interest="Mobile apps" href="#project">Discuss a mobile project →</a></div></details>
-          <details class="solution"><summary><span><strong>Automation &amp; integrations</strong><small>Connect the tools you already use</small></span><i aria-hidden="true"></i></summary><div class="solution-detail"><p>Move information between systems, flag exceptions and give each handoff a clear owner so people can stop re-entering the same details.</p><a class="project-link" data-interest="Automation &amp; integrations" href="#project">Discuss an integration →</a></div></details>
-          <details class="solution"><summary><span><strong>AI ecosystems</strong><small>Coordinate several workflows</small></span><i aria-hidden="true"></i></summary><div class="solution-detail"><p>Bring agents, business applications and people into a shared workflow. Define who can see each input and who approves the next action.</p><a class="project-link" data-interest="AI ecosystems" href="#project">Discuss a connected system →</a></div></details>
+          <details class="solution" name="studio-service" open><summary><span><strong>AI agents</strong><small>Hand off repetitive tasks</small></span><i aria-hidden="true"></i></summary><div class="solution-detail"><figure class="service-sample sample-0"><span class="artboard relay" aria-hidden="true">
+            <span class="art-type">Recruitment</span>
+            <span class="relay-orbit"></span>
+            <span class="relay-app"><span class="app-bar"><span class="app-mark">f.</span> Follow-up <span class="app-dots">•••</span></span>
+              <span class="app-body"><span class="ui-label">Submission workspace</span><b>Follow-ups</b><span class="ui-line"></span><span class="queue-row"><i>AK</i><span><strong>Client feedback</strong><small>Candidate submission</small></span><span class="queue-status">In review</span></span><span class="queue-row"><i>MS</i><span><strong>Next steps</strong><small>Hiring team</small></span></span></span>
+            </span><span class="draft-note"><span class="note-icon">↗</span><span><small>Draft prepared</small><b>Ready for review</b></span></span>
+
+          </span><figcaption>Illustrative example · Follow-up draft</figcaption><strong>Two profiles submitted Monday.</strong><p>Could you share feedback on either profile?</p><small>Awaiting recruiter review</small></figure><p>Give a specialist agent a defined job, such as preparing a follow-up or assembling a first draft. Choose where a person reviews its work.</p><a href="#work">See workflow studies →</a> <a class="project-link" data-interest="AI agents" href="#project">Create an agent brief →</a></div></details>
+          <details class="solution" name="studio-service"><summary><span><strong>Software &amp; SaaS</strong><small>Build a tool around your team</small></span><i aria-hidden="true"></i></summary><div class="solution-detail"><figure class="service-sample sample-1"><figcaption>Illustrative example · Team workspace</figcaption><strong>Submission queue</strong><p>Assign the next review to the hiring lead.</p><small>Owner assigned</small></figure><p>Turn a spreadsheet, inbox and collection of workarounds into one application with clear roles, records and next steps.</p><a class="project-link" data-interest="Software &amp; SaaS" href="#project">Discuss a software project →</a></div></details>
+          <details class="solution" name="studio-service"><summary><span><strong>Websites &amp; commerce</strong><small>Help visitors explore and buy</small></span><i aria-hidden="true"></i></summary><div class="solution-detail"><figure class="service-sample sample-2"><figcaption>Illustrative example · Storefront</figcaption><strong>Studio notebook</strong><p>Ink blue · Hardcover · 160 pages</p><small>Ready for checkout</small></figure><p>Connect discovery, product information and checkout in a storefront, or guide a prospective customer from their first question to an enquiry.</p><a class="project-link" data-interest="Websites &amp; commerce" href="#project">Discuss a web project →</a></div></details>
+          <details class="solution" name="studio-service"><summary><span><strong>Mobile apps</strong><small>Put the right tools in the field</small></span><i aria-hidden="true"></i></summary><div class="solution-detail"><figure class="service-sample sample-3"><figcaption>Illustrative example · Field visit</figcaption><strong>Visit record</strong><p>Front desk intake completed on site.</p><small>Ready to sync</small></figure><p>Design iOS and Android experiences for the place the work happens, from an intake at reception to a visit recorded on the move.</p><a class="project-link" data-interest="Mobile apps" href="#project">Discuss a mobile project →</a></div></details>
+          <details class="solution" name="studio-service"><summary><span><strong>Automation &amp; integrations</strong><small>Connect the tools you already use</small></span><i aria-hidden="true"></i></summary><div class="solution-detail"><figure class="service-sample sample-4"><figcaption>Illustrative example · Intake routing</figcaption><strong>New enquiry received</strong><p>Match the request to its account owner.</p><small>Routed to intake</small></figure><p>Move information between systems, flag exceptions and give each handoff a clear owner so people can stop re-entering the same details.</p><a class="project-link" data-interest="Automation &amp; integrations" href="#project">Discuss an integration →</a></div></details>
+          <details class="solution" name="studio-service"><summary><span><strong>AI ecosystems</strong><small>Coordinate several workflows</small></span><i aria-hidden="true"></i></summary><div class="solution-detail"><figure class="service-sample sample-5"><figcaption>Illustrative example · Review desk</figcaption><strong>Research → Draft → Review</strong><p>The editor checks the sources before publication.</p><small>Editor approval required</small></figure><p>Bring agents, business applications and people into a shared workflow. Define who can see each input and who approves the next action.</p><a class="project-link" data-interest="AI ecosystems" href="#project">Discuss a connected system →</a></div></details>
       </div>
     </div></section>
     <section class="approach section" id="approach"><div class="wrap">
@@ -204,7 +260,7 @@
     </div></section>
     <section class="project" id="project"><div class="wrap project-inner">
       <div><p class="eyebrow">Project brief</p><h2>What would<br>you <em>delegate?</em></h2></div>
-      <div class="project-action"><p>Start with one task your team would like to hand off.</p><div class="enquiry-actions"><a href="mailto:admin@delegatlabs.in" class="button primary" id="project-email">Email us <span class="arrow-icon" aria-hidden="true"><span>↗</span></span></a><button type="button" class="quiet-link" id="brief-open">Create a brief <span aria-hidden="true">→</span></button></div></div>
+      <div class="project-action"><p>Start with one task your team would like to hand off.</p><div class="enquiry-actions"><button type="button" class="button primary" id="brief-open">Start a project <span aria-hidden="true">↗</span></button><a href="mailto:admin@delegatlabs.in" id="project-email">admin@delegatlabs.in</a></div></div>
     </div></section>
   </main>
   <footer><div class="wrap foot-inner"><a class="wordmark" href="#top">Delegatlabs<span>.AI</span></a><span>DelegatLabs LLP</span><a href="#top">Back to top ↑</a></div></footer>

@@ -107,3 +107,32 @@
     document.querySelectorAll(".project-card, .section-copy, .steps li").forEach(el => reveal.observe(el));
   }
 })();
+
+(() => {
+  const tablist = document.querySelector(".channel-tabs");
+  const tabs = [...tablist.querySelectorAll('[role="tab"]')];
+  function selectChannel(selected) {
+    tabs.forEach(tab => {
+      const active = tab === selected;
+      const panel = document.getElementById(tab.getAttribute("aria-controls"));
+      tab.setAttribute("aria-selected", String(active));
+      tab.tabIndex = active ? 0 : -1;
+      panel.hidden = !active;
+    });
+  }
+  tabs.forEach((tab, index) => {
+    const panel = document.getElementById(tab.getAttribute("aria-controls"));
+    panel.setAttribute("role", "tabpanel");
+    panel.setAttribute("aria-labelledby", tab.id);
+    tab.addEventListener("click", () => selectChannel(tab));
+    tab.addEventListener("keydown", event => {
+      const next = {Home: 0, End: tabs.length - 1, ArrowLeft: (index + tabs.length - 1) % tabs.length, ArrowRight: (index + 1) % tabs.length}[event.key];
+      if (next === undefined) return;
+      event.preventDefault();
+      selectChannel(tabs[next]);
+      tabs[next].focus();
+    });
+  });
+  selectChannel(tabs[0]);
+  tablist.hidden = false;
+})();

@@ -1,0 +1,76 @@
+.channel-decision {
+  margin-top: clamp(16px, 1.6vw, 24px);
+  color: var(--ink);
+}
+.channel-decision fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  min-width: 0;
+}
+.channel-decision legend {
+  margin-bottom: 9px;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -.02em;
+}
+.decision-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.decision-options label {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  min-height: 44px;
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  background: var(--page);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 550;
+  line-height: 1.15;
+  text-align: center;
+  transition: color .16s ease-out, background-color .16s ease-out, border-color .16s ease-out;
+}
+.decision-options input {
+  appearance: none;
+  margin: 0;
+  width: 12px;
+  height: 12px;
+  flex: none;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+}
+.decision-options input:checked { background: radial-gradient(currentColor 39%, transparent 44%); }
+.decision-options label:has(:checked) {
+  color: var(--page);
+  background: var(--ink);
+  border-color: var(--ink);
+}
+.decision-options label:has(:focus-visible) { outline: 3px solid var(--focus); outline-offset: 2px; }
+.decision-response {
+  margin-top: 10px;
+  padding: 13px 15px;
+  border-inline-start: 2px solid var(--accent);
+  background: var(--paper);
+  border-radius: 0 8px 8px 0;
+}
+.decision-kind { color: var(--accent); font-size: 12px; font-weight: 650; }
+.decision-sample { margin: 4px 0 7px; font-size: 15px; font-weight: 520; line-height: 1.4; letter-spacing: -.018em; }
+.decision-owner { display: block; color: var(--muted); font-size: 12px; line-height: 1.4; }
+@media (hover: hover) {
+  .decision-options label:hover { border-color: var(--ink); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .decision-options label { transition: none; }
+}
+@media (forced-colors: active) {
+  .decision-options input { appearance: auto; }
+  .decision-options label:has(:checked) { outline: 1px solid Highlight; }
+}
